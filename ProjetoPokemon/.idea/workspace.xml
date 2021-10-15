@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="MOD .gitignore">
+    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="ADD classe MainBrunno">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +184,28 @@
       <option name="project" value="LOCAL" />
       <updated>1634339925849</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="MOD Acoes e Pokemon">
+      <created>1634340153488</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1634340153488</updated>
+    </task>
+    <task id="LOCAL-00012" summary="MOD classe Pokedex">
+      <created>1634340782211</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1634340782211</updated>
+    </task>
+    <task id="LOCAL-00013" summary="ADD classe MainBrunno">
+      <created>1634341003923</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1634341003923</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,7 +213,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="brzonatto" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="brzonatto" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -209,6 +257,9 @@
     <MESSAGE value="ADD classe PokemonLendario" />
     <MESSAGE value="teste" />
     <MESSAGE value="MOD .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="MOD .gitignore" />
+    <MESSAGE value="MOD Acoes e Pokemon" />
+    <MESSAGE value="MOD classe Pokedex" />
+    <MESSAGE value="ADD classe MainBrunno" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD classe MainBrunno" />
   </component>
 </project>
