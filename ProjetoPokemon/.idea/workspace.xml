@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="ADD classe PokemonLendario">
+    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="MOD .gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +99,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -165,7 +170,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634339639220</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="teste">
+      <created>1634339809532</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1634339809532</updated>
+    </task>
+    <task id="LOCAL-00010" summary="MOD .gitignore">
+      <created>1634339925849</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1634339925849</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,10 +204,11 @@
     <MESSAGE value="ADD classe Tipo" />
     <MESSAGE value="ADD classe Status" />
     <MESSAGE value="ADD classe Sexo" />
-    <MESSAGE value="MOD .gitignore" />
     <MESSAGE value="ADD classe Habilidade" />
     <MESSAGE value="ADD classe Evolucao" />
     <MESSAGE value="ADD classe PokemonLendario" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD classe PokemonLendario" />
+    <MESSAGE value="teste" />
+    <MESSAGE value="MOD .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="MOD .gitignore" />
   </component>
 </project>
