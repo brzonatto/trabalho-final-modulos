@@ -2,7 +2,7 @@ package com.dbc;
 
 import java.util.ArrayList;
 
-public class Pokemon {
+public class Pokemon implements Acoes {
     private String nome;
     private Integer numero;
     private Double altura;
@@ -119,5 +119,20 @@ public class Pokemon {
 
     public void setEvolucao(Evolucao evolucao) {
         this.evolucao = evolucao;
+    }
+
+    @Override
+    public void atacar() {
+        
+    }
+
+    @Override
+    public void entrarPokeBola() {
+
+    }
+
+    @Override
+    public void sairPokeBola() {
+
     }
 }
