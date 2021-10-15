@@ -2,7 +2,7 @@ package com.dbc;
 
 import java.util.ArrayList;
 
-public class Pokemon implements Acoes {
+public class Pokemon implements Acoes, Impressao {
     private String nome;
     private Integer numero;
     private Double altura;
@@ -123,7 +123,7 @@ public class Pokemon implements Acoes {
 
     @Override
     public void atacar() {
-        
+
     }
 
     @Override
@@ -134,5 +134,10 @@ public class Pokemon implements Acoes {
     @Override
     public void sairPokeBola() {
 
+    }
+
+    @Override
+    public String imprimir() {
+        return null;
     }
 }
