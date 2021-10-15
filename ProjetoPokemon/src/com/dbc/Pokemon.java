@@ -122,7 +122,7 @@ public class Pokemon implements Acoes, Impressao {
     }
 
     @Override
-    public void atacar() {
+    public void atacar(Habilidade hab) {
 
     }
 
