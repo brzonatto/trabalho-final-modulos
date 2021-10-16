@@ -62,32 +62,32 @@ public class Pokedex {
     public void retiraTipo(Tipo tipoRetirado) {
         Integer guardaIndice = -1;
         for (int i = 0; i < listaPokemon.size(); i++) {
-            if (listaPokemon.get(i).equals(tipoRetirado)) {
+            if (listaTipos.get(i).equals(tipoRetirado)) {
                 guardaIndice = i;
             }
         }
         if (guardaIndice == -1) {
             System.out.println("Tipo não encontrado");
         } else {
-            listaPokemon.remove(tipoRetirado);
+            listaTipos.remove(tipoRetirado);
         }
     }
 
     public void adicionaHabilidade(Habilidade novaHabilidade) {
-        listaTipos.add(novaHabilidade);
+        listaHabilidades.add(novaHabilidade);
     }
 
     public void retiraHabilidade(Habilidade habiliadeRetirada){
         Integer guardaIndice = -1;
         for (int i = 0; i < listaPokemon.size(); i++) {
-            if (listaPokemon.get(i).equals(habiliadeRetirada)) {
+            if (listaHabilidades.get(i).equals(habiliadeRetirada)) {
                 guardaIndice = i;
             }
         }
         if (guardaIndice == -1) {
             System.out.println("Tipo não encontrado");
         } else {
-            listaPokemon.remove(habiliadeRetirada);
+            listaHabilidades.remove(habiliadeRetirada);
         }
     }
 }
