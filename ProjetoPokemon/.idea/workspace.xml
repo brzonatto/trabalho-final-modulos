@@ -7,8 +7,9 @@
     <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="MOD Metodos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Habilidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Habilidade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Tipo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634396288672</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="MOD Metodos">
+      <created>1634397904079</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1634397904079</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

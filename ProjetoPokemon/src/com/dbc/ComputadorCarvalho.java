@@ -3,7 +3,6 @@ package com.dbc;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.Locale;
 
 public class ComputadorCarvalho {
     private ArrayList<Pokemon> pokemons;
@@ -100,6 +99,24 @@ public class ComputadorCarvalho {
         System.out.print("Digite a velocidade: ");
         Integer velocidade = scan.nextInt();
         return new Status(hp, ataque, defesa, especialAtaque, especialDefesa, velocidade);
+    }
+
+    public void addPokeTEst() {
+        Integer numero = 1;
+        String nome = "Bulbasauro";
+        Integer level = 1;
+        Status status = new Status(10, 10, 10, 10, 10, 10);
+        Double altura = 0.9;
+        Double peso = 5.0;
+        String categoria = "Semente";
+        ArrayList<Tipo> tipos = new ArrayList<>();
+        tipos.add(Tipo.PLANTA);
+        tipos.add(Tipo.VENENOSO);
+        ArrayList<Habilidade> habilidades = new ArrayList<>();
+        habilidades.add(new Habilidade("Crescer", 2.0));
+
+
+        this.pokemons.add(new Pokemon(numero, nome, level, status, altura, peso, categoria, tipos, habilidades));
     }
 
     public void printPokemons() {
