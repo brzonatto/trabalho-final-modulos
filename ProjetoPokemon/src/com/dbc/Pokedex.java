@@ -3,92 +3,66 @@ package com.dbc;
 import java.util.ArrayList;
 
 public class Pokedex {
-    ArrayList<Pokemon> listaPokemon = new ArrayList<Pokemon>();
-    ArrayList<Tipo> listaTipos = new ArrayList<Tipo>();
-    ArrayList<Habilidade> listaHabilidades = new ArrayList<Habilidade>();
+    ArrayList<Pokemon> Pokemons;
+    ArrayList<Tipo> Tipos;
+    ArrayList<Habilidade> Habilidades;
 
-    public Pokedex(ArrayList<Pokemon> listaPokemon, ArrayList<Tipo> listaTipos, ArrayList<Habilidade> listaHabilidades) {
-        this.listaPokemon = listaPokemon;
-        this.listaTipos = listaTipos;
-        this.listaHabilidades = listaHabilidades;
+    public Pokedex() {
+
     }
 
-    public ArrayList<Pokemon> getListaPokemon() {
-        return listaPokemon;
+    public Pokedex(ArrayList<Pokemon> pokemons, ArrayList<Tipo> tipos, ArrayList<Habilidade> habilidades) {
+        Pokemons = pokemons;
+        Tipos = tipos;
+        Habilidades = habilidades;
     }
 
-    public void setListaPokemon(ArrayList<Pokemon> listaPokemon) {
-        this.listaPokemon = listaPokemon;
+    public ArrayList<Pokemon> getPokemons() {
+        return Pokemons;
     }
 
-    public ArrayList<Tipo> getListaTipos() {
-        return listaTipos;
+    public void setPokemons(ArrayList<Pokemon> pokemons) {
+        Pokemons = pokemons;
     }
 
-    public void setListaTipos(ArrayList<Tipo> listaTipos) {
-        this.listaTipos = listaTipos;
+    public ArrayList<Tipo> getTipos() {
+        return Tipos;
     }
 
-    public ArrayList<Habilidade> getListaHabilidades() {
-        return listaHabilidades;
+    public void setTipos(ArrayList<Tipo> tipos) {
+        Tipos = tipos;
     }
 
-    public void setListaHabilidades(ArrayList<Habilidade> listaHabilidades) {
-        this.listaHabilidades = listaHabilidades;
+    public ArrayList<Habilidade> getHabilidades() {
+        return Habilidades;
     }
 
-    public void adicionaPokemon(Pokemon novoPokemon) {
-        listaPokemon.add(novoPokemon);
+    public void setHabilidades(ArrayList<Habilidade> habilidades) {
+        Habilidades = habilidades;
     }
 
-    public void retiraPokemon(Pokemon pokemonRetirado) {
-        Integer guardaIndice = -1;
-        for (int i = 0; i < listaPokemon.size(); i++) {
-            if (listaPokemon.get(i).equals(pokemonRetirado)) {
-                guardaIndice = i;
-            }
-        }
-        if (guardaIndice == -1) {
-            System.out.println("Pokémon não encontrado");
-        } else {
-            listaPokemon.remove(pokemonRetirado);
-        }
+     public void addPokemon(Pokemon pokemon) {
+
+     }
+
+     public void removePokemon(Pokemon pokemon) {
+
+     }
+
+    public void addTipo(Tipo tipo) {
+
     }
 
-    public void adicionaTipo(Tipo novoTipo) {
-        listaTipos.add(novoTipo);
+    public void removeTipo(Tipo tipo) {
+
     }
 
-    public void retiraTipo(Tipo tipoRetirado) {
-        Integer guardaIndice = -1;
-        for (int i = 0; i < listaPokemon.size(); i++) {
-            if (listaPokemon.get(i).equals(tipoRetirado)) {
-                guardaIndice = i;
-            }
-        }
-        if (guardaIndice == -1) {
-            System.out.println("Tipo não encontrado");
-        } else {
-            listaPokemon.remove(tipoRetirado);
-        }
+    public void addHabilidade(Habilidade habilidade) {
+
     }
 
-    public void adicionaHabilidade(Habilidade novaHabilidade) {
-        listaTipos.add(novaHabilidade);
-    }
+    public void removeHabilidade(Habilidade habilidade) {
 
-    public void retiraHabilidade(Habilidade habiliadeRetirada){
-        Integer guardaIndice = -1;
-        for (int i = 0; i < listaPokemon.size(); i++) {
-            if (listaPokemon.get(i).equals(habiliadeRetirada)) {
-                guardaIndice = i;
-            }
-        }
-        if (guardaIndice == -1) {
-            System.out.println("Tipo não encontrado");
-        } else {
-            listaPokemon.remove(habiliadeRetirada);
-        }
     }
 }
 
