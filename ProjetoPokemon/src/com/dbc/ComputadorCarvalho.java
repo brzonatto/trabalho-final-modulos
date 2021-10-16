@@ -43,9 +43,9 @@ public class ComputadorCarvalho {
 
     public void addPokemons() {
         scan.useLocale(Locale.US);
-        System.out.print("Adicionar Pokemon\n");
+        System.out.println("Adicionar Pokemon");
         Integer numero = 1;
-        System.out.println("Digite o nome: ");
+        System.out.print("Digite o nome: ");
         String nome = scan.next();
         System.out.print("Digite o level: ");
         Integer level = scan.nextInt();
@@ -77,7 +77,7 @@ public class ComputadorCarvalho {
             String nomeHabilidade = scan.next();
             System.out.print("Digite o multiplicador de poder: ");
             Double multiplicadorDePoder = scan.nextDouble();
-            Habilidade habilidade = new Habilidade(nome, multiplicadorDePoder);
+            Habilidade habilidade = new Habilidade(nomeHabilidade, multiplicadorDePoder);
             habilidades.add(habilidade);
             System.out.print("Deseja parar de digitar habilidades? (S/N): ");
             sair = scan.next();
@@ -104,7 +104,7 @@ public class ComputadorCarvalho {
 
     public void printPokemons() {
         for (Pokemon key : pokemons) {
-            System.out.println(key);
+            key.imprimirPokemon();
         }
     }
 }

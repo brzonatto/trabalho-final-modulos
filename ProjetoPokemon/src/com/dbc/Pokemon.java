@@ -1,5 +1,7 @@
 package com.dbc;
 
+import jdk.swing.interop.SwingInterOpUtils;
+
 import java.util.ArrayList;
 
 public class Pokemon {
@@ -103,6 +105,19 @@ public class Pokemon {
         this.habilidades = habilidades;
     }
 
+    public void imprimirPokemon() {
+        System.out.println(this);
+
+        System.out.println("TIPOS");
+        for (Tipo key : this.tipos) {
+            System.out.println(key.getNome());
+        }
+        System.out.println("HABILIDADES");
+        for (Habilidade key : this.habilidades) {
+            System.out.println(key.getNome());
+        }
+    }
+
     @Override
     public String toString() {
         return  "Numero: " + this.numero +
@@ -111,8 +126,6 @@ public class Pokemon {
                 "\nAltura: " + this.altura +
                 "\nPeso: " + this.peso +
                 "\nCategoria: " + this.categoria +
-                "\nStatus: " + this.status +
-                "\nTipos: " + this.tipos +
-                "\nHabilidades: " + this.habilidades;
+                "\nStatus: " + this.status;
     }
 }

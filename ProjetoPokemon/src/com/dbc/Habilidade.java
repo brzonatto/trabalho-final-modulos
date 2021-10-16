@@ -31,6 +31,6 @@ public class Habilidade {
 
     @Override
     public String toString() {
-        return "Habilidade: " + this.nome + "\nMultiplicacao de poder: " + this.multiplicacaoDePoder;
+        return "Habilidade: " + this.nome;
     }
 }
