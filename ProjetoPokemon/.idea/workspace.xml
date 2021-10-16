@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="MOD class PokemonLendario">
+    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="MOD classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/Habilidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Habilidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Pokedex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Pokedex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Sexo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Sexo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Tipo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -254,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634347287011</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="MOD classes">
+      <created>1634389320712</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1634389320712</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -314,6 +316,7 @@
     <MESSAGE value="MOD classe Pokemon &quot;SEXO&quot;" />
     <MESSAGE value="MOD interface Acoes" />
     <MESSAGE value="MOD class PokemonLendario" />
-    <option name="LAST_COMMIT_MESSAGE" value="MOD class PokemonLendario" />
+    <MESSAGE value="MOD classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="MOD classes" />
   </component>
 </project>
