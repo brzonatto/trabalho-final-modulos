@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="MOD classe Pokedex">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Acoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Acoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" afterDir="false" />
+    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="MOD interface Acoes">
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/PokemonLendario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/PokemonLendario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +226,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634347047088</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="MOD classe Pokemon &quot;SEXO&quot;">
+      <created>1634347153539</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1634347153539</updated>
+    </task>
+    <task id="LOCAL-00018" summary="MOD interface Acoes">
+      <created>1634347180422</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1634347180422</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,6 +297,8 @@
     <MESSAGE value="DEL classe MainBrunno, MainJonathas, MainLeo" />
     <MESSAGE value="MOD classe Main" />
     <MESSAGE value="MOD classe Pokedex" />
-    <option name="LAST_COMMIT_MESSAGE" value="MOD classe Pokedex" />
+    <MESSAGE value="MOD classe Pokemon &quot;SEXO&quot;" />
+    <MESSAGE value="MOD interface Acoes" />
+    <option name="LAST_COMMIT_MESSAGE" value="MOD interface Acoes" />
   </component>
 </project>
