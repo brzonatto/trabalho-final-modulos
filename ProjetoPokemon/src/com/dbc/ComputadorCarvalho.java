@@ -40,51 +40,6 @@ public class ComputadorCarvalho {
         this.habilidades = habilidades;
     }
 
-    public void addPokemons() {
-        scan.useLocale(Locale.US);
-        System.out.print("Digite o numero: ");
-        Integer numero = scan.nextInt();
-        System.out.print("Digite o nome: ");
-        String nome = scan.next();
-        System.out.print("Digite o level: ");
-        Integer level = scan.nextInt();
-        System.out.println("Digite os status: ");
-        Status status = addStatus();
-        System.out.print("Digite a altura: ");
-        Double altura = scan.nextDouble();
-        System.out.print("Digite o peso: ");
-        Double peso = scan.nextDouble();
-        System.out.print("Digite a categoria: ");
-        String categoria = scan.next();
-        ArrayList<Tipo> tipos = new ArrayList<>();
-        String tipo = "";
-        String sair;
-
-        do {
-            System.out.print("Digite o tipo: ");
-            tipo = scan.next();
-            tipos.add(Tipo.valueOf(tipo.toUpperCase(Locale.ROOT)));
-            System.out.print("Deseja parar de digitar tipos? (S/N): ");
-            sair = scan.next();
-        } while (!sair.equalsIgnoreCase("s"));
-
-        ArrayList<Habilidade> habilidades = new ArrayList<>();
-        System.out.println("Digite as Habilidades: ");
-
-        do {
-            System.out.print("Digite o nome: ");
-            String nomeHabilidade = scan.next();
-            System.out.print("Digite o multiplicador de poder: ");
-            Double multiplicadorDePoder = scan.nextDouble();
-            Habilidade habilidade = new Habilidade(nomeHabilidade, multiplicadorDePoder);
-            habilidades.add(habilidade);
-            System.out.print("Deseja parar de digitar habilidades? (S/N): ");
-            sair = scan.next();
-        } while (!sair.equalsIgnoreCase("s"));
-
-        this.pokemons.add(new Pokemon(numero, nome, level, status, altura, peso, categoria, tipos, habilidades));
-    }
-
     public Status addStatus() {
         System.out.print("Digite o HP: ");
         Integer hp = scan.nextInt();
@@ -107,13 +62,50 @@ public class ComputadorCarvalho {
                 .findFirst().get();
     }
 
+    public void editarNomePokemon(Integer numero, String nome) {
+        Pokemon pokemonMOD = pegarPokemonPorNumero(numero);
+        pokemonMOD.setNome(nome);
+    }
+
+    public void editarLevelPokemon(Integer numero, Integer level) {
+        Pokemon pokemonMOD = pegarPokemonPorNumero(numero);
+        pokemonMOD.setLevel(level);
+    }
+
+    public void editarStatusPokemon(Integer numero, Status status) {
+        Pokemon pokemonMOD = pegarPokemonPorNumero(numero);
+        pokemonMOD.setStatus(status);
+    }
+
+    public void editarAlturaPokemon(Integer numero, Double altura) {
+        Pokemon pokemonMOD = pegarPokemonPorNumero(numero);
+        pokemonMOD.setAltura(altura);
+    }
+
+    public void editarPesoPokemon(Integer numero, Double peso){
+        Pokemon pokemonMOD = pegarPokemonPorNumero(numero);
+        pokemonMOD.setPeso(peso);
+    }
+
+    public void editarCategoriaPokemon(Integer numero, String categoria) {
+        Pokemon pokemonMOD = pegarPokemonPorNumero(numero);
+        pokemonMOD.setCategoria(categoria);
+    }
+
+    public void editarTiposPokemon(Integer numero, ArrayList<Tipo> tipos) {
+        Pokemon pokemonMOD = pegarPokemonPorNumero(numero);
+        pokemonMOD.setTipos(tipos);
+    }
+
+    public void editarHabilidadesPokemon(Integer numero, ArrayList<Habilidade> habilidades) {
+        Pokemon pokemonMOD = pegarPokemonPorNumero(numero);
+        pokemonMOD.setHabilidades(habilidades);
+    }
+
     public void editarPokemon() {
         scan.useLocale(Locale.US);
         System.out.print("Digite o número do pokemon a ser editado: ");
         Integer numero = scan.nextInt();
-        Pokemon pokemonEditado = pokemons.stream()
-                .filter( pokemon -> pokemon.getNumero().equals(numero))
-                        .findFirst().get();
 
         System.out.println("O que você deseja editar? ");
         System.out.println("Opções:");
@@ -134,27 +126,27 @@ public class ComputadorCarvalho {
         switch (opcao) {
             case "1":
                 System.out.print("Digite o novo nome: ");
-                pokemonEditado.setNome(scan.next());
+                editarNomePokemon(numero, scan.next());
                 break;
             case "2":
                 System.out.print("Digite o novo level: ");
-                pokemonEditado.setLevel(scan.nextInt());
+                editarLevelPokemon(numero, scan.nextInt());
                 break;
             case "3":
                 System.out.print("Digite o novo grupo de status: ");
-                pokemonEditado.setStatus(addStatus());
+                editarStatusPokemon(numero, addStatus());
                 break;
             case "4":
                 System.out.print("Digite a nova altura: ");
-                pokemonEditado.setAltura(scan.nextDouble());
+                editarAlturaPokemon(numero, scan.nextDouble());
                 break;
             case "5":
                 System.out.print("Digite o novo peso: ");
-                pokemonEditado.setPeso(scan.nextDouble());
+                editarPesoPokemon(numero, scan.nextDouble());
                 break;
             case "6":
                 System.out.print("Digite a nova categoria: ");
-                pokemonEditado.setCategoria(scan.next());
+                editarCategoriaPokemon(numero, scan.next());
                 break;
             case "7":
                 ArrayList<Tipo> tipos = new ArrayList<>();
@@ -167,7 +159,7 @@ public class ComputadorCarvalho {
                     System.out.print("Deseja parar de digitar tipos? (S/N): ");
                     sair = scan.next();
                 } while (!sair.equalsIgnoreCase("s"));
-                pokemonEditado.setTipos(tipos);
+                editarTiposPokemon(numero, tipos);
                 break;
             case "8":
                 ArrayList<Habilidade> habilidades = new ArrayList<>();
@@ -181,10 +173,11 @@ public class ComputadorCarvalho {
                     System.out.print("Deseja parar de digitar habilidades? (S/N): ");
                     sair = scan.next();
                 } while (!sair.equalsIgnoreCase("s"));
+                editarHabilidadesPokemon(numero, habilidades);
                 break;
             case "9":
-                removePokemon(pokemonEditado.getNumero());
-                addPokemons();
+                removePokemon(numero);
+                //addPokemon();
                 break;
             default:
                 System.out.println("Opção inválida");
@@ -194,6 +187,12 @@ public class ComputadorCarvalho {
 
     public void removePokemon(Integer numero) {
         pokemons.removeIf(pokemon -> pokemon.getNumero() == numero);
+    }
+
+    public void addPokemon(Integer numero, String nome, Integer level, Status status,
+                           Double altura, Double peso, String categoria, ArrayList<Tipo> tipos, ArrayList<Habilidade> habilidades) {
+        this.pokemons.add(new Pokemon(numero, nome, level, status, altura, peso,
+                categoria, tipos, habilidades));
     }
 
     public void addPokeTEst() {
@@ -233,4 +232,87 @@ public class ComputadorCarvalho {
             key.imprimirPokemon();
         }
     }
+
+    public void menu() {
+        opcoes();
+        System.out.print("Digite a opção: ");
+        String opcao = scan.next();
+        while (!opcao.equalsIgnoreCase("s")) {
+            switch (opcao) {
+                case "1":
+                    scan.useLocale(Locale.US);
+                    System.out.print("Digite o numero: ");
+                    Integer numero = scan.nextInt();
+                    System.out.print("Digite o nome: ");
+                    String nome = scan.next();
+                    System.out.print("Digite o level: ");
+                    Integer level = scan.nextInt();
+                    System.out.println("Digite os status: ");
+                    Status status = addStatus();
+                    System.out.print("Digite a altura: ");
+                    Double altura = scan.nextDouble();
+                    System.out.print("Digite o peso: ");
+                    Double peso = scan.nextDouble();
+                    System.out.print("Digite a categoria: ");
+                    String categoria = scan.next();
+                    ArrayList<Tipo> tipos = new ArrayList<>();
+                    String tipo = "";
+                    String sair;
+
+                    do {
+                        System.out.print("Digite o tipo: ");
+                        tipo = scan.next();
+                        tipos.add(Tipo.valueOf(tipo.toUpperCase(Locale.ROOT)));
+                        System.out.print("Deseja parar de digitar tipos? (S/N): ");
+                        sair = scan.next();
+                    } while (!sair.equalsIgnoreCase("s"));
+
+                    ArrayList<Habilidade> habilidades = new ArrayList<>();
+                    System.out.println("Digite as Habilidades: ");
+
+                    do {
+                        System.out.print("Digite o nome: ");
+                        String nomeHabilidade = scan.next();
+                        System.out.print("Digite o multiplicador de poder: ");
+                        Double multiplicadorDePoder = scan.nextDouble();
+                        Habilidade habilidade = new Habilidade(nomeHabilidade, multiplicadorDePoder);
+                        habilidades.add(habilidade);
+                        System.out.print("Deseja parar de digitar habilidades? (S/N): ");
+                        sair = scan.next();
+                    } while (!sair.equalsIgnoreCase("s"));
+
+                    addPokemon(numero, nome, level, status, altura, peso, categoria, tipos, habilidades);
+                    break;
+                case "2":
+                    printPokemons();
+                    break;
+                case "3":
+                    System.out.print("Digite o número do Pokemon a ser removido!");
+                    numero = scan.nextInt();
+                    removePokemon(numero);
+                    break;
+                case "4":
+                    editarPokemon();
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
+            }
+
+            System.out.println("");
+            opcoes();
+            System.out.print("Digite a opção: ");
+            opcao = scan.next();
+        }
+    }
+
+    public void opcoes() {
+        System.out.println("Opções: ");
+        System.out.println("  1  - Adicionar Pokemon");
+        System.out.println("  2  - Mostrar todos Pokemons cadastrados");
+        System.out.println("  3  - Remover Pokemon");
+        System.out.println("  4  - Editar Pokemon");
+        System.out.println("(S/N)- Sair/Continuar\n");
+    }
+
 }
