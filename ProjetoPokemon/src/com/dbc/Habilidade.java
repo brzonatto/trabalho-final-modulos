@@ -18,4 +18,9 @@ public class Habilidade {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    @Override
+    public String toString() {
+        return "Habilidade: " + this.nome;
+    }
 }

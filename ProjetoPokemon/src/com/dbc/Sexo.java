@@ -1,7 +1,18 @@
 package com.dbc;
 
 public enum Sexo {
-    MACHO,
-    FEMEA,
-    DESCONHECIDO;
+    MACHO("Macho"),
+    FEMEA("Fêmea"),
+    DESCONHECIDO("Desconhecido");
+
+    private String nome;
+
+    Sexo(String nome) {
+        this.nome = nome;
+    }
+
+    @Override
+    public String toString() {
+        return this.nome;
+    }
 }

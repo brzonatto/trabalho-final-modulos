@@ -68,4 +68,15 @@ public class Status {
     public void setVelocidade(Integer velocidade) {
         this.velocidade = velocidade;
     }
+
+    @Override
+    public String toString() {
+        return " --Status-- " +
+                "\nHP: " + this.hp +
+                "\nAtaque: " + this.ataque +
+                "\nDefesa: " + this.defesa +
+                "\nAtaque Especial: " + this.especialAtaque +
+                "\nDefesa Especial: " + this.especialDefesa +
+                "\nVelocidade: " + this.velocidade;
+    }
 }

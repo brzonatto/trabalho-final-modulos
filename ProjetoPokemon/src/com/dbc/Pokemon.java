@@ -2,37 +2,43 @@ package com.dbc;
 
 import java.util.ArrayList;
 
-public class Pokemon implements Acoes, Impressao {
-    private String nome;
+public class Pokemon {
     private Integer numero;
+    private String nome;
+    private Integer level;
+    private Status status;
     private Double altura;
     private Double peso;
     private String categoria;
     private Sexo sexo;
-    private ArrayList<Tipo> tipos;
-    private Integer level;
+    private Tipo tipos;
     private ArrayList<Habilidade> habilidades;
-    private Status status;
-    private Evolucao evolucao;
 
-    public Pokemon(){
+    public Pokemon() {
 
     }
 
-    public Pokemon(String nome, Integer numero, Double altura, Double peso, String categoria, Sexo sexo,
-                   ArrayList<Tipo> tipos, Integer level,
-                   ArrayList<Habilidade> habilidades, Status status, Evolucao evolucao) {
-        this.nome = nome;
+    public Pokemon(Integer numero, String nome, Integer level, Status status, Double altura, Double peso,
+                   String categoria, Sexo sexo, Tipo tipos,
+                   ArrayList<Habilidade> habilidades) {
         this.numero = numero;
+        this.nome = nome;
+        this.level = level;
+        this.status = status;
         this.altura = altura;
         this.peso = peso;
         this.categoria = categoria;
         this.sexo = sexo;
         this.tipos = tipos;
-        this.level = level;
         this.habilidades = habilidades;
-        this.status = status;
-        this.evolucao = evolucao;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
     }
 
     public String getNome() {
@@ -43,12 +49,20 @@ public class Pokemon implements Acoes, Impressao {
         this.nome = nome;
     }
 
-    public Integer getNumero() {
-        return numero;
+    public Integer getLevel() {
+        return level;
     }
 
-    public void setNumero(Integer numero) {
-        this.numero = numero;
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public Double getAltura() {
@@ -83,20 +97,12 @@ public class Pokemon implements Acoes, Impressao {
         this.sexo = sexo;
     }
 
-    public ArrayList<Tipo> getTipos() {
+    public Tipo getTipos() {
         return tipos;
     }
 
-    public void setTipos(ArrayList<Tipo> tipos) {
+    public void setTipos(Tipo tipos) {
         this.tipos = tipos;
-    }
-
-    public Integer getLevel() {
-        return level;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
     }
 
     public ArrayList<Habilidade> getHabilidades() {
@@ -107,39 +113,19 @@ public class Pokemon implements Acoes, Impressao {
         this.habilidades = habilidades;
     }
 
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public Evolucao getEvolucao() {
-        return evolucao;
-    }
-
-    public void setEvolucao(Evolucao evolucao) {
-        this.evolucao = evolucao;
-    }
-
     @Override
-    public void atacar(Habilidade habilidade) {
-
-    }
-
-    @Override
-    public void entrarPokeBola() {
-
-    }
-
-    @Override
-    public void sairPokeBola() {
-
-    }
-
-    @Override
-    public String imprimir() {
-        return null;
+    public String toString() {
+        return "Pokemon{" +
+                "numero=" + numero +
+                ", nome='" + nome + '\'' +
+                ", level=" + level +
+                ", status=" + status +
+                ", altura=" + altura +
+                ", peso=" + peso +
+                ", categoria='" + categoria + '\'' +
+                ", sexo=" + sexo +
+                ", tipos=" + tipos +
+                ", habilidades=" + habilidades +
+                '}';
     }
 }
