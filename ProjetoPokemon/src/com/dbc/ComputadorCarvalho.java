@@ -40,4 +40,8 @@ public class ComputadorCarvalho {
     public void setHabilidades(ArrayList<Habilidade> habilidades) {
         this.habilidades = habilidades;
     }
+
+    public void addPokemons() {
+
+    }
 }
