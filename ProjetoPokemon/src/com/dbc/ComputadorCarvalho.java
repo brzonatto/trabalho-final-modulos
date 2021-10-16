@@ -10,13 +10,9 @@ public class ComputadorCarvalho {
     Scanner scan = new Scanner((System.in));
 
     public ComputadorCarvalho() {
-
-    }
-
-    public ComputadorCarvalho(ArrayList<Pokemon> pokemons, ArrayList<Tipo> tipos, ArrayList<Habilidade> habilidades) {
-        this.pokemons = pokemons;
-        this.tipos = tipos;
-        this.habilidades = habilidades;
+        this.pokemons = new ArrayList<>();
+        this.tipos = new ArrayList<>();
+        this.habilidades = new ArrayList<>();
     }
 
     public ArrayList<Pokemon> getPokemons() {
