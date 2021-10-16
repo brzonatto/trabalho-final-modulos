@@ -115,17 +115,15 @@ public class Pokemon {
 
     @Override
     public String toString() {
-        return "Pokemon{" +
-                "numero=" + numero +
-                ", nome='" + nome + '\'' +
-                ", level=" + level +
-                ", status=" + status +
-                ", altura=" + altura +
-                ", peso=" + peso +
-                ", categoria='" + categoria + '\'' +
-                ", sexo=" + sexo +
-                ", tipos=" + tipos +
-                ", habilidades=" + habilidades +
-                '}';
+        return "Nome: " + this.nome +
+                "\nnumero: " + this.numero +
+                "\nLevel: " + this.level +
+                "\nStatus: " + this.status +
+                "\nAltura: " + this.altura +
+                "\nPeso: " + this.peso +
+                "\nCategoria: " + this.categoria + '\'' +
+                "\nSexo: " + this.sexo +
+                "\nTipos: " + this.tipos +
+                "\nHabilidades: " + this.habilidades;
     }
 }
