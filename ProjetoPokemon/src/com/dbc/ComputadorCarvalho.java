@@ -1,9 +1,11 @@
 package com.dbc;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
+import java.util.Locale;
 
-public class ComputadorCarvalho extends Acoes {
+public class ComputadorCarvalho {
     private ArrayList<Pokemon> pokemons;
     private ArrayList<Tipo> tipos;
     private ArrayList<Habilidade> habilidades;
@@ -40,40 +42,46 @@ public class ComputadorCarvalho extends Acoes {
     }
 
     public void addPokemons() {
-        System.out.println("Adicionar Pokemon");
+        scan.useLocale(Locale.US);
+        System.out.print("Adicionar Pokemon\n");
         Integer numero = 1;
         System.out.println("Digite o nome: ");
-        String nome = scan.nextLine();
-        System.out.println("Digite o level: ");
+        String nome = scan.next();
+        System.out.print("Digite o level: ");
         Integer level = scan.nextInt();
         System.out.println("Digite os status: ");
         Status status = addStatus();
-        System.out.println("Digite a altura: ");
+        System.out.print("Digite a altura: ");
         Double altura = scan.nextDouble();
-        System.out.println("Digite o peso: ");
+
+        System.out.print("Digite o peso: ");
         Double peso = scan.nextDouble();
-        System.out.println("Digite a categoria: ");
-        String categoria = scan.nextLine();
-        ArrayList<Tipo> tipos = null;
+
+        System.out.print("Digite a categoria: ");
+        String categoria = scan.next();
+        ArrayList<Tipo> tipos = new ArrayList<>();
         String tipo = "";
-        do {
-            System.out.println("Digite os tipos (digite parar para encerrar a adição de tipos): ");
-            tipo = scan.nextLine();
-            tipos.add(Tipo.valueOf(tipo));
-        } while (tipo.equalsIgnoreCase("parar"));
-        ArrayList<Habilidade> habilidades = null;
-        System.out.println("Digite as Habilidades: ");
         String sair;
         do {
+            System.out.print("Digite o tipo: ");
+            tipo = scan.next();
+            tipos.add(Tipo.valueOf(tipo.toUpperCase(Locale.ROOT)));
+            System.out.print("Deseja parar de digitar tipos? (S/N): ");
+            sair = scan.next();
+        } while (!sair.equalsIgnoreCase("s"));
+        ArrayList<Habilidade> habilidades = new ArrayList<>();
+        System.out.println("Digite as Habilidades: ");
+
+        do {
             System.out.print("Digite o nome: ");
-            nome = scan.nextLine();
+            String nomeHabilidade = scan.next();
             System.out.print("Digite o multiplicador de poder: ");
             Double multiplicadorDePoder = scan.nextDouble();
             Habilidade habilidade = new Habilidade(nome, multiplicadorDePoder);
             habilidades.add(habilidade);
-            System.out.println("Deseja parar de digitar habilidades? (S/N): ");
-            sair = scan.nextLine();
-        } while (sair.equalsIgnoreCase("parar"));
+            System.out.print("Deseja parar de digitar habilidades? (S/N): ");
+            sair = scan.next();
+        } while (!sair.equalsIgnoreCase("s"));
 
         this.pokemons.add(new Pokemon(numero++, nome, level, status, altura, peso, categoria, tipos, habilidades));
     }
@@ -92,5 +100,11 @@ public class ComputadorCarvalho extends Acoes {
         System.out.print("Digite a velocidade: ");
         Integer velocidade = scan.nextInt();
         return new Status(hp, ataque, defesa, especialAtaque, especialDefesa, velocidade);
+    }
+
+    public void printPokemons() {
+        for (Pokemon key : pokemons) {
+            System.out.println(key);
+        }
     }
 }

@@ -105,13 +105,13 @@ public class Pokemon {
 
     @Override
     public String toString() {
-        return "Nome: " + this.nome +
-                "\nnumero: " + this.numero +
+        return  "Numero: " + this.numero +
+                "\nNome: " + this.nome +
                 "\nLevel: " + this.level +
-                "\nStatus: " + this.status +
                 "\nAltura: " + this.altura +
                 "\nPeso: " + this.peso +
-                "\nCategoria: " + this.categoria + '\'' +
+                "\nCategoria: " + this.categoria +
+                "\nStatus: " + this.status +
                 "\nTipos: " + this.tipos +
                 "\nHabilidades: " + this.habilidades;
     }

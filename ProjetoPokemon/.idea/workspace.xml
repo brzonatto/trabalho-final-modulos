@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="ADD Metodos">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/PokemonLendario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/PokemonLendario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Status.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634393453796</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="ADD Metodos">
+      <created>1634393620378</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1634393620378</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -353,5 +363,15 @@
     <MESSAGE value="ADD Utils" />
     <MESSAGE value="ADD Metodos" />
     <option name="LAST_COMMIT_MESSAGE" value="ADD Metodos" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.InputMismatchException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

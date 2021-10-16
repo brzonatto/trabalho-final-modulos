@@ -74,8 +74,7 @@ public class Status {
 
     @Override
     public String toString() {
-        return " --Status-- " +
-                "\nHP: " + this.hp +
+        return  "\nHP: " + this.hp +
                 "\nAtaque: " + this.ataque +
                 "\nDefesa: " + this.defesa +
                 "\nAtaque Especial: " + this.especialAtaque +

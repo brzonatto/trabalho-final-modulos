@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class PokemonLendario extends Pokemon {
     private String regiaoDominante;
 
-    public PokemonLendario(String nome, Integer numero, Double altura, Double peso, String categoria,
-                           Sexo sexo, ArrayList<Tipo> tipos, Integer level, ArrayList<Habilidade> habilidades,
-                           Status status, Evolucao evolucao, String regiaoDominante) {
-        super(nome, numero, altura, peso, categoria, sexo, tipos, level, habilidades, status, evolucao);
+    public PokemonLendario(Integer numero, String nome, Integer level, Status status, Double altura, Double peso,
+                           String categoria, ArrayList<Tipo> tipos, ArrayList<Habilidade> habilidades,
+                           String regiaoDominante) {
+        super(numero, nome, level, status, altura, peso, categoria, tipos, habilidades);
         this.regiaoDominante = regiaoDominante;
     }
 
