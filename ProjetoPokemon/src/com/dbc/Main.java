@@ -36,6 +36,10 @@ public class Main {
                     Integer numero = scan.nextInt();
                     pcCarvalho.removePokemon(numero);
                     break;
+                case "4":
+//                    System.out.println("edit poke");
+                    pcCarvalho.editarPokemon();
+                    break;
                 default:
                     System.out.println("Opção inválida!");
                     break;
@@ -47,13 +51,13 @@ public class Main {
             System.out.print("Digite a opção: ");
             opcao = scan.next();
         }
-
     }
 
     public static void opcoes() {
         System.out.println("Opções: ");
         System.out.println("1 - Adicionar Pokemon");
         System.out.println("2 - Mostrar todos Pokemons cadastrados");
-        System.out.println("3 - Remover Pokemon\n");
+        System.out.println("3 - Remover Pokemon");
+        System.out.println("4 - Editar Pokemon\n");
     }
 }

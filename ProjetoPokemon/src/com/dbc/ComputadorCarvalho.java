@@ -102,41 +102,89 @@ public class ComputadorCarvalho {
         return new Status(hp, ataque, defesa, especialAtaque, especialDefesa, velocidade);
     }
 
+    public Pokemon pegarPokemonPorNumero(Integer numero) {
+        return pokemons.stream().filter(pokemon -> pokemon.getNumero().equals(numero))
+                .findFirst().get();
+    }
+
     public void editarPokemon() {
         scan.useLocale(Locale.US);
+        System.out.print("Digite o número do pokemon a ser editado: ");
+        Integer numero = scan.nextInt();
+        Pokemon pokemonEditado = pokemons.stream()
+                .filter( pokemon -> pokemon.getNumero().equals(numero))
+                        .findFirst().get();
+
         System.out.println("O que você deseja editar? ");
         System.out.println("Opções:");
-        System.out.println("1 - Número");
-        System.out.println("2 - Nome");
-        System.out.println("3 - Level");
-        System.out.println("4 - Status");
-        System.out.println("5 - Altura");
-        System.out.println("6 - Peso");
-        System.out.println("3 - Categoria");
+
+        System.out.println("1 - Nome");
+        System.out.println("2 - Level");
+        System.out.println("3 - Status");
+        System.out.println("4 - Altura");
+        System.out.println("5 - Peso");
+        System.out.println("6 - Categoria");
         System.out.println("7 - Tipos");
         System.out.println("8 - Habilidades");
         System.out.println("9 - TODOS");
 
         System.out.print("Digite a opção: ");
         String opcao = scan.next();
+
         switch (opcao) {
             case "1":
+                System.out.print("Digite o novo nome: ");
+                pokemonEditado.setNome(scan.next());
                 break;
             case "2":
+                System.out.print("Digite o novo level: ");
+                pokemonEditado.setLevel(scan.nextInt());
                 break;
             case "3":
+                System.out.print("Digite o novo grupo de status: ");
+                pokemonEditado.setStatus(addStatus());
                 break;
             case "4":
+                System.out.print("Digite a nova altura: ");
+                pokemonEditado.setAltura(scan.nextDouble());
                 break;
             case "5":
+                System.out.print("Digite o novo peso: ");
+                pokemonEditado.setPeso(scan.nextDouble());
                 break;
             case "6":
+                System.out.print("Digite a nova categoria: ");
+                pokemonEditado.setCategoria(scan.next());
                 break;
             case "7":
+                ArrayList<Tipo> tipos = new ArrayList<>();
+                String tipo = "";
+                String sair;
+                do {
+                    System.out.print("Digite o tipo: ");
+                    tipo = scan.next();
+                    tipos.add(Tipo.valueOf(tipo.toUpperCase(Locale.ROOT)));
+                    System.out.print("Deseja parar de digitar tipos? (S/N): ");
+                    sair = scan.next();
+                } while (!sair.equalsIgnoreCase("s"));
+                pokemonEditado.setTipos(tipos);
                 break;
             case "8":
+                ArrayList<Habilidade> habilidades = new ArrayList<>();
+                do {
+                    System.out.print("Digite o nome: ");
+                    String nomeHabilidade = scan.next();
+                    System.out.print("Digite o multiplicador de poder: ");
+                    Double multiplicadorDePoder = scan.nextDouble();
+                    Habilidade habilidade = new Habilidade(nomeHabilidade, multiplicadorDePoder);
+                    habilidades.add(habilidade);
+                    System.out.print("Deseja parar de digitar habilidades? (S/N): ");
+                    sair = scan.next();
+                } while (!sair.equalsIgnoreCase("s"));
                 break;
             case "9":
+                removePokemon(pokemonEditado.getNumero());
+                addPokemons();
                 break;
             default:
                 System.out.println("Opção inválida");
@@ -145,7 +193,7 @@ public class ComputadorCarvalho {
     }
 
     public void removePokemon(Integer numero) {
-        this.pokemons.removeIf(pokemon -> pokemon.getNumero() == numero);
+        pokemons.removeIf(pokemon -> pokemon.getNumero() == numero);
     }
 
     public void addPokeTEst() {

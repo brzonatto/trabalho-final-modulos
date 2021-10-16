@@ -59,9 +59,9 @@ public enum Tipo {
     @Override
     public String toString() {
         return  this.nome +
-                "\nFortecontra:" + this.forteContra +
-                "\nFracocontra:" + this.fracoContra +
-                "\nResistentea:" + this.resistenteA +
-                "\nVulneravela:" + this.vulneravelA;
+                "\nForte contra:" + this.forteContra +
+                "\nFraco contra:" + this.fracoContra +
+                "\nResistente a:" + this.resistenteA +
+                "\nVulneravel a:" + this.vulneravelA;
     }
 }
