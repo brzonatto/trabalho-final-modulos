@@ -3,7 +3,7 @@ package com.dbc;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ComputadorCarvalho {
+public class ComputadorCarvalho extends Acoes {
     private ArrayList<Pokemon> pokemons;
     private ArrayList<Tipo> tipos;
     private ArrayList<Habilidade> habilidades;
