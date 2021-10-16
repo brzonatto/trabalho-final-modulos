@@ -8,7 +8,7 @@ public class Pokemon implements Acoes, Impressao {
     private Double altura;
     private Double peso;
     private String categoria;
-    private Integer sexo;
+    private Sexo sexo;
     private ArrayList<Tipo> tipos;
     private Integer level;
     private ArrayList<Habilidade> habilidades;
@@ -19,7 +19,9 @@ public class Pokemon implements Acoes, Impressao {
 
     }
 
-    public Pokemon(String nome, Integer numero, Double altura, Double peso, String categoria, Integer sexo, ArrayList<Tipo> tipos, Integer level, ArrayList<Habilidade> habilidades, Status status, Evolucao evolucao) {
+    public Pokemon(String nome, Integer numero, Double altura, Double peso, String categoria, Sexo sexo,
+                   ArrayList<Tipo> tipos, Integer level,
+                   ArrayList<Habilidade> habilidades, Status status, Evolucao evolucao) {
         this.nome = nome;
         this.numero = numero;
         this.altura = altura;
@@ -73,11 +75,11 @@ public class Pokemon implements Acoes, Impressao {
         this.categoria = categoria;
     }
 
-    public Integer getSexo() {
+    public Sexo getSexo() {
         return sexo;
     }
 
-    public void setSexo(Integer sexo) {
+    public void setSexo(Sexo sexo) {
         this.sexo = sexo;
     }
 
@@ -122,7 +124,7 @@ public class Pokemon implements Acoes, Impressao {
     }
 
     @Override
-    public void atacar(Habilidade hab) {
+    public void atacar(Habilidade habilidade) {
 
     }
 
