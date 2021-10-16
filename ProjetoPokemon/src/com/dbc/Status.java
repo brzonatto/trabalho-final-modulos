@@ -1,5 +1,7 @@
 package com.dbc;
 
+import java.util.Scanner;
+
 public class Status {
     private Integer hp;
     private Integer ataque;
@@ -7,6 +9,7 @@ public class Status {
     private Integer especialAtaque;
     private Integer especialDefesa;
     private Integer velocidade;
+    Scanner scan = new Scanner((System.in));
 
     public Status() {
 

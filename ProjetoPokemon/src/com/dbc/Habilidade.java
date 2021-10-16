@@ -21,6 +21,14 @@ public class Habilidade {
         this.nome = nome;
     }
 
+    public Double getMultiplicacaoDePoder() {
+        return multiplicacaoDePoder;
+    }
+
+    public void setMultiplicacaoDePoder(Double multiplicacaoDePoder) {
+        this.multiplicacaoDePoder = multiplicacaoDePoder;
+    }
+
     @Override
     public String toString() {
         return "Habilidade: " + this.nome + "\nMultiplicacao de poder: " + this.multiplicacaoDePoder;

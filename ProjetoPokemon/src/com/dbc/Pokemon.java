@@ -10,8 +10,7 @@ public class Pokemon {
     private Double altura;
     private Double peso;
     private String categoria;
-    private Sexo sexo;
-    private Tipo tipos;
+    private ArrayList<Tipo> tipos;
     private ArrayList<Habilidade> habilidades;
 
     public Pokemon() {
@@ -19,7 +18,7 @@ public class Pokemon {
     }
 
     public Pokemon(Integer numero, String nome, Integer level, Status status, Double altura, Double peso,
-                   String categoria, Sexo sexo, Tipo tipos,
+                   String categoria, ArrayList<Tipo> tipos,
                    ArrayList<Habilidade> habilidades) {
         this.numero = numero;
         this.nome = nome;
@@ -28,7 +27,6 @@ public class Pokemon {
         this.altura = altura;
         this.peso = peso;
         this.categoria = categoria;
-        this.sexo = sexo;
         this.tipos = tipos;
         this.habilidades = habilidades;
     }
@@ -89,19 +87,11 @@ public class Pokemon {
         this.categoria = categoria;
     }
 
-    public Sexo getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(Sexo sexo) {
-        this.sexo = sexo;
-    }
-
-    public Tipo getTipos() {
+    public ArrayList<Tipo> getTipos() {
         return tipos;
     }
 
-    public void setTipos(Tipo tipos) {
+    public void setTipos(ArrayList<Tipo> tipos) {
         this.tipos = tipos;
     }
 
@@ -122,7 +112,6 @@ public class Pokemon {
                 "\nAltura: " + this.altura +
                 "\nPeso: " + this.peso +
                 "\nCategoria: " + this.categoria + '\'' +
-                "\nSexo: " + this.sexo +
                 "\nTipos: " + this.tipos +
                 "\nHabilidades: " + this.habilidades;
     }
