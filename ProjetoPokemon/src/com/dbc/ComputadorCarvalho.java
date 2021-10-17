@@ -340,7 +340,7 @@ public class ComputadorCarvalho {
 
     public void printPokemons() {
         this.pokemons.stream().sorted((a, b) -> a.getNumero().compareTo(b.getNumero()))
-                .forEach(c -> c.imprimirPokemon());
+                .forEach(c -> c.imprimir());
     }
 
     public void menu() {

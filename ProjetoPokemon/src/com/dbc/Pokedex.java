@@ -22,7 +22,7 @@ public class Pokedex {
 
     public void imprimeTodosPokemon(){
         for (Pokemon pokemon : grupoPokemon) {
-            pokemon.imprimirPokemon();
+            pokemon.imprimir();
         }
     }
 
