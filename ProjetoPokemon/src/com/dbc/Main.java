@@ -1,8 +1,9 @@
 package com.dbc;
 
 public class Main {
-
     public static void main(String[] args) {
-	// write your code here
+        ComputadorCarvalho pcCarvalho = new ComputadorCarvalho();
+        pcCarvalho.addPokeTEst();
+        pcCarvalho.menu();
     }
 }

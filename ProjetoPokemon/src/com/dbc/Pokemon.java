@@ -2,35 +2,41 @@ package com.dbc;
 
 import java.util.ArrayList;
 
-public class Pokemon implements Acoes, Impressao {
-    private String nome;
+public class Pokemon {
     private Integer numero;
+    private String nome;
+    private Integer level;
+    private Status status;
     private Double altura;
     private Double peso;
     private String categoria;
-    private Integer sexo;
     private ArrayList<Tipo> tipos;
-    private Integer level;
     private ArrayList<Habilidade> habilidades;
-    private Status status;
-    private Evolucao evolucao;
 
-    public Pokemon(){
+    public Pokemon() {
 
     }
 
-    public Pokemon(String nome, Integer numero, Double altura, Double peso, String categoria, Integer sexo, ArrayList<Tipo> tipos, Integer level, ArrayList<Habilidade> habilidades, Status status, Evolucao evolucao) {
-        this.nome = nome;
+    public Pokemon(Integer numero, String nome, Integer level, Status status, Double altura, Double peso,
+                   String categoria, ArrayList<Tipo> tipos,
+                   ArrayList<Habilidade> habilidades) {
         this.numero = numero;
+        this.nome = nome;
+        this.level = level;
+        this.status = status;
         this.altura = altura;
         this.peso = peso;
         this.categoria = categoria;
-        this.sexo = sexo;
         this.tipos = tipos;
-        this.level = level;
         this.habilidades = habilidades;
-        this.status = status;
-        this.evolucao = evolucao;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
     }
 
     public String getNome() {
@@ -41,12 +47,20 @@ public class Pokemon implements Acoes, Impressao {
         this.nome = nome;
     }
 
-    public Integer getNumero() {
-        return numero;
+    public Integer getLevel() {
+        return level;
     }
 
-    public void setNumero(Integer numero) {
-        this.numero = numero;
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public Double getAltura() {
@@ -73,28 +87,12 @@ public class Pokemon implements Acoes, Impressao {
         this.categoria = categoria;
     }
 
-    public Integer getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(Integer sexo) {
-        this.sexo = sexo;
-    }
-
     public ArrayList<Tipo> getTipos() {
         return tipos;
     }
 
     public void setTipos(ArrayList<Tipo> tipos) {
         this.tipos = tipos;
-    }
-
-    public Integer getLevel() {
-        return level;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
     }
 
     public ArrayList<Habilidade> getHabilidades() {
@@ -105,39 +103,27 @@ public class Pokemon implements Acoes, Impressao {
         this.habilidades = habilidades;
     }
 
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public Evolucao getEvolucao() {
-        return evolucao;
-    }
-
-    public void setEvolucao(Evolucao evolucao) {
-        this.evolucao = evolucao;
+    public void imprimirPokemon() {
+        System.out.println("\n##############################\n");
+        System.out.println(this);
+        System.out.println("\nTIPOS");
+        for (Tipo key : this.tipos) {
+            System.out.println(key);
+        }
+        System.out.println("\nHABILIDADES: ");
+        for (Habilidade key : this.habilidades) {
+            System.out.println(key.getNome());
+        }
     }
 
     @Override
-    public void atacar(Habilidade hab) {
-
-    }
-
-    @Override
-    public void entrarPokeBola() {
-
-    }
-
-    @Override
-    public void sairPokeBola() {
-
-    }
-
-    @Override
-    public String imprimir() {
-        return null;
+    public String toString() {
+        return  "Numero: " + this.numero +
+                "\n\nNome: " + this.nome +
+                "\nLevel: " + this.level +
+                "\nAltura: " + this.altura +
+                "\nPeso: " + this.peso +
+                "\nCategoria: " + this.categoria +
+                "\n\nStatus: " + this.status;
     }
 }
