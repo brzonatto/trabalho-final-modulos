@@ -39,7 +39,7 @@ public class Evolucao {
         System.out.println("Lv: " + this.estagioUm.getLevel() + " - " + this.estagioUm.getNome());
         System.out.println("Lv: " + this.estagioDois.getLevel() + " - " + this.estagioDois.getNome());
         if (this.estagioTres != null) {
-            System.out.println("Lv: " + this.estagioDois.getLevel() + " - " + this.estagioDois.getNome());
+            System.out.println("Lv: " + this.estagioTres.getLevel() + " - " + this.estagioTres.getNome());
         }
     }
 }

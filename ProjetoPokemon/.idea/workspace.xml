@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="ADD evolucao">
+    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="MOD evolucao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Evolucao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Evolucao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,7 +371,28 @@
       <option name="project" value="LOCAL" />
       <updated>1634494569565</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="MOD evolucao, pokemon, caomputador carvalho devido alteracoes na evolucao">
+      <created>1634500930590</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1634500930590</updated>
+    </task>
+    <task id="LOCAL-00038" summary="MOD menu">
+      <created>1634501078131</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1634501078131</updated>
+    </task>
+    <task id="LOCAL-00039" summary="MOD evolucao">
+      <created>1634503443102</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1634503443102</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -389,7 +406,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="brzonatto" />
+                        <option value="origin/brzonatto" />
                       </list>
                     </value>
                   </entry>
@@ -407,6 +424,16 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="origin/brzonatto" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="brzonatto" />
                 </option>
               </RecentGroup>
@@ -418,9 +445,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ADD classe Sexo" />
-    <MESSAGE value="ADD classe Habilidade" />
-    <MESSAGE value="ADD classe Evolucao" />
     <MESSAGE value="ADD classe PokemonLendario" />
     <MESSAGE value="teste" />
     <MESSAGE value="MOD .gitignore" />
@@ -443,7 +467,10 @@
     <MESSAGE value="ADD metodo editar pcCarvalho" />
     <MESSAGE value="ADD 3 pokes teste para fazer evolucao" />
     <MESSAGE value="ADD evolucao" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD evolucao" />
+    <MESSAGE value="MOD evolucao, pokemon, caomputador carvalho devido alteracoes na evolucao" />
+    <MESSAGE value="MOD menu" />
+    <MESSAGE value="MOD evolucao" />
+    <option name="LAST_COMMIT_MESSAGE" value="MOD evolucao" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
