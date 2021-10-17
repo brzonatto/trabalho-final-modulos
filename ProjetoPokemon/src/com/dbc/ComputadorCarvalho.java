@@ -120,11 +120,7 @@ public class ComputadorCarvalho {
         pokemonMOD.setHabilidades(habilidades);
     }
 
-    public void addEvolucao(Pokemon um, Pokemon dois, Pokemon tres) {
-        this.evolucoes.add(new Evolucao(um, dois, tres));
-    }
-
-    public void addEvolucao2(Integer numero, Pokemon um, Pokemon dois, Pokemon tres) {
+    public void addEvolucao(Integer numero, Pokemon um, Pokemon dois, Pokemon tres) {
         Pokemon pokemon = pegarPokemonPorNumero(numero);
         Evolucao evolucao = new Evolucao(um, dois, tres);
         pokemon.setEvolucao(evolucao);
@@ -386,10 +382,10 @@ public class ComputadorCarvalho {
                     } else {
                         stage3 = null;
                     }
-                    addEvolucao2(numero1 ,stage1, stage2, stage3);
-                    addEvolucao2(numero2 ,stage1, stage2, stage3);
+                    addEvolucao(numero1 ,stage1, stage2, stage3);
+                    addEvolucao(numero2 ,stage1, stage2, stage3);
                     if (stage3 != null) {
-                        addEvolucao2(numero3 ,stage1, stage2, stage3);
+                        addEvolucao(numero3 ,stage1, stage2, stage3);
                     }
                     break;
                 default:
