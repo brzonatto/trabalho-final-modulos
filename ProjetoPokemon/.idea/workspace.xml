@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="ADD 3 pokes teste para fazer evolucao" />
+    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="ADD 3 pokes teste para fazer evolucao">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -348,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634435988164</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="ADD 3 pokes teste para fazer evolucao">
+      <created>1634436318528</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1634436318528</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

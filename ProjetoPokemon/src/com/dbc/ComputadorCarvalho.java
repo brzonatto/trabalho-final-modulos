@@ -147,7 +147,7 @@ public class ComputadorCarvalho {
                 break;
             case "7":
                 ArrayList<Tipo> tipos = new ArrayList<>();
-                String tipo = "";
+                String tipo;
                 String sair;
                 do {
                     System.out.print("Digite o tipo: ");
@@ -208,7 +208,7 @@ public class ComputadorCarvalho {
         System.out.print("Digite a categoria: ");
         String categoria = scan.next();
         ArrayList<Tipo> tipos = new ArrayList<>();
-        String tipo = "";
+        String tipo;
         String sair;
 
         do {
