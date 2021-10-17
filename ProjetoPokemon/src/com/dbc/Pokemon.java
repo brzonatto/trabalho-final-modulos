@@ -12,6 +12,7 @@ public class Pokemon {
     private String categoria;
     private ArrayList<Tipo> tipos;
     private ArrayList<Habilidade> habilidades;
+    private Evolucao evolucao;
 
     public Pokemon() {
 
@@ -29,6 +30,7 @@ public class Pokemon {
         this.categoria = categoria;
         this.tipos = tipos;
         this.habilidades = habilidades;
+        this.evolucao = null;
     }
 
     public Integer getNumero() {
@@ -99,6 +101,14 @@ public class Pokemon {
         return habilidades;
     }
 
+    public Evolucao getEvolucao() {
+        return evolucao;
+    }
+
+    public void setEvolucao(Evolucao evolucao) {
+        this.evolucao = evolucao;
+    }
+
     public void setHabilidades(ArrayList<Habilidade> habilidades) {
         this.habilidades = habilidades;
     }
@@ -110,9 +120,13 @@ public class Pokemon {
         for (Tipo key : this.tipos) {
             System.out.println(key);
         }
-        System.out.println("\nHABILIDADES: ");
+        System.out.println("\nHABILIDADES");
         for (Habilidade key : this.habilidades) {
             System.out.println(key.getNome());
+        }
+        if(this.evolucao != null) {
+            System.out.println("\nEVOLUÇOES");
+            this.evolucao.imprimir();
         }
     }
 

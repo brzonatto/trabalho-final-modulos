@@ -124,6 +124,12 @@ public class ComputadorCarvalho {
         this.evolucoes.add(new Evolucao(um, dois, tres));
     }
 
+    public void addEvolucao2(Integer numero, Pokemon um, Pokemon dois, Pokemon tres) {
+        Pokemon pokemon = pegarPokemonPorNumero(numero);
+        Evolucao evolucao = new Evolucao(um, dois, tres);
+        pokemon.setEvolucao(evolucao);
+    }
+
     public void editarPokemon() {
         scan.useLocale(Locale.US);
         System.out.print("Digite o número do pokemon a ser editado: ");
@@ -297,12 +303,43 @@ public class ComputadorCarvalho {
         peso = 100.0;
         categoria = "Semente";
         ArrayList<Tipo> tipos3 = new ArrayList<>();
-        tipos2.add(Tipo.PLANTA);
-        tipos2.add(Tipo.VENENOSO);
+        tipos3.add(Tipo.PLANTA);
+        tipos3.add(Tipo.VENENOSO);
         ArrayList<Habilidade> habilidades3 = new ArrayList<>();
         habilidades3.add(new Habilidade("Crescer", 2.0));
 
         this.pokemons.add(new Pokemon(numero, nome, level, status, altura, peso, categoria, tipos3, habilidades3));
+
+        numero = 19;
+        nome = "Ratata";
+        level = 1;
+        status = new Status(2, 4, 3, 2, 3, 5);
+        altura = 0.3;
+        peso = 3.5;
+        categoria = "Rato";
+        ArrayList<Tipo> tipos4 = new ArrayList<>();
+        tipos4.add(Tipo.NORMAL);
+        ArrayList<Habilidade> habilidades4 = new ArrayList<>();
+        habilidades4.add(new Habilidade("Mordida", 2.0));
+        habilidades4.add(new Habilidade("Aranhão", 2.0));
+
+        this.pokemons.add(new Pokemon(numero, nome, level, status, altura, peso, categoria, tipos4, habilidades4));
+
+        numero = 20;
+        nome = "Raticate";
+        level = 16;
+        status = new Status(5, 5, 5, 6, 6, 5);
+        altura = 0.7;
+        peso = 18.5;
+        categoria = "Rato";
+        ArrayList<Tipo> tipos5 = new ArrayList<>();
+        tipos5.add(Tipo.NORMAL);
+        ArrayList<Habilidade> habilidades5 = new ArrayList<>();
+        habilidades5.add(new Habilidade("Mordida", 2.0));
+        habilidades5.add(new Habilidade("Aranhão", 2.0));
+        habilidades5.add(new Habilidade("Rabada", 2.0));
+
+        this.pokemons.add(new Pokemon(numero, nome, level, status, altura, peso, categoria, tipos5, habilidades5));
     }
 
     public void printPokemons() {
@@ -334,24 +371,26 @@ public class ComputadorCarvalho {
                 case "5":
                     Pokemon stage2;
                     Pokemon stage3;
+                    Integer numero3 = null;
                     System.out.print("Qual o número do Pokemon estagio 1: ");
-                    Pokemon stage1 = pegarPokemonPorNumero(scan.nextInt());
-                    System.out.print("Deseja adicionar o estagio 2 (S/N): ");
+                    Integer numero1 = scan.nextInt();
+                    Pokemon stage1 = pegarPokemonPorNumero(numero1);
+                    System.out.print("Qual o número do Pokemon estagio 2: ");
+                    Integer numero2 = scan.nextInt();
+                    stage2 = pegarPokemonPorNumero(numero2);
+                    System.out.print("Deseja adicionar o estagio 3 (S/N): ");
                     if (scan.next().equalsIgnoreCase("s")) {
-                        System.out.print("Qual o número do Pokemon estagio 2: ");
-                        stage2 = pegarPokemonPorNumero(scan.nextInt());
-                        System.out.print("Deseja adicionar o estagio 3 (S/N): ");
-                        if (scan.next().equalsIgnoreCase("s")) {
-                            System.out.print("Qual o número do Pokemon estagio 3: ");
-                            stage3 = pegarPokemonPorNumero(scan.nextInt());
-                        } else {
-                            stage3 = null;
-                        }
+                        System.out.print("Qual o número do Pokemon estagio 3: ");
+                        numero3 = scan.nextInt();
+                        stage3 = pegarPokemonPorNumero(numero3);
                     } else {
-                        stage2 = null;
                         stage3 = null;
                     }
-                    addEvolucao(stage1, stage2, stage3);
+                    addEvolucao2(numero1 ,stage1, stage2, stage3);
+                    addEvolucao2(numero2 ,stage1, stage2, stage3);
+                    if (stage3 != null) {
+                        addEvolucao2(numero3 ,stage1, stage2, stage3);
+                    }
                     break;
                 default:
                     System.out.println("Opção inválida!");
