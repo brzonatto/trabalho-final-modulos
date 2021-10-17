@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="ADD classe MainBrunno">
+    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="MOD Metodos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Tipo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +90,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/dbc/utils" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\brzon\Desktop\trabalho-final-modulos\ProjetoPokemon\src\com\dbc\utils" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -205,7 +214,105 @@
       <option name="project" value="LOCAL" />
       <updated>1634341003923</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="DEL classe MainBrunno, MainJonathas, MainLeo">
+      <created>1634346739012</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1634346739012</updated>
+    </task>
+    <task id="LOCAL-00015" summary="MOD classe Main">
+      <created>1634347029603</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1634347029603</updated>
+    </task>
+    <task id="LOCAL-00016" summary="MOD classe Pokedex">
+      <created>1634347047088</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1634347047088</updated>
+    </task>
+    <task id="LOCAL-00017" summary="MOD classe Pokemon &quot;SEXO&quot;">
+      <created>1634347153539</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1634347153539</updated>
+    </task>
+    <task id="LOCAL-00018" summary="MOD interface Acoes">
+      <created>1634347180422</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1634347180422</updated>
+    </task>
+    <task id="LOCAL-00019" summary="MOD class PokemonLendario">
+      <created>1634347287011</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1634347287011</updated>
+    </task>
+    <task id="LOCAL-00020" summary="MOD classes">
+      <created>1634389320712</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1634389320712</updated>
+    </task>
+    <task id="LOCAL-00021" summary="MOD classes ComputadorCarvalho">
+      <created>1634389708118</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1634389708118</updated>
+    </task>
+    <task id="LOCAL-00022" summary="MOD classes">
+      <created>1634390063468</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1634390063468</updated>
+    </task>
+    <task id="LOCAL-00023" summary="ADD Utils">
+      <created>1634390506034</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1634390506034</updated>
+    </task>
+    <task id="LOCAL-00024" summary="ADD Metodos">
+      <created>1634393453796</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1634393453796</updated>
+    </task>
+    <task id="LOCAL-00025" summary="ADD Metodos">
+      <created>1634393620378</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1634393620378</updated>
+    </task>
+    <task id="LOCAL-00026" summary="MOD Metodos">
+      <created>1634396288672</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1634396288672</updated>
+    </task>
+    <task id="LOCAL-00027" summary="MOD Metodos">
+      <created>1634397904079</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1634397904079</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,8 +365,28 @@
     <MESSAGE value="teste" />
     <MESSAGE value="MOD .gitignore" />
     <MESSAGE value="MOD Acoes e Pokemon" />
-    <MESSAGE value="MOD classe Pokedex" />
     <MESSAGE value="ADD classe MainBrunno" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD classe MainBrunno" />
+    <MESSAGE value="DEL classe MainBrunno, MainJonathas, MainLeo" />
+    <MESSAGE value="MOD classe Main" />
+    <MESSAGE value="MOD classe Pokedex" />
+    <MESSAGE value="MOD classe Pokemon &quot;SEXO&quot;" />
+    <MESSAGE value="MOD interface Acoes" />
+    <MESSAGE value="MOD class PokemonLendario" />
+    <MESSAGE value="MOD classes ComputadorCarvalho" />
+    <MESSAGE value="MOD classes" />
+    <MESSAGE value="ADD Utils" />
+    <MESSAGE value="ADD Metodos" />
+    <MESSAGE value="MOD Metodos" />
+    <option name="LAST_COMMIT_MESSAGE" value="MOD Metodos" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.InputMismatchException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

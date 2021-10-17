@@ -1,5 +1,7 @@
 package com.dbc;
 
+import java.util.Scanner;
+
 public class Status {
     private Integer hp;
     private Integer ataque;
@@ -7,6 +9,7 @@ public class Status {
     private Integer especialAtaque;
     private Integer especialDefesa;
     private Integer velocidade;
+    Scanner scan = new Scanner((System.in));
 
     public Status() {
 
@@ -67,5 +70,15 @@ public class Status {
 
     public void setVelocidade(Integer velocidade) {
         this.velocidade = velocidade;
+    }
+
+    @Override
+    public String toString() {
+        return  "\nHP: " + this.hp +
+                "\nAtaque: " + this.ataque +
+                "\nDefesa: " + this.defesa +
+                "\nAtaque Especial: " + this.especialAtaque +
+                "\nDefesa Especial: " + this.especialDefesa +
+                "\nVelocidade: " + this.velocidade;
     }
 }
