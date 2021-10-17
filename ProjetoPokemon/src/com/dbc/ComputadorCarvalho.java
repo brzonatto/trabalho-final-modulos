@@ -278,7 +278,7 @@ public class ComputadorCarvalho {
         tipos2.add(Tipo.PLANTA);
         tipos2.add(Tipo.VENENOSO);
         ArrayList<Habilidade> habilidades3 = new ArrayList<>();
-        habilidades2.add(new Habilidade("Crescer", 2.0));
+        habilidades3.add(new Habilidade("Crescer", 2.0));
 
         this.pokemons.add(new Pokemon(numero, nome, level, status, altura, peso, categoria, tipos3, habilidades3));
     }

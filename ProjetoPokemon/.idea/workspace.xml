@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="ADD metodo editar pcCarvalho" />
+    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="ADD 3 pokes teste para fazer evolucao" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -341,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634435504476</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="ADD 3 pokes teste para fazer evolucao">
+      <created>1634435988164</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1634435988164</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -384,7 +391,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ADD classe Tipo" />
     <MESSAGE value="ADD classe Status" />
     <MESSAGE value="ADD classe Sexo" />
     <MESSAGE value="ADD classe Habilidade" />
@@ -409,7 +415,8 @@
     <MESSAGE value="ADD metodo remove pcCArvalho" />
     <MESSAGE value="ADD metodo editar pcCArvalho" />
     <MESSAGE value="ADD metodo editar pcCarvalho" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD metodo editar pcCarvalho" />
+    <MESSAGE value="ADD 3 pokes teste para fazer evolucao" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD 3 pokes teste para fazer evolucao" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
