@@ -8,12 +8,14 @@ public class ComputadorCarvalho {
     private ArrayList<Pokemon> pokemons;
     private ArrayList<Tipo> tipos;
     private ArrayList<Habilidade> habilidades;
+    private ArrayList<Evolucao> evolucoes;
     Scanner scan = new Scanner((System.in));
 
     public ComputadorCarvalho() {
         this.pokemons = new ArrayList<>();
         this.tipos = new ArrayList<>();
         this.habilidades = new ArrayList<>();
+        this.evolucoes = new ArrayList<>();
     }
 
     public ArrayList<Pokemon> getPokemons() {
@@ -38,6 +40,22 @@ public class ComputadorCarvalho {
 
     public void setHabilidades(ArrayList<Habilidade> habilidades) {
         this.habilidades = habilidades;
+    }
+
+    public ArrayList<Evolucao> getEvolucoes() {
+        return evolucoes;
+    }
+
+    public void setEvolucoes(ArrayList<Evolucao> evolucoes) {
+        this.evolucoes = evolucoes;
+    }
+
+    public Scanner getScan() {
+        return scan;
+    }
+
+    public void setScan(Scanner scan) {
+        this.scan = scan;
     }
 
     public Status addStatus() {
@@ -100,6 +118,10 @@ public class ComputadorCarvalho {
     public void editarHabilidadesPokemon(Integer numero, ArrayList<Habilidade> habilidades) {
         Pokemon pokemonMOD = pegarPokemonPorNumero(numero);
         pokemonMOD.setHabilidades(habilidades);
+    }
+
+    public void addEvolucao(Pokemon um, Pokemon dois, Pokemon tres) {
+        this.evolucoes.add(new Evolucao(um, dois, tres));
     }
 
     public void editarPokemon() {
@@ -309,6 +331,28 @@ public class ComputadorCarvalho {
                 case "4":
                     editarPokemon();
                     break;
+                case "5":
+                    Pokemon stage2;
+                    Pokemon stage3;
+                    System.out.print("Qual o número do Pokemon estagio 1: ");
+                    Pokemon stage1 = pegarPokemonPorNumero(scan.nextInt());
+                    System.out.print("Deseja adicionar o estagio 2 (S/N): ");
+                    if (scan.next().equalsIgnoreCase("s")) {
+                        System.out.print("Qual o número do Pokemon estagio 2: ");
+                        stage2 = pegarPokemonPorNumero(scan.nextInt());
+                        System.out.print("Deseja adicionar o estagio 3 (S/N): ");
+                        if (scan.next().equalsIgnoreCase("s")) {
+                            System.out.print("Qual o número do Pokemon estagio 3: ");
+                            stage3 = pegarPokemonPorNumero(scan.nextInt());
+                        } else {
+                            stage3 = null;
+                        }
+                    } else {
+                        stage2 = null;
+                        stage3 = null;
+                    }
+                    addEvolucao(stage1, stage2, stage3);
+                    break;
                 default:
                     System.out.println("Opção inválida!");
                     break;
@@ -327,6 +371,7 @@ public class ComputadorCarvalho {
         System.out.println("  2  - Mostrar todos Pokemons cadastrados");
         System.out.println("  3  - Remover Pokemon");
         System.out.println("  4  - Editar Pokemon");
+        System.out.println("  5  - Adicionar Evolução");
         System.out.println("(S/N)- Sair/Continuar\n");
     }
 
