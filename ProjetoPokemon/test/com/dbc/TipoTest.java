@@ -4,25 +4,37 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class HabilidadeTest {
+class TipoTest {
 
     @Test
     void getNome() {
     }
 
     @Test
-    void setNome() {
+    void getForteContra() {
     }
 
     @Test
-    void getMultiplicacaoDePoder() {
+    void getFracoContra() {
     }
 
     @Test
-    void setMultiplicacaoDePoder() {
+    void getResistenteA() {
+    }
+
+    @Test
+    void getVulneravelA() {
     }
 
     @Test
     void testToString() {
+    }
+
+    @Test
+    void values() {
+    }
+
+    @Test
+    void valueOf() {
     }
 }
