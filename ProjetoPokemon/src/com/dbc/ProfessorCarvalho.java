@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class ComputadorCarvalho {
+public class ProfessorCarvalho {
     private ArrayList<Pokemon> pokemons;
     private ArrayList<Tipo> tipos;
     private ArrayList<Habilidade> habilidades;
     Scanner scan = new Scanner((System.in));
 
-    public ComputadorCarvalho() {
+    public ProfessorCarvalho() {
         this.pokemons = new ArrayList<>();
         this.tipos = new ArrayList<>();
         this.habilidades = new ArrayList<>();

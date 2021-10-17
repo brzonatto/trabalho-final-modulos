@@ -39,34 +39,26 @@ public class MainLeo {
         ArrayList<Pokemon> listaTeste = new ArrayList<>();
         listaTeste.add(pokemonTeste);
 
-        Pokedex pokedexTeste = new Pokedex(listaTeste);
-
-        pokedexTeste.addPokemon(pokemonTeste2);       // Add pokémon a pokédex
-        pokedexTeste.addPokemon(pokemonTeste3);
-
-//        pokedexTeste.imprimeTodosPokemon();           // Imprimindo os pokémon
-
-        Stream<Pokemon> listaAtualizada = pokedexTeste.getGrupoPokemon().stream();  // Transformei a lista em stream para testes
-
-//        Stream<Pokemon> pokemonDeAgua = listaAtualizada.filter(pokemon -> pokemon.getTipos().get(0).equals(Tipo.AGUA) ||
-//                pokemon.getTipos().get(1).equals(Tipo.AGUA));
-
-//        pokemonDeAgua.forEach(System.out::println);
-
-       pokedexTeste.filtrarPorTipo(Tipo.AGUA);
-//       pokedexTeste.filtrarPorTipo(Tipo.PLANTA);
-//
-
-
-
-
-
+/**
+ * Pokedex pokedexTeste = new Pokedex(listaTeste);
+ *
+ *         pokedexTeste.addPokemon(pokemonTeste2);       // Add pokémon a pokédex
+ *         pokedexTeste.addPokemon(pokemonTeste3);
+ *
+ *         pokedexTeste.imprimeTodosPokemon();           // Imprimindo os pokémon
+ *
+ *         Stream<Pokemon> listaAtualizada = pokedexTeste.getGrupoPokemon().stream();  // Transformei a lista em stream para testes
+ *
+ *         Stream<Pokemon> pokemonDeAgua = listaAtualizada.filter(pokemon -> pokemon.getTipos().get(0).equals(Tipo.AGUA) ||
+ *                 pokemon.getTipos().get(1).equals(Tipo.AGUA));
+ *
+ *         pokemonDeAgua.forEach(System.out::println);
+ *
+ *        pokedexTeste.filtrarPorTipo(Tipo.AGUA);
+ *        pokedexTeste.filtrarPorTipo(Tipo.PLANTA);
+ *
+ */
 //        System.out.println("Digite o tipo a ser pesquisado");
 //        String tipoDigitado = leia.nextLine();
-
-
-
-
-
     }
 }
