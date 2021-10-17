@@ -1,6 +1,6 @@
 package com.dbc;
 
-public class Evolucao {
+public class Evolucao implements Impressao{
     Pokemon estagioUm;
     Pokemon estagioDois;
     Pokemon estagioTres;

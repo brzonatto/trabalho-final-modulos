@@ -2,7 +2,7 @@ package com.dbc;
 
 import java.util.ArrayList;
 
-public class Pokemon {
+public class Pokemon implements Impressao {
     private Integer numero;
     private String nome;
     private Integer level;
@@ -113,7 +113,36 @@ public class Pokemon {
         this.habilidades = habilidades;
     }
 
-    public void imprimirPokemon() {
+//    public void imprimirPokemon() {
+//        System.out.println("\n##############################\n");
+//        System.out.println(this);
+//        System.out.println("\nTIPOS");
+//        for (Tipo key : this.tipos) {
+//            System.out.println(key);
+//        }
+//        System.out.println("\nHABILIDADES");
+//        for (Habilidade key : this.habilidades) {
+//            System.out.println(key.getNome());
+//        }
+//        if(this.evolucao != null) {
+//            System.out.println("\nEVOLUÇOES");
+//            this.evolucao.imprimir();
+//        }
+//    }
+
+    @Override
+    public String toString() {
+        return  "Numero: " + this.numero +
+                "\n\nNome: " + this.nome +
+                "\nLevel: " + this.level +
+                "\nAltura: " + this.altura +
+                "\nPeso: " + this.peso +
+                "\nCategoria: " + this.categoria +
+                "\n\nStatus: " + this.status;
+    }
+
+    @Override
+    public void imprimir() {
         System.out.println("\n##############################\n");
         System.out.println(this);
         System.out.println("\nTIPOS");
@@ -128,16 +157,5 @@ public class Pokemon {
             System.out.println("\nEVOLUÇOES");
             this.evolucao.imprimir();
         }
-    }
-
-    @Override
-    public String toString() {
-        return  "Numero: " + this.numero +
-                "\n\nNome: " + this.nome +
-                "\nLevel: " + this.level +
-                "\nAltura: " + this.altura +
-                "\nPeso: " + this.peso +
-                "\nCategoria: " + this.categoria +
-                "\n\nStatus: " + this.status;
     }
 }
