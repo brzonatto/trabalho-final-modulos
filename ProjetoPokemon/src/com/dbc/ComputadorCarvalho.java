@@ -238,11 +238,11 @@ public class ComputadorCarvalho {
 
     public void addPokeTEst() {
         Integer numero = 1;
-        String nome = "Bulbasauro";
+        String nome = "Bulbassauro";
         Integer level = 1;
-        Status status = new Status(10, 10, 10, 10, 10, 10);
-        Double altura = 0.9;
-        Double peso = 5.0;
+        Status status = new Status(3, 3, 3, 4, 4, 3);
+        Double altura = 0.7;
+        Double peso = 6.9;
         String categoria = "Semente";
         ArrayList<Tipo> tipos = new ArrayList<>();
         tipos.add(Tipo.PLANTA);
@@ -252,12 +252,12 @@ public class ComputadorCarvalho {
 
         this.pokemons.add(new Pokemon(numero, nome, level, status, altura, peso, categoria, tipos, habilidades));
 
-        numero = 125;
-        nome = "Bulbasauro";
-        level = 1;
-        status = new Status(10, 10, 10, 10, 10, 10);
-        altura = 0.9;
-        peso = 5.0;
+        numero = 2;
+        nome = "Ivyssauro";
+        level = 12;
+        status = new Status(4, 4, 4, 5, 5, 4);
+        altura = 1.0;
+        peso = 13.0;
         categoria = "Semente";
         ArrayList<Tipo> tipos2 = new ArrayList<>();
         tipos2.add(Tipo.PLANTA);
@@ -266,6 +266,21 @@ public class ComputadorCarvalho {
         habilidades2.add(new Habilidade("Crescer", 2.0));
 
         this.pokemons.add(new Pokemon(numero, nome, level, status, altura, peso, categoria, tipos2, habilidades2));
+
+        numero = 3;
+        nome = "Venussauro";
+        level = 26;
+        status = new Status(5, 5, 5, 6, 6, 5);
+        altura = 2.0;
+        peso = 100.0;
+        categoria = "Semente";
+        ArrayList<Tipo> tipos3 = new ArrayList<>();
+        tipos2.add(Tipo.PLANTA);
+        tipos2.add(Tipo.VENENOSO);
+        ArrayList<Habilidade> habilidades3 = new ArrayList<>();
+        habilidades2.add(new Habilidade("Crescer", 2.0));
+
+        this.pokemons.add(new Pokemon(numero, nome, level, status, altura, peso, categoria, tipos3, habilidades3));
     }
 
     public void printPokemons() {
