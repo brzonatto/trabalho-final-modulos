@@ -1,22 +1,45 @@
 package com.dbc;
 
-import java.util.ArrayList;
-
 public class Evolucao {
-    private ArrayList<Pokemon> pokemons;
+    Pokemon estagioUm;
+    Pokemon estagioDois;
+    Pokemon estagioTres;
 
-    public Evolucao() {
+    public Evolucao(Pokemon estagioUm, Pokemon estagioDois, Pokemon estagioTres) {
+        this.estagioUm = estagioUm;
+        this.estagioDois = estagioDois;
+        this.estagioTres = estagioTres;
     }
 
-    public Evolucao(ArrayList<Pokemon> pokemons) {
-        this.pokemons = pokemons;
+    public Pokemon getEstagioUm() {
+        return estagioUm;
     }
 
-    public ArrayList<Pokemon> getPokemons() {
-        return pokemons;
+    public void setEstagioUm(Pokemon estagioUm) {
+        this.estagioUm = estagioUm;
     }
 
-    public void setPokemons(ArrayList<Pokemon> pokemons) {
-        this.pokemons = pokemons;
+    public Pokemon getEstagioDois() {
+        return estagioDois;
+    }
+
+    public void setEstagioDois(Pokemon estagioDois) {
+        this.estagioDois = estagioDois;
+    }
+
+    public Pokemon getEstagioTres() {
+        return estagioTres;
+    }
+
+    public void setEstagioTres(Pokemon estagioTres) {
+        this.estagioTres = estagioTres;
+    }
+
+    public void imprimir() {
+        System.out.println("Lv: " + this.estagioUm.getLevel() + " - " + this.estagioUm.getNome());
+        System.out.println("Lv: " + this.estagioDois.getLevel() + " - " + this.estagioDois.getNome());
+        if (this.estagioTres != null) {
+            System.out.println("Lv: " + this.estagioTres.getLevel() + " - " + this.estagioTres.getNome());
+        }
     }
 }
