@@ -104,8 +104,8 @@ public class Pokemon {
     }
 
     public void imprimirPokemon() {
+        System.out.println("\n##############################\n");
         System.out.println(this);
-
         System.out.println("\nTIPOS");
         for (Tipo key : this.tipos) {
             System.out.println(key);
@@ -114,8 +114,6 @@ public class Pokemon {
         for (Habilidade key : this.habilidades) {
             System.out.println(key.getNome());
         }
-
-        System.out.println("\n##############################\n");
     }
 
     @Override

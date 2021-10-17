@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634415415895</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="ADD metodo editar pcCArvalho">
+      <created>1634426388280</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1634426388280</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
