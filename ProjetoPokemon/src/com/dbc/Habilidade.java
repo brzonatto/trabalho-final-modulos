@@ -33,4 +33,8 @@ public class Habilidade {
     public String toString() {
         return "Habilidade: " + this.nome;
     }
+
+    public Double ataqueMultiplicado(){
+        return null;
+    }
 }

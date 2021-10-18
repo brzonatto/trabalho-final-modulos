@@ -72,6 +72,14 @@ public class Status {
         this.velocidade = velocidade;
     }
 
+    public Integer calculaTotal(){
+        return this.hp + this.ataque + this.defesa + this.especialAtaque + this.especialDefesa + this.velocidade;
+    }
+
+    public Double calculaMedia(){
+        return calculaTotal().doubleValue() / 6;
+    }
+
     @Override
     public String toString() {
         return  "\nHP: " + this.hp +
