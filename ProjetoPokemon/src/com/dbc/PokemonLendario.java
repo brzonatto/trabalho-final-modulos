@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class PokemonLendario extends Pokemon implements Impressao {
     private String regiaoDominante;
-    private Sexo sexo;
 
     public PokemonLendario(){
 
@@ -12,10 +11,9 @@ public class PokemonLendario extends Pokemon implements Impressao {
 
     public PokemonLendario(Integer numero, String nome, Integer level, Status status, Double altura, Double peso,
                            String categoria, ArrayList<Tipo> tipos, ArrayList<Habilidade> habilidades,
-                           String regiaoDominante, Sexo sexo) {
+                           String regiaoDominante) {
         super(numero, nome, level, status, altura, peso, categoria, tipos, habilidades);
         this.regiaoDominante = regiaoDominante;
-        this.sexo = sexo;
     }
 
     public String getRegiaoDominante() {
@@ -24,14 +22,6 @@ public class PokemonLendario extends Pokemon implements Impressao {
 
     public void setRegiaoDominante(String regiaoDominante) {
         this.regiaoDominante = regiaoDominante;
-    }
-
-    public Sexo getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(Sexo sexo) {
-        this.sexo = sexo;
     }
 
     public Integer multiplicadorDeStatus(){
@@ -47,6 +37,17 @@ public class PokemonLendario extends Pokemon implements Impressao {
 
     @Override
     public void imprimir(){
-
+        System.out.println("\n##############################\n");
+        System.out.println(this);
+        System.out.println("\nTIPOS");
+        for (Tipo key : this.getTipos()) {
+            System.out.println(key);
+        }
+        System.out.println("\nHABILIDADES");
+        for (Habilidade key : super.getHabilidades()) {
+            System.out.println(key.getNome());
+        }
+        System.out.println();
+        System.out.println("ESTE POKÉMON É LENDÁRIO WOOOOOW!");
     }
 }

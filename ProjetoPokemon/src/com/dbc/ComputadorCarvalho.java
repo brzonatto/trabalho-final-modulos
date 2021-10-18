@@ -257,7 +257,15 @@ public class ComputadorCarvalho {
             sair = scan.next();
         } while (!sair.equalsIgnoreCase("s"));
 
-        addPokemon(numero, nome, level, status, altura, peso, categoria, tipos, habilidades);
+        if(status.calculaTotal() > 500){
+            System.out.print("Este pokémon é lendário, devido seu número de status alto.\nAdicione sua região dominante");
+            String regiaoDominante = scan.next();
+            this.pokemons.add(new PokemonLendario(numero, nome, level, status, altura, peso, categoria,
+                    tipos, habilidades, regiaoDominante));
+        }else{
+            addPokemon(numero, nome, level, status, altura, peso, categoria, tipos, habilidades);
+        }
+
     }
 
     public void addPokeTEst() {

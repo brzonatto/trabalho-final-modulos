@@ -37,4 +37,6 @@ public class Habilidade {
     public Double ataqueMultiplicado(){
         return null;
     }
+
+
 }

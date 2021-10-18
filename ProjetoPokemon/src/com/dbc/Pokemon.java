@@ -158,4 +158,11 @@ public class Pokemon implements Impressao {
             this.evolucao.imprimir();
         }
     }
+
+    public Boolean ehLendario(){
+        if(this.getStatus().calculaTotal() > 500){
+            return true;
+        }
+        return false;
+    }
 }
