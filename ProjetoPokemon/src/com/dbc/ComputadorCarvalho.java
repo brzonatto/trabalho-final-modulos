@@ -51,7 +51,8 @@ public class ComputadorCarvalho {
     }
 
     public void editarStatusPokemon(Integer numero, Status status) {
-
+        Pokemon pokemonMOD = pegarPokemonPorNumero(numero);
+        pokemonMOD.setStatus(status);
     }
 
     public void editarAlturaPokemon(Integer numero, Double altura) {
@@ -170,7 +171,8 @@ public class ComputadorCarvalho {
     }
 
     public void addPokemon(Integer numero, String nome, Integer level, Status status,
-                           Double altura, Double peso, String categoria, ArrayList<Tipo> tipos, ArrayList<Habilidade> habilidades) {
+                           Double altura, Double peso, String categoria, ArrayList<Tipo> tipos,
+                           ArrayList<Habilidade> habilidades) {
         this.pokemons.add(new Pokemon(numero, nome, level, status, altura, peso,
                 categoria, tipos, habilidades));
     }

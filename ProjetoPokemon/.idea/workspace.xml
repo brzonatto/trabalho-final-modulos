@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="MOD evolucao">
+    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="AJUSTES NAS CLASSES">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetoPokemon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetoPokemon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/Evolucao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Evolucao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Habilidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Habilidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/TestesUnitarios.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Tipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/dbc/PokemonLendarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/dbc/PokemonLendarioTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/dbc/PokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/dbc/PokemonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/PokemonLendario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/PokemonLendario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Status.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/com/dbc/StatusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/dbc/StatusTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +105,7 @@
       <recent name="C:\Users\brzon\Desktop\trabalho-final-modulos\ProjetoPokemon\src\com\dbc\utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.StatusTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.dbc.Main" />
       <module name="ProjetoPokemon" />
@@ -152,10 +147,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PokemonTest.deveTestarSePokemonEhLendarioComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dbc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dbc" />
+      <option name="MAIN_CLASS_NAME" value="com.dbc.PokemonTest" />
+      <option name="METHOD_NAME" value="deveTestarSePokemonEhLendarioComSucesso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatusTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dbc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dbc" />
+      <option name="MAIN_CLASS_NAME" value="com.dbc.StatusTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.StatusTest" />
         <item itemvalue="JUnit.PokemonLendarioTest.deveTestarMultiplicadorDeStatusPokemonLendario" />
+        <item itemvalue="JUnit.PokemonTest.deveTestarSePokemonEhLendarioComSucesso" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.PokemonLendarioTest" />
       </list>
     </recent_temporary>
@@ -449,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634509666170</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="AJUSTES NAS CLASSES">
+      <created>1634564375486</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1634564375486</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -543,7 +578,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ADD classe PokemonLendario" />
     <MESSAGE value="teste" />
     <MESSAGE value="MOD .gitignore" />
     <MESSAGE value="MOD Acoes e Pokemon" />
@@ -568,7 +602,8 @@
     <MESSAGE value="MOD evolucao, pokemon, caomputador carvalho devido alteracoes na evolucao" />
     <MESSAGE value="MOD menu" />
     <MESSAGE value="MOD evolucao" />
-    <option name="LAST_COMMIT_MESSAGE" value="MOD evolucao" />
+    <MESSAGE value="AJUSTES NAS CLASSES" />
+    <option name="LAST_COMMIT_MESSAGE" value="AJUSTES NAS CLASSES" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -20,9 +20,9 @@ public class PokemonLendario extends Pokemon implements Impressao {
          Integer hp = super.getStatus().getHp() * 2;
          Integer ataque = super.getStatus().getAtaque() * 2;
          Integer defesa = super.getStatus().getDefesa() * 2;
-         Integer especialAtaque = super.getStatus().getEspecialAtaque() *2;
-         Integer especialDefesa = super.getStatus().getEspecialDefesa()*2;
-         Integer velocidade = super.getStatus().getVelocidade()*2;
+         Integer especialAtaque = super.getStatus().getEspecialAtaque() * 2;
+         Integer especialDefesa = super.getStatus().getEspecialDefesa() * 2;
+         Integer velocidade = super.getStatus().getVelocidade() * 2;
          Status status = new Status(hp, ataque, defesa, especialAtaque, especialDefesa, velocidade);
          return status.calculaTotal();
     }

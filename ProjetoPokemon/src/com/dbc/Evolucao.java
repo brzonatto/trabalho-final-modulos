@@ -1,9 +1,9 @@
 package com.dbc;
 
 public class Evolucao implements Impressao{
-    Pokemon estagioUm;
-    Pokemon estagioDois;
-    Pokemon estagioTres;
+    Pokemon estagioUm; // sem evolução
+    Pokemon estagioDois; // com 1 evolução
+    Pokemon estagioTres; // com 2 evoluções
 
     public Evolucao(Pokemon estagioUm, Pokemon estagioDois, Pokemon estagioTres) {
         this.estagioUm = estagioUm;
