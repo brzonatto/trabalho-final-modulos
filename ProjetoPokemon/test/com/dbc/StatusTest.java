@@ -5,7 +5,6 @@ import static org.junit.Assert.*;;
 
 
 public class StatusTest {
-
     @Test
     public void deveTestarTotalStatusComSucesso() {
         Status statusTeste = new Status(20, 10, 30, 40, 10, 10);
@@ -33,5 +32,4 @@ public class StatusTest {
         Double mediaEsperada = statusTeste.calculaMedia();
         assertNotEquals(25.0, mediaEsperada, 0);
     }
-
 }

@@ -36,26 +36,6 @@ public enum Tipo {
         this.vulneravelA = vulneravelA;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public String getForteContra() {
-        return forteContra;
-    }
-
-    public String getFracoContra() {
-        return fracoContra;
-    }
-
-    public String getResistenteA() {
-        return resistenteA;
-    }
-
-    public String getVulneravelA() {
-        return vulneravelA;
-    }
-
     @Override
     public String toString() {
         return  this.nome +

@@ -5,9 +5,8 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 public class PokemonTest {
-
     @Test
-    public void deveTestarSePokemonEhLendarioComSucesso(){         // Teste relacionado com a classe Pokémon
+    public void deveTestarSePokemonEhLendarioComSucesso(){
         PokemonLendario pokemonLendario = new PokemonLendario();
         pokemonLendario.setNumero(10);
         pokemonLendario.setNome("Mew");
@@ -35,5 +34,4 @@ public class PokemonTest {
 
         assertTrue(resultadoTeste);
     }
-
 }

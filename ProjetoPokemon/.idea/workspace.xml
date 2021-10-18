@@ -6,6 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="MOD evolucao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoPokemon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetoPokemon.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/Evolucao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Evolucao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/Habilidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Habilidade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/TestesUnitarios.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/Tipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/dbc/PokemonLendarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/dbc/PokemonLendarioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/dbc/PokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/dbc/PokemonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/dbc/StatusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/dbc/StatusTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,15 +95,22 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/dbc/utils" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\brzon\Desktop\trabalho-final-modulos\ProjetoPokemon\src\com\dbc\utils" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.dbc.Main" />
       <module name="ProjetoPokemon" />
@@ -104,9 +121,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PokemonLendarioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dbc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dbc" />
+      <option name="MAIN_CLASS_NAME" value="com.dbc.PokemonLendarioTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PokemonLendarioTest.deveTestarMultiplicadorDeStatusPokemonLendario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dbc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dbc" />
+      <option name="MAIN_CLASS_NAME" value="com.dbc.PokemonLendarioTest" />
+      <option name="METHOD_NAME" value="deveTestarMultiplicadorDeStatusPokemonLendario" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PokemonLendarioTest.deveTestarMultiplicadorDeStatusPokemonLendario" />
+        <item itemvalue="JUnit.PokemonLendarioTest" />
       </list>
     </recent_temporary>
   </component>
@@ -402,9 +452,45 @@
     <option name="localTasksCounter" value="41" />
     <servers />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1692b18c-a5c6-45d0-884f-c737e16a5267">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/brzon/Desktop/trabalho-final-modulos/ProjetoPokemon/test" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -413,7 +499,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/brzonatto" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -424,6 +510,11 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1692b18c-a5c6-45d0-884f-c737e16a5267" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -431,12 +522,12 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="origin/brzonatto" />
+                  <option value="origin/main" />
                 </option>
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="origin/main" />
+                  <option value="origin/brzonatto" />
                 </option>
               </RecentGroup>
               <RecentGroup>

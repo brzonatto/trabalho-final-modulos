@@ -16,14 +16,6 @@ public class PokemonLendario extends Pokemon implements Impressao {
         this.regiaoDominante = regiaoDominante;
     }
 
-    public String getRegiaoDominante() {
-        return regiaoDominante;
-    }
-
-    public void setRegiaoDominante(String regiaoDominante) {
-        this.regiaoDominante = regiaoDominante;
-    }
-
     public Integer multiplicadorDeStatus(){
          Integer hp = super.getStatus().getHp() * 2;
          Integer ataque = super.getStatus().getAtaque() * 2;

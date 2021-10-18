@@ -1,5 +1,7 @@
 package com.dbc;
 
+import com.dbc.utils.Utils;
+
 import java.util.ArrayList;
 
 public class Pokemon implements Impressao {
@@ -113,32 +115,11 @@ public class Pokemon implements Impressao {
         this.habilidades = habilidades;
     }
 
-//    public void imprimirPokemon() {
-//        System.out.println("\n##############################\n");
-//        System.out.println(this);
-//        System.out.println("\nTIPOS");
-//        for (Tipo key : this.tipos) {
-//            System.out.println(key);
-//        }
-//        System.out.println("\nHABILIDADES");
-//        for (Habilidade key : this.habilidades) {
-//            System.out.println(key.getNome());
-//        }
-//        if(this.evolucao != null) {
-//            System.out.println("\nEVOLUÇOES");
-//            this.evolucao.imprimir();
-//        }
-//    }
-
-    @Override
-    public String toString() {
-        return  "Numero: " + this.numero +
-                "\n\nNome: " + this.nome +
-                "\nLevel: " + this.level +
-                "\nAltura: " + this.altura +
-                "\nPeso: " + this.peso +
-                "\nCategoria: " + this.categoria +
-                "\n\nStatus: " + this.status;
+    public Boolean ehLendario(){
+        if(this.getStatus().calculaTotal() > 500){
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -159,10 +140,15 @@ public class Pokemon implements Impressao {
         }
     }
 
-    public Boolean ehLendario(){
-        if(this.getStatus().calculaTotal() > 500){
-            return true;
-        }
-        return false;
+    @Override
+    public String toString() {
+        return  "Numero: " + this.numero +
+                "\n\nNome: " + this.nome +
+                "\nLevel: " + this.level +
+                "\nAltura: " + this.altura +
+                "\nPeso: " + this.peso +
+                "\nCategoria: " + this.categoria +
+                "\nStatus: " + this.status +
+                "\n\nTotal: " + this.status.calculaTotal() + " Média: " + Utils.formatarDouble2casas(this.status.calculaMedia());
     }
 }

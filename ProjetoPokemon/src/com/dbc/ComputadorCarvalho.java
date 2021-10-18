@@ -18,46 +18,6 @@ public class ComputadorCarvalho {
         this.evolucoes = new ArrayList<>();
     }
 
-    public ArrayList<Pokemon> getPokemons() {
-        return pokemons;
-    }
-
-    public void setPokemons(ArrayList<Pokemon> pokemons) {
-        this.pokemons = pokemons;
-    }
-
-    public ArrayList<Tipo> getTipos() {
-        return tipos;
-    }
-
-    public void setTipos(ArrayList<Tipo> tipos) {
-        this.tipos = tipos;
-    }
-
-    public ArrayList<Habilidade> getHabilidades() {
-        return habilidades;
-    }
-
-    public void setHabilidades(ArrayList<Habilidade> habilidades) {
-        this.habilidades = habilidades;
-    }
-
-    public ArrayList<Evolucao> getEvolucoes() {
-        return evolucoes;
-    }
-
-    public void setEvolucoes(ArrayList<Evolucao> evolucoes) {
-        this.evolucoes = evolucoes;
-    }
-
-    public Scanner getScan() {
-        return scan;
-    }
-
-    public void setScan(Scanner scan) {
-        this.scan = scan;
-    }
-
     public Status addStatus() {
         System.out.print("Digite o HP: ");
         Integer hp = scan.nextInt();
@@ -91,8 +51,7 @@ public class ComputadorCarvalho {
     }
 
     public void editarStatusPokemon(Integer numero, Status status) {
-        Pokemon pokemonMOD = pegarPokemonPorNumero(numero);
-        pokemonMOD.setStatus(status);
+
     }
 
     public void editarAlturaPokemon(Integer numero, Double altura) {
@@ -348,7 +307,7 @@ public class ComputadorCarvalho {
 
     public void printPokemons() {
         this.pokemons.stream().sorted((a, b) -> a.getNumero().compareTo(b.getNumero()))
-                .forEach(c -> c.imprimir());
+                .forEach(Pokemon::imprimir);
     }
 
     public void menu() {
@@ -362,7 +321,11 @@ public class ComputadorCarvalho {
                     inseriPokemon();
                     break;
                 case "2":
-                    printPokemons();
+                    if(this.pokemons.size() == 0) {
+                        System.out.println("\nNão existem Pokemons cadastrados no momento!");
+                    } else {
+                        printPokemons();
+                    }
                     break;
                 case "3":
                     System.out.print("Digite o número do Pokemon a ser removido!");
