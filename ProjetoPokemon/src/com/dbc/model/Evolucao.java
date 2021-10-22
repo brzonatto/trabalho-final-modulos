@@ -1,7 +1,5 @@
 package com.dbc.model;
 
-
-
 public class Evolucao {
     private Integer idEvolucao;
     private Pokemon estagioUm; // sem evolução
