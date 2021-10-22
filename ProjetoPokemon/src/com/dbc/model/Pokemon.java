@@ -1,9 +1,5 @@
 package com.dbc.model;
 
-import com.dbc.old.Evolucao;
-import com.dbc.old.Habilidade;
-import com.dbc.old.Status;
-
 import java.util.ArrayList;
 
 public class Pokemon {
