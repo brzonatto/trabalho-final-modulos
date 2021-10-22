@@ -198,7 +198,7 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
                 e.printStackTrace();
             }
         }
-        return pessoas;
+        return pokemons;
     }
 
 }
