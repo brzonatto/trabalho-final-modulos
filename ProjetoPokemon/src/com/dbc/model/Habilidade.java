@@ -1,8 +1,17 @@
 package com.dbc.model;
 
 public class Habilidade {
+    private Integer idHabilidade;
     private String nome;
     private Double multiplicacaoDePoder;
+
+    public Integer getIdHabilidade() {
+        return idHabilidade;
+    }
+
+    public void setIdHabilidade(Integer idHabilidade) {
+        this.idHabilidade = idHabilidade;
+    }
 
     public String getNome() {
         return nome;
