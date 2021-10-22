@@ -4,23 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="DELETE TESTES">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/model/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/model/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/model/PokemonLendario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/model/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/model/Tipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/repository/PokemonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/repository/PokemonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/service/PokemonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/service/PokemonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/view/Carvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/view/Carvalho.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/view/Main.java" afterDir="false" />
-    </list>
-    <list id="4ccf74cd-f84a-485e-9ed7-7aca599ed600" name="Changes by Jonathas" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/repository/PokemonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/repository/PokemonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/view/Carvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/view/Carvalho.java" afterDir="false" />
-    </list>
-    <list id="da0bccc3-9fee-49d5-992d-cd933372df29" name="Changes by leonardocardoso" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/view/Carvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/view/Carvalho.java" afterDir="false" />
-    </list>
+    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="add metodos" />
+    <list id="4ccf74cd-f84a-485e-9ed7-7aca599ed600" name="Changes by Jonathas" comment="Changes by Jonathas" />
+    <list id="da0bccc3-9fee-49d5-992d-cd933372df29" name="Changes by leonardocardoso" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,31 +22,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/com/dbc/repository/PokemonRepository.java">
-      <ranges>
-        <range start1="9" end1="10" start2="9" end2="9" changelist="4c6826bd-8648-4de4-b266-c64e4232755e" />
-        <range start1="48" end1="49" start2="47" end2="48" changelist="4ccf74cd-f84a-485e-9ed7-7aca599ed600" />
-        <range start1="133" end1="134" start2="132" end2="133" changelist="4c6826bd-8648-4de4-b266-c64e4232755e" />
-        <range start1="181" end1="182" start2="180" end2="181" changelist="4c6826bd-8648-4de4-b266-c64e4232755e" />
-        <range start1="188" end1="188" start2="187" end2="189" changelist="4c6826bd-8648-4de4-b266-c64e4232755e" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/com/dbc/view/Carvalho.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="8" changelist="4c6826bd-8648-4de4-b266-c64e4232755e" />
-        <range start1="8" end1="8" start2="14" end2="15" changelist="4c6826bd-8648-4de4-b266-c64e4232755e" />
-        <range start1="9" end1="10" start2="16" end2="17" changelist="4c6826bd-8648-4de4-b266-c64e4232755e" />
-        <range start1="17" end1="18" start2="24" end2="83" changelist="4c6826bd-8648-4de4-b266-c64e4232755e" />
-        <range start1="20" end1="21" start2="85" end2="87" changelist="4ccf74cd-f84a-485e-9ed7-7aca599ed600" />
-        <range start1="23" end1="24" start2="89" end2="95" changelist="4ccf74cd-f84a-485e-9ed7-7aca599ed600" />
-        <range start1="26" end1="27" start2="97" end2="133" changelist="4ccf74cd-f84a-485e-9ed7-7aca599ed600" />
-        <range start1="45" end1="46" start2="151" end2="152" changelist="4c6826bd-8648-4de4-b266-c64e4232755e" />
-        <range start1="47" end1="51" start2="153" end2="157" changelist="da0bccc3-9fee-49d5-992d-cd933372df29" />
-        <range start1="53" end1="54" start2="159" end2="160" changelist="4c6826bd-8648-4de4-b266-c64e4232755e" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1zY71EPq34fHkhvEkIPQlxDtgQn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -234,13 +195,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634312952744</updated>
-    </task>
-    <task id="LOCAL-00001" summary="ADD Projeto">
-      <created>1634313171001</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1634313171001</updated>
     </task>
     <task id="LOCAL-00002" summary="ADD classe Tipo">
       <created>1634338875569</created>
@@ -571,7 +525,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634929887407</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="add metodos">
+      <created>1634938754177</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1634938754177</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Changes by Jonathas">
+      <created>1634938881281</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1634938881281</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -665,8 +633,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MOD classe Main" />
-    <MESSAGE value="MOD classe Pokedex" />
     <MESSAGE value="MOD classe Pokemon &quot;SEXO&quot;" />
     <MESSAGE value="MOD interface Acoes" />
     <MESSAGE value="MOD class PokemonLendario" />
@@ -690,7 +656,9 @@
     <MESSAGE value="DELETE PASTA OLD" />
     <MESSAGE value="ADD CARVALHO VIEW" />
     <MESSAGE value="DELETE TESTES" />
-    <option name="LAST_COMMIT_MESSAGE" value="DELETE TESTES" />
+    <MESSAGE value="add metodos" />
+    <MESSAGE value="Changes by Jonathas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Jonathas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
