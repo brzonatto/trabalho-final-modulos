@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dbc.model.Pokemon;
+import com.dbc.model.PokemonLendario;
 
 public class PokemonRepository implements Repositorio<Integer, Pokemon> {
     @Override
@@ -30,22 +31,33 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
             con = ConexaoBancoDeDados.getConnection();
 
             Integer proximoId = this.getProximoId(con);
-            pokemon.setIdPessoa(proximoId);//TODO
+            pokemon.setIdPokemon(proximoId);
 
             String sql = "INSERT INTO POKEMON\n" +
-                    "(ID_PESSOA, NOME, DATA_NASCIMENTO, CPF)\n" +
-                    "VALUES(?, ?, ?, ?)\n";
+                    "(ID_POKEMON, NUMERO_POKEMON, NOME_POKEMON, LEVEL_POKEMON, PESO_POKEMON, ALTURA_POKEMON, CATEGORIA_POKEMON, REGIAO_DOMINANTE_POKE_LENDARIO, HP_STATUS, ATAQUE_STATUS, DEFESA_STATUS, ATAQUE_ESPECIAL_STATUS, DEFESA_ESPECIAL_STATUS, VELOCIDADE_STATUS)\n" +
+                    "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)\n";
 
             PreparedStatement stmt = con.prepareStatement(sql);
 
-            stmt.setInt(1, pessoa.getIdPessoa());
-            stmt.setString(2, pessoa.getNome());
-            stmt.setDate(3, Date.valueOf(pessoa.getDataNascimento()));
-            stmt.setString(4, pessoa.getCpf());
+            stmt.setInt(1, pokemon.getIdPokemon());
+            stmt.setInt(2, pokemon.getNumero());
+            stmt.setString(3, pokemon.getNome());
+            stmt.setInt(4, pokemon.getLevel());
+            stmt.setDouble(5, pokemon.getPeso());
+            stmt.setDouble(6, pokemon.getAltura());
+            stmt.setString(7, pokemon.getCategoria());
+            stmt.setString(8, ((PokemonLendario) pokemon).getRegiaoDominante());//TODO VER CAST
+            stmt.setInt(9, pokemon.getStatus().getHp());//HP_STATUS
+            stmt.setInt(10, pokemon.getStatus().getAtaque());//ATAQUE_STATUS,
+            stmt.setInt(11, pokemon.getStatus().getDefesa());//DEFESA_STATUS,
+            stmt.setInt(12, pokemon.getStatus().getEspecialAtaque());//ATAQUE_ESPECIAL_STATUS,
+            stmt.setInt(13, pokemon.getStatus().getEspecialDefesa());//DEFESA_ESPECIAL_STATUS,
+            stmt.setInt(14, pokemon.getStatus().getVelocidade());//VELOCIDADE_STATUS
+
 
             int res = stmt.executeUpdate();
-            System.out.println("adicionarPessoa.res=" + res);
-            return pessoa;
+            System.out.println("adicionarPokemon.res=" + res);
+            return pokemon;
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());
         } finally {
@@ -65,7 +77,7 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
         try {
             con = ConexaoBancoDeDados.getConnection();
 
-            String sql = "DELETE FROM PESSOA WHERE id_pessoa = ?";
+            String sql = "DELETE FROM POKEMON WHERE ID_POKEMON = ?";
 
             PreparedStatement stmt = con.prepareStatement(sql);
 
@@ -73,7 +85,7 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
 
             // Executa-se a consulta
             int res = stmt.executeUpdate();
-            System.out.println("removerPessoaPorId.res=" + res);
+            System.out.println("removerPokemonPorId.res=" + res);
 
             return res > 0;
         } catch (SQLException e) {
@@ -90,23 +102,42 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
     }
 
     @Override
-    public boolean editar(Integer id, Pessoa pessoa) throws BancoDeDadosException {
+    public boolean editar(Integer id, Pokemon pokemon) throws BancoDeDadosException {
         Connection con = null;
         try {
             con = ConexaoBancoDeDados.getConnection();
 
             StringBuilder sql = new StringBuilder();
-            sql.append("UPDATE PESSOA SET ");
-            sql.append(" cpf = ?,");
+            sql.append("UPDATE POKEMON SET ");
+            sql.append(" numero = ?,");
             sql.append(" nome = ?,");
-            sql.append(" data_nascimento = ? ");
-            sql.append(" WHERE id_pessoa = ? ");
+            sql.append(" level = ? ");
+            sql.append(" peso = ? ");
+            sql.append(" altura = ? ");
+            sql.append(" categoria = ? ");
+            sql.append(" HP = ? ");
+            sql.append(" ataque = ? ");
+            sql.append(" defesa = ? ");
+            sql.append(" especialAtaque = ? ");
+            sql.append(" especialDefesa = ? ");
+            sql.append(" velocidade = ? ");
+            sql.append(" WHERE ID_POKEMON  = ? ");
 
             PreparedStatement stmt = con.prepareStatement(sql.toString());
 
-            stmt.setString(1, pessoa.getCpf());
-            stmt.setString(2, pessoa.getNome());
-            stmt.setDate(3, Date.valueOf(pessoa.getDataNascimento()));
+            stmt.setInt(1, pokemon.getNumero());
+            stmt.setString(2, pokemon.getNome());
+            stmt.setInt(3, pokemon.getLevel());
+            stmt.setDouble(4, pokemon.getPeso());
+            stmt.setDouble(5, pokemon.getAltura());
+            stmt.setString(6, pokemon.getCategoria());
+            stmt.setString(7, ((PokemonLendario) pokemon).getRegiaoDominante());//TODO VER CAST
+            stmt.setInt(8, pokemon.getStatus().getHp());//HP_STATUS
+            stmt.setInt(9, pokemon.getStatus().getAtaque());//ATAQUE_STATUS,
+            stmt.setInt(10, pokemon.getStatus().getDefesa());//DEFESA_STATUS,
+            stmt.setInt(11, pokemon.getStatus().getEspecialAtaque());//ATAQUE_ESPECIAL_STATUS,
+            stmt.setInt(12, pokemon.getStatus().getEspecialDefesa());//DEFESA_ESPECIAL_STATUS,
+            stmt.setInt(13, pokemon.getStatus().getVelocidade());//VELOCIDADE_STATUS
             stmt.setInt(4, id);
 
             // Executa-se a consulta
@@ -128,25 +159,33 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
     }
 
     @Override
-    public List<Pessoa> listar() throws BancoDeDadosException {
-        List<Pessoa> pessoas = new ArrayList<>();
+    public List<Pokemon> listar() throws BancoDeDadosException {
+        List<Pokemon> pokemons = new ArrayList<>();
         Connection con = null;
         try {
             con = ConexaoBancoDeDados.getConnection();
             Statement stmt = con.createStatement();
 
-            String sql = "SELECT * FROM PESSOA";
+            String sql = "SELECT * FROM POKEMON";
 
-            // Executa-se a consulta
+
             ResultSet res = stmt.executeQuery(sql);
 
             while (res.next()) {
-                Pessoa pessoa = new Pessoa();
-                pessoa.setIdPessoa(res.getInt("id_pessoa"));
-                pessoa.setNome(res.getString("nome"));
-                pessoa.setDataNascimento(res.getDate("data_nascimento").toLocalDate());
-                pessoa.setCpf(res.getString("cpf"));
-                pessoas.add(pessoa);
+                Pokemon pokemon = new Pokemon();
+                pokemon.setIdPokemon(res.getInt("id_pokemon"));
+                pokemon.setNome(res.getString("nome_pokemon"));
+                pokemon.setLevel(res.getInt("level_pokemon"));
+                pokemon.setPeso(res.getDouble("peso_pokemon"));
+                pokemon.setAltura(res.getDouble("altura_pokemon"));
+                pokemon.setCategoria(res.getString("categoria_pokemon"));
+                ((PokemonLendario) pokemon).setRegiaoDominante(res.getString("região_dominante_pokemon_lendario"));
+                pokemon.getStatus().setHp(res.getInt("hp_status"));
+                pokemon.getStatus().setAtaque(res.getInt("ataque_status"));
+                pokemon.getStatus().setDefesa(res.getInt("defesa_status"));
+                pokemon.getStatus().setEspecialAtaque(res.getInt("ataque_especial_status"));
+                pokemon.getStatus().setEspecialDefesa(res.getInt("defesa_especial_status"));
+                pokemon.getStatus().setVelocidade(res.getInt("velocidade_status"));
             }
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());
