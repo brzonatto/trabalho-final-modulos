@@ -45,7 +45,7 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
             stmt.setDouble(5, pokemon.getPeso());
             stmt.setDouble(6, pokemon.getAltura());
             stmt.setString(7, pokemon.getCategoria());
-            stmt.setString(8, ((PokemonLendario) pokemon).getRegiaoDominante());//TODO VER CAST
+            stmt.setString(8, pokemon.getRegiaoDominante());
             stmt.setInt(9, pokemon.getStatus().getHp());//HP_STATUS
             stmt.setInt(10, pokemon.getStatus().getAtaque());//ATAQUE_STATUS,
             stmt.setInt(11, pokemon.getStatus().getDefesa());//DEFESA_STATUS,
