@@ -6,6 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="AJUSTES NAS PASTAS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/ComputadorCarvalho.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/model/Evolucao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/old/Evolucao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/model/Habilidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/old/Habilidade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/model/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/old/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/model/PokemonLendario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/old/PokemonLendario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/model/Sexo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/model/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/old/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/repository/ConexaoBancoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/repository/ConexaoBancoDeDados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/dbc/PokemonLendarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/dbc/PokemonLendarioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/dbc/PokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/dbc/PokemonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/dbc/StatusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/dbc/StatusTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +129,7 @@
       <module name="ProjetoPokemon" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dbc.model.*" />
+          <option name="PATTERN" value="com.dbc.old.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,7 +144,7 @@
       <module name="ProjetoPokemon" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dbc.model.*" />
+          <option name="PATTERN" value="com.dbc.old.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -149,7 +160,7 @@
       <module name="ProjetoPokemon" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dbc.model.*" />
+          <option name="PATTERN" value="com.dbc.old.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -165,7 +176,7 @@
       <module name="ProjetoPokemon" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dbc.model.*" />
+          <option name="PATTERN" value="com.dbc.old.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

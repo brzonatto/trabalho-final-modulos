@@ -1,6 +1,8 @@
 package com.dbc;
 
-import com.dbc.model.*;
+import com.dbc.old.PokemonLendario;
+import com.dbc.model.Tipo;
+import com.dbc.old.*;
 
 import java.util.ArrayList;
 import java.util.Locale;

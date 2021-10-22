@@ -1,6 +1,6 @@
 package com.dbc;
 
-import com.dbc.model.Status;
+import com.dbc.old.Status;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
