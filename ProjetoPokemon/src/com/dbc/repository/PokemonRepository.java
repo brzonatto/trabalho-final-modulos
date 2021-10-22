@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dbc.model.Pokemon;
-import com.dbc.model.PokemonLendario;
 
 public class PokemonRepository implements Repositorio<Integer, Pokemon> {
     @Override
@@ -131,7 +130,7 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
             stmt.setDouble(4, pokemon.getPeso());
             stmt.setDouble(5, pokemon.getAltura());
             stmt.setString(6, pokemon.getCategoria());
-            stmt.setString(7, ((PokemonLendario) pokemon).getRegiaoDominante());//TODO VER CAST
+            stmt.setString(7, pokemon.getRegiaoDominante());
             stmt.setInt(8, pokemon.getStatus().getHp());//HP_STATUS
             stmt.setInt(9, pokemon.getStatus().getAtaque());//ATAQUE_STATUS,
             stmt.setInt(10, pokemon.getStatus().getDefesa());//DEFESA_STATUS,
@@ -179,13 +178,15 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
                 pokemon.setPeso(res.getDouble("peso_pokemon"));
                 pokemon.setAltura(res.getDouble("altura_pokemon"));
                 pokemon.setCategoria(res.getString("categoria_pokemon"));
-                ((PokemonLendario) pokemon).setRegiaoDominante(res.getString("região_dominante_pokemon_lendario"));
+                pokemon.setRegiaoDominante(res.getString("regiao_dominante_pokemon_lendario"));
                 pokemon.getStatus().setHp(res.getInt("hp_status"));
                 pokemon.getStatus().setAtaque(res.getInt("ataque_status"));
                 pokemon.getStatus().setDefesa(res.getInt("defesa_status"));
                 pokemon.getStatus().setEspecialAtaque(res.getInt("ataque_especial_status"));
                 pokemon.getStatus().setEspecialDefesa(res.getInt("defesa_especial_status"));
                 pokemon.getStatus().setVelocidade(res.getInt("velocidade_status"));
+
+                pokemons.add(pokemon);
             }
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());

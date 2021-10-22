@@ -1,5 +1,7 @@
 package com.dbc.model;
 
+import java.util.Arrays;
+
 public enum Tipo {
     NORMAL("NORMAL", "", "PEDRA,FANTASMA,AÇO", "FANTASMA", "LUTADOR"),
     LUTADOR("LUTADOR", "NORMAL,PEDRA,AÇO,GELO,ESCURIDÃO", "VOADOR,VENENOSO,PSÍQUICO,INSETO,FANTASMA,FADA", "PEDRA,INSETO,ESCURIDÃO", "VOADOR,PSÍQUICO,FADA"),
@@ -32,6 +34,17 @@ public enum Tipo {
         this.fracoContra = fracoContra;
         this.resistenteA = resistenteA;
         this.vulneravelA = vulneravelA;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public static Tipo ofTipo(String tipo) {
+        return Arrays.stream(Tipo.values())
+                .filter(tp -> tp.getNome().equalsIgnoreCase(tipo))
+                .findFirst()
+                .get();
     }
 
     @Override

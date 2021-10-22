@@ -1,7 +1,10 @@
 package com.dbc.service;
 import com.dbc.exceptions.BancoDeDadosException;
 import com.dbc.model.Pokemon;
+import com.dbc.model.Status;
 import com.dbc.repository.PokemonRepository;
+
+import java.util.List;
 
 public class PokemonService {
     private PokemonRepository pokemonRepository;
@@ -12,7 +15,6 @@ public class PokemonService {
 
 
     // Criação do Pokémon
-
     public void adicionarPokemon(Pokemon pokemon) {
         try {
             Pokemon pokemonAdicionado = pokemonRepository.adicionar(pokemon);
@@ -46,10 +48,18 @@ public class PokemonService {
     // leitura
     public void listar() {
         try {
-            pokemonRepository.listar().forEach(System.out::println);
+            List<Pokemon> listar = pokemonRepository.listar();
+            listar.forEach(System.out::println);
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }
+    }
+
+    public Integer somaStatus(Pokemon pokemon) {
+        Status status = pokemon.getStatus();
+        Integer soma = status.getHp() + status.getAtaque() + status.getDefesa() + status.getEspecialAtaque()
+                + status.getEspecialDefesa() + status.getVelocidade();
+        return soma;
     }
 }
 

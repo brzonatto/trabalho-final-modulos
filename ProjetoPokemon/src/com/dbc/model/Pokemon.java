@@ -11,8 +11,9 @@ public class Pokemon {
     private Double altura;
     private String categoria;
     private Status status;
+    private String regiaoDominante;
     private ArrayList<Tipo> tipos;
-    private Habilidade habilidade;
+    private ArrayList<Habilidade> habilidade;
     private Evolucao evolucao;
 
     public Integer getIdPokemon() {
@@ -55,6 +56,14 @@ public class Pokemon {
         this.peso = peso;
     }
 
+    public String getRegiaoDominante() {
+        return regiaoDominante;
+    }
+
+    public void setRegiaoDominante(String regiaoDominante) {
+        this.regiaoDominante = regiaoDominante;
+    }
+
     public Double getAltura() {
         return altura;
     }
@@ -87,11 +96,11 @@ public class Pokemon {
         this.tipos = tipos;
     }
 
-    public Habilidade getHabilidade() {
+    public ArrayList<Habilidade> getHabilidade() {
         return habilidade;
     }
 
-    public void setHabilidade(Habilidade habilidade) {
+    public void setHabilidade(ArrayList<Habilidade> habilidade) {
         this.habilidade = habilidade;
     }
 
