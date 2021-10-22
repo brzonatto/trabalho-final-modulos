@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="AJUSTES NAS CLASSES">
-      <change beforePath="$PROJECT_DIR$/../DB_POKEMON/POKEMON_CONCEITUAL.brM3" beforeDir="false" afterPath="$PROJECT_DIR$/../DB_POKEMON/POKEMON_CONCEITUAL.brM3" afterDir="false" />
+    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="AJUSTES NAS PASTAS">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,12 +97,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\brzon\Desktop\trabalho-final-modulos\ProjetoPokemon" />
+      <recent name="C:\Users\brzon\Desktop\trabalho-final-modulos\ProjetoPokemon\src\com\dbc\repository" />
+      <recent name="C:\Users\brzon\Desktop\trabalho-final-modulos\ProjetoPokemon\src\com\dbc\exceptions" />
       <recent name="C:\Users\brzon\Desktop\trabalho-final-modulos\ProjetoPokemon\src\com\dbc\utils" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.StatusTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.dbc.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.dbc.view.Main" />
       <module name="ProjetoPokemon" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
@@ -486,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634579789211</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="AJUSTES NAS PASTAS">
+      <created>1634911845498</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1634911845498</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -580,7 +590,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="teste" />
     <MESSAGE value="MOD .gitignore" />
     <MESSAGE value="MOD Acoes e Pokemon" />
     <MESSAGE value="ADD classe MainBrunno" />
@@ -605,7 +614,8 @@
     <MESSAGE value="MOD menu" />
     <MESSAGE value="MOD evolucao" />
     <MESSAGE value="AJUSTES NAS CLASSES" />
-    <option name="LAST_COMMIT_MESSAGE" value="AJUSTES NAS CLASSES" />
+    <MESSAGE value="AJUSTES NAS PASTAS" />
+    <option name="LAST_COMMIT_MESSAGE" value="AJUSTES NAS PASTAS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
