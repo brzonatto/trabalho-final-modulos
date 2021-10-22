@@ -1,5 +1,7 @@
 package com.dbc;
 
+import com.dbc.model.*;
+
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;

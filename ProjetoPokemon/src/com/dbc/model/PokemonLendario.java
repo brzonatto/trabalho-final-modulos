@@ -1,4 +1,6 @@
-package com.dbc;
+package com.dbc.model;
+
+import com.dbc.Impressao;
 
 import java.util.ArrayList;
 

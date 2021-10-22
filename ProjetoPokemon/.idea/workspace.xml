@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="AJUSTES NAS CLASSES">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DB_POKEMON/POKEMON_CONCEITUAL.brM3" beforeDir="false" afterPath="$PROJECT_DIR$/../DB_POKEMON/POKEMON_CONCEITUAL.brM3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/dbc/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -115,7 +115,7 @@
       <module name="ProjetoPokemon" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dbc.*" />
+          <option name="PATTERN" value="com.dbc.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,7 +130,7 @@
       <module name="ProjetoPokemon" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dbc.*" />
+          <option name="PATTERN" value="com.dbc.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,7 +146,7 @@
       <module name="ProjetoPokemon" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dbc.*" />
+          <option name="PATTERN" value="com.dbc.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -162,7 +162,7 @@
       <module name="ProjetoPokemon" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dbc.*" />
+          <option name="PATTERN" value="com.dbc.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

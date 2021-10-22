@@ -1,4 +1,4 @@
-package com.dbc;
+package com.dbc.model;
 
 import java.util.ArrayList;
 

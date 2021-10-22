@@ -1,6 +1,8 @@
-package com.dbc;
+package com.dbc.model;
 
-public class Evolucao implements Impressao{
+import com.dbc.Impressao;
+
+public class Evolucao implements Impressao {
     Pokemon estagioUm; // sem evolução
     Pokemon estagioDois; // com 1 evolução
     Pokemon estagioTres; // com 2 evoluções

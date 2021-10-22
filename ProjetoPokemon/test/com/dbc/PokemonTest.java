@@ -1,5 +1,9 @@
 package com.dbc;
 
+import com.dbc.model.Habilidade;
+import com.dbc.model.PokemonLendario;
+import com.dbc.model.Status;
+import com.dbc.model.Tipo;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.ArrayList;

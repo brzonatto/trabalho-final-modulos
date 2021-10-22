@@ -1,5 +1,6 @@
-package com.dbc;
+package com.dbc.model;
 
+import com.dbc.Impressao;
 import com.dbc.utils.Utils;
 
 import java.util.ArrayList;
