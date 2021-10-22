@@ -1,23 +1,52 @@
 package com.dbc.model;
 
-import com.dbc.Impressao;
 
-public class Evolucao implements Impressao {
-    Pokemon estagioUm; // sem evolução
-    Pokemon estagioDois; // com 1 evolução
-    Pokemon estagioTres; // com 2 evoluções
 
-    public Evolucao(Pokemon estagioUm, Pokemon estagioDois, Pokemon estagioTres) {
+public class Evolucao {
+    private Integer idEvolucao;
+    private Pokemon estagioUm; // sem evolução
+    private Pokemon estagioDois; // com 1 evolução
+    private Pokemon estagioTres; // com 2 evoluções
+
+    public Integer getIdEvolucao() {
+        return idEvolucao;
+    }
+
+    public void setIdEvolucao(Integer idEvolucao) {
+        this.idEvolucao = idEvolucao;
+    }
+
+    public Pokemon getEstagioUm() {
+        return estagioUm;
+    }
+
+    public void setEstagioUm(Pokemon estagioUm) {
         this.estagioUm = estagioUm;
+    }
+
+    public Pokemon getEstagioDois() {
+        return estagioDois;
+    }
+
+    public void setEstagioDois(Pokemon estagioDois) {
         this.estagioDois = estagioDois;
+    }
+
+    public Pokemon getEstagioTres() {
+        return estagioTres;
+    }
+
+    public void setEstagioTres(Pokemon estagioTres) {
         this.estagioTres = estagioTres;
     }
 
-    public void imprimir() {
-        System.out.println("Lv: " + this.estagioUm.getLevel() + " - " + this.estagioUm.getNome());
-        System.out.println("Lv: " + this.estagioDois.getLevel() + " - " + this.estagioDois.getNome());
-        if (this.estagioTres != null) {
-            System.out.println("Lv: " + this.estagioTres.getLevel() + " - " + this.estagioTres.getNome());
-        }
+    @Override
+    public String toString() {
+        return "Evolucao{" +
+                "idEvolucao=" + idEvolucao +
+                ", estagioUm=" + estagioUm +
+                ", estagioDois=" + estagioDois +
+                ", estagioTres=" + estagioTres +
+                '}';
     }
 }

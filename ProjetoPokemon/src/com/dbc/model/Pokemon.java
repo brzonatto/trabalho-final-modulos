@@ -1,39 +1,30 @@
 package com.dbc.model;
 
-import com.dbc.Impressao;
-import com.dbc.utils.Utils;
+import com.dbc.old.Evolucao;
+import com.dbc.old.Habilidade;
+import com.dbc.old.Status;
 
 import java.util.ArrayList;
 
-public class Pokemon implements Impressao {
+public class Pokemon {
+    private Integer idPokemon;
     private Integer numero;
     private String nome;
     private Integer level;
-    private Status status;
-    private Double altura;
     private Double peso;
+    private Double altura;
     private String categoria;
+    private Status status;
     private ArrayList<Tipo> tipos;
-    private ArrayList<Habilidade> habilidades;
+    private Habilidade habilidade;
     private Evolucao evolucao;
 
-    public Pokemon() {
-
+    public Integer getIdPokemon() {
+        return idPokemon;
     }
 
-    public Pokemon(Integer numero, String nome, Integer level, Status status, Double altura, Double peso,
-                   String categoria, ArrayList<Tipo> tipos,
-                   ArrayList<Habilidade> habilidades) {
-        this.numero = numero;
-        this.nome = nome;
-        this.level = level;
-        this.status = status;
-        this.altura = altura;
-        this.peso = peso;
-        this.categoria = categoria;
-        this.tipos = tipos;
-        this.habilidades = habilidades;
-        this.evolucao = null;
+    public void setIdPokemon(Integer idPokemon) {
+        this.idPokemon = idPokemon;
     }
 
     public Integer getNumero() {
@@ -60,12 +51,12 @@ public class Pokemon implements Impressao {
         this.level = level;
     }
 
-    public Status getStatus() {
-        return status;
+    public Double getPeso() {
+        return peso;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setPeso(Double peso) {
+        this.peso = peso;
     }
 
     public Double getAltura() {
@@ -76,20 +67,20 @@ public class Pokemon implements Impressao {
         this.altura = altura;
     }
 
-    public Double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(Double peso) {
-        this.peso = peso;
-    }
-
     public String getCategoria() {
         return categoria;
     }
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public ArrayList<Tipo> getTipos() {
@@ -100,8 +91,12 @@ public class Pokemon implements Impressao {
         this.tipos = tipos;
     }
 
-    public ArrayList<Habilidade> getHabilidades() {
-        return habilidades;
+    public Habilidade getHabilidade() {
+        return habilidade;
+    }
+
+    public void setHabilidade(Habilidade habilidade) {
+        this.habilidade = habilidade;
     }
 
     public Evolucao getEvolucao() {
@@ -112,44 +107,20 @@ public class Pokemon implements Impressao {
         this.evolucao = evolucao;
     }
 
-    public void setHabilidades(ArrayList<Habilidade> habilidades) {
-        this.habilidades = habilidades;
-    }
-
-    public Boolean ehLendario(){
-        if(this.getStatus().calculaTotal() > 500){
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public void imprimir() {
-        System.out.println("\n##############################\n");
-        System.out.println(this);
-        System.out.println("\nTIPOS");
-        for (Tipo key : this.tipos) {
-            System.out.println(key);
-        }
-        System.out.println("\nHABILIDADES");
-        for (Habilidade key : this.habilidades) {
-            System.out.println(key.getNome());
-        }
-        if(this.evolucao != null) {
-            System.out.println("\nEVOLUÇOES");
-            this.evolucao.imprimir();
-        }
-    }
-
     @Override
     public String toString() {
-        return  "Numero: " + this.numero +
-                "\n\nNome: " + this.nome +
-                "\nLevel: " + this.level +
-                "\nAltura: " + this.altura +
-                "\nPeso: " + this.peso +
-                "\nCategoria: " + this.categoria +
-                "\nStatus: " + this.status +
-                "\n\nTotal: " + this.status.calculaTotal() + " Média: " + Utils.formatarDouble2casas(this.status.calculaMedia());
+        return "Pokemon{" +
+                "idPokemon=" + idPokemon +
+                ", numero=" + numero +
+                ", nome='" + nome + '\'' +
+                ", level=" + level +
+                ", peso=" + peso +
+                ", altura=" + altura +
+                ", categoria='" + categoria + '\'' +
+                ", status=" + status +
+                ", tipos=" + tipos +
+                ", habilidade=" + habilidade +
+                ", evolucao=" + evolucao +
+                '}';
     }
 }

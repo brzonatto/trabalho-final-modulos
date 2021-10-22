@@ -1,4 +1,4 @@
-package com.dbc.model;
+package com.dbc.old;
 
 public class Status {
     private Integer hp;
@@ -7,6 +7,19 @@ public class Status {
     private Integer especialAtaque;
     private Integer especialDefesa;
     private Integer velocidade;
+
+    public Status() {
+
+    }
+
+    public Status(Integer hp, Integer ataque, Integer defesa, Integer especialAtaque, Integer especialDefesa, Integer velocidade) {
+        this.hp = hp;
+        this.ataque = ataque;
+        this.defesa = defesa;
+        this.especialAtaque = especialAtaque;
+        this.especialDefesa = especialDefesa;
+        this.velocidade = velocidade;
+    }
 
     public Integer getHp() {
         return hp;
@@ -56,15 +69,21 @@ public class Status {
         this.velocidade = velocidade;
     }
 
+    public Integer calculaTotal(){
+        return this.hp + this.ataque + this.defesa + this.especialAtaque + this.especialDefesa + this.velocidade;
+    }
+
+    public Double calculaMedia(){
+        return calculaTotal().doubleValue() / 6;
+    }
+
     @Override
     public String toString() {
-        return "Status{" +
-                "hp=" + hp +
-                ", ataque=" + ataque +
-                ", defesa=" + defesa +
-                ", especialAtaque=" + especialAtaque +
-                ", especialDefesa=" + especialDefesa +
-                ", velocidade=" + velocidade +
-                '}';
+        return  "\nHP: " + this.hp +
+                "\nAtaque: " + this.ataque +
+                "\nDefesa: " + this.defesa +
+                "\nAtaque Especial: " + this.especialAtaque +
+                "\nDefesa Especial: " + this.especialDefesa +
+                "\nVelocidade: " + this.velocidade;
     }
 }
