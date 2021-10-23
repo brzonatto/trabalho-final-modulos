@@ -4,6 +4,7 @@ import com.dbc.model.Pokemon;
 import com.dbc.model.Status;
 import com.dbc.repository.PokemonRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PokemonService {
@@ -61,6 +62,13 @@ public class PokemonService {
                 + status.getEspecialDefesa() + status.getVelocidade();
         return soma;
     }
+
+    public Pokemon pegarPokemonPorNumero(Integer numero) throws BancoDeDadosException {
+        List<Pokemon> pokemons = pokemonRepository.listar();
+        return pokemons.stream().filter(pokemon -> pokemon.getNumero().equals(numero))
+                .findFirst().get();
+    }
+
 }
 
 

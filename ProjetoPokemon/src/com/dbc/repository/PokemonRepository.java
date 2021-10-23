@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dbc.model.Pokemon;
+import com.dbc.model.Status;
 
 public class PokemonRepository implements Repositorio<Integer, Pokemon> {
     @Override
@@ -53,9 +54,9 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
             stmt.setInt(13, pokemon.getStatus().getEspecialDefesa());//DEFESA_ESPECIAL_STATUS,
             stmt.setInt(14, pokemon.getStatus().getVelocidade());//VELOCIDADE_STATUS
 
-
             int res = stmt.executeUpdate();
             System.out.println("adicionarPokemon.res=" + res);
+
             return pokemon;
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());
@@ -107,41 +108,105 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
             con = ConexaoBancoDeDados.getConnection();
 
             StringBuilder sql = new StringBuilder();
-            sql.append("UPDATE POKEMON SET ");
-            sql.append(" numero = ?,");
-            sql.append(" nome = ?,");
-            sql.append(" level = ? ");
-            sql.append(" peso = ? ");
-            sql.append(" altura = ? ");
-            sql.append(" categoria = ? ");
-            sql.append(" HP = ? ");
-            sql.append(" ataque = ? ");
-            sql.append(" defesa = ? ");
-            sql.append(" especialAtaque = ? ");
-            sql.append(" especialDefesa = ? ");
-            sql.append(" velocidade = ? ");
-            sql.append(" WHERE ID_POKEMON  = ? ");
+            sql.append("UPDATE POKEMON SET \n");
+
+            if (pokemon.getNumero() != null) {
+                sql.append(" NUMERO_POKEMON = ?,");
+            }
+            if (pokemon.getNome() != null) {
+                sql.append(" NOME_POKEMON = ?,");
+            }
+            if (pokemon.getLevel() != null) {
+                sql.append(" LEVEL_POKEMON = ?,");
+            }
+            if (pokemon.getPeso() != null) {
+                sql.append(" PESO_POKEMON = ?,");
+            }
+            if (pokemon.getAltura() != null) {
+                sql.append(" ALTURA_POKEMON = ?,");
+            }
+            if (pokemon.getCategoria() != null) {
+                sql.append(" CATEGORIA_POKEMON = ?,");
+            }
+            if (pokemon.getRegiaoDominante() != null) {
+                sql.append(" REGIAO_DOMINANTE_POKE_LENDARIO = ?,");
+            }
+            Status status = pokemon.getStatus();
+            if (status != null) {
+                if (status.getHp() != null) {
+                    sql.append(" HP_STATUS = ?,");
+                }
+                if (status.getAtaque() != null) {
+                    sql.append(" ATAQUE_STATUS = ?,");
+                }
+                if (status.getDefesa() != null) {
+                    sql.append(" DEFESA_STATUS = ?,");
+                }
+                if (status.getEspecialAtaque() != null) {
+                    sql.append(" ATAQUE_ESPECIAL_STATUS = ?,");
+                }
+                if (status.getEspecialDefesa() != null) {
+                    sql.append(" DEFESA_ESPECIAL_STATUS = ?,");
+                }
+                if (status.getVelocidade() != null) {
+                    sql.append(" VELOCIDADE_STATUS = ?,");
+                }
+            }
+
+
+            sql.deleteCharAt(sql.length() - 1); //remove o ultimo ','
+            sql.append(" WHERE ID_POKEMON = ? ");
 
             PreparedStatement stmt = con.prepareStatement(sql.toString());
 
-            stmt.setInt(1, pokemon.getNumero());
-            stmt.setString(2, pokemon.getNome());
-            stmt.setInt(3, pokemon.getLevel());
-            stmt.setDouble(4, pokemon.getPeso());
-            stmt.setDouble(5, pokemon.getAltura());
-            stmt.setString(6, pokemon.getCategoria());
-            stmt.setString(7, pokemon.getRegiaoDominante());
-            stmt.setInt(8, pokemon.getStatus().getHp());//HP_STATUS
-            stmt.setInt(9, pokemon.getStatus().getAtaque());//ATAQUE_STATUS,
-            stmt.setInt(10, pokemon.getStatus().getDefesa());//DEFESA_STATUS,
-            stmt.setInt(11, pokemon.getStatus().getEspecialAtaque());//ATAQUE_ESPECIAL_STATUS,
-            stmt.setInt(12, pokemon.getStatus().getEspecialDefesa());//DEFESA_ESPECIAL_STATUS,
-            stmt.setInt(13, pokemon.getStatus().getVelocidade());//VELOCIDADE_STATUS
-            stmt.setInt(4, id);
+            int index = 1;
+            if (pokemon.getNumero() != null) {
+                stmt.setInt(index++, pokemon.getNumero());
+            }
+            if (pokemon.getNome() != null) {
+                stmt.setString(index++, pokemon.getNome());
+            }
+            if (pokemon.getLevel() != null) {
+                stmt.setInt(index++, pokemon.getLevel());
+            }
+            if (pokemon.getPeso() != null) {
+                stmt.setDouble(index++, pokemon.getPeso());
+            }
+            if (pokemon.getAltura() != null) {
+                stmt.setDouble(index++, pokemon.getAltura());
+            }
+            if (pokemon.getCategoria() != null) {
+                stmt.setString(index++, pokemon.getCategoria());
+            }
+            if (pokemon.getRegiaoDominante() != null) {
+                stmt.setString(index++, pokemon.getRegiaoDominante());
+            }
+            if (status != null) {
+                if (status.getHp() != null) {
+                    stmt.setInt(index++, status.getHp());
+                }
+                if (status.getAtaque() != null) {
+                    stmt.setInt(index++, status.getAtaque());
+                }
+                if (status.getDefesa() != null) {
+                    stmt.setInt(index++, status.getDefesa());
+                }
+                if (status.getEspecialAtaque() != null) {
+                    stmt.setInt(index++, status.getEspecialAtaque());
+                }
+                if (status.getEspecialDefesa() != null) {
+                    stmt.setInt(index++, status.getEspecialDefesa());
+                }
+                if (status.getVelocidade() != null) {
+                    stmt.setInt(index++, status.getVelocidade());
+                }
+            }
+
+            stmt.setInt(index++, id);
 
             // Executa-se a consulta
             int res = stmt.executeUpdate();
-            System.out.println("editarPessoa.res=" + res);
+            System.out.println("editarPokemon.res=" + res);
 
             return res > 0;
         } catch (SQLException e) {
@@ -165,29 +230,15 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
             con = ConexaoBancoDeDados.getConnection();
             Statement stmt = con.createStatement();
 
-            String sql = "SELECT * FROM POKEMON";
-
+            String sql = "SELECT P.* FROM POKEMON P";
 
             ResultSet res = stmt.executeQuery(sql);
 
             while (res.next()) {
-                Pokemon pokemon = new Pokemon();
-                pokemon.setIdPokemon(res.getInt("id_pokemon"));
-                pokemon.setNome(res.getString("nome_pokemon"));
-                pokemon.setLevel(res.getInt("level_pokemon"));
-                pokemon.setPeso(res.getDouble("peso_pokemon"));
-                pokemon.setAltura(res.getDouble("altura_pokemon"));
-                pokemon.setCategoria(res.getString("categoria_pokemon"));
-                pokemon.setRegiaoDominante(res.getString("regiao_dominante_pokemon_lendario"));
-                pokemon.getStatus().setHp(res.getInt("hp_status"));
-                pokemon.getStatus().setAtaque(res.getInt("ataque_status"));
-                pokemon.getStatus().setDefesa(res.getInt("defesa_status"));
-                pokemon.getStatus().setEspecialAtaque(res.getInt("ataque_especial_status"));
-                pokemon.getStatus().setEspecialDefesa(res.getInt("defesa_especial_status"));
-                pokemon.getStatus().setVelocidade(res.getInt("velocidade_status"));
-
+                Pokemon pokemon = getPokemonFromResultSet(res);
                 pokemons.add(pokemon);
             }
+            return pokemons;
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());
         } finally {
@@ -199,7 +250,28 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
                 e.printStackTrace();
             }
         }
-        return pokemons;
+    }
+
+    private Pokemon getPokemonFromResultSet(ResultSet res) throws SQLException {
+        Pokemon pokemon = new Pokemon();
+        pokemon.setIdPokemon(res.getInt("id_pokemon"));
+        pokemon.setNumero(res.getInt("numero_pokemon"));
+        pokemon.setNome(res.getString("nome_pokemon"));
+        pokemon.setLevel(res.getInt("level_pokemon"));
+        pokemon.setPeso(res.getDouble("peso_pokemon"));
+        pokemon.setAltura(res.getDouble("altura_pokemon"));
+        pokemon.setCategoria(res.getString("categoria_pokemon"));
+        pokemon.setRegiaoDominante(res.getString("regiao_dominante_poke_lendario"));
+        Status status = new Status();
+        status.setHp(res.getInt("hp_status"));
+        status.setAtaque(res.getInt("ataque_status"));
+        status.setDefesa(res.getInt("defesa_status"));
+        status.setEspecialAtaque(res.getInt("ataque_especial_status"));
+        status.setEspecialDefesa(res.getInt("defesa_especial_status"));
+        status.setVelocidade(res.getInt("velocidade_status"));
+        pokemon.setStatus(status);
+
+        return pokemon;
     }
 
 }

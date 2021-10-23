@@ -132,7 +132,7 @@ public class HabilidadeRepository implements Repositorio<Integer, Habilidade> {
             con = ConexaoBancoDeDados.getConnection();
             Statement stmt = con.createStatement();
 
-            String sql = "SELECT * FROM HBILIDADE";
+            String sql = "SELECT * FROM HABILIDADE";
 
             // Executa-se a consulta
             ResultSet res = stmt.executeQuery(sql);

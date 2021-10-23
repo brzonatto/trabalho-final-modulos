@@ -40,6 +40,22 @@ public enum Tipo {
         return nome;
     }
 
+    public String getForteContra() {
+        return forteContra;
+    }
+
+    public String getFracoContra() {
+        return fracoContra;
+    }
+
+    public String getResistenteA() {
+        return resistenteA;
+    }
+
+    public String getVulneravelA() {
+        return vulneravelA;
+    }
+
     public static Tipo ofTipo(String tipo) {
         return Arrays.stream(Tipo.values())
                 .filter(tp -> tp.getNome().equalsIgnoreCase(tipo))

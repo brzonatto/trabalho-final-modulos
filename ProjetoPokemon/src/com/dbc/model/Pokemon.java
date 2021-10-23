@@ -10,11 +10,9 @@ public class Pokemon {
     private Double peso;
     private Double altura;
     private String categoria;
-    private Status status;
     private String regiaoDominante;
-    private ArrayList<Tipo> tipos;
-    private ArrayList<Habilidade> habilidade;
-    private Evolucao evolucao;
+    private Status status;
+
 
     public Integer getIdPokemon() {
         return idPokemon;
@@ -88,30 +86,6 @@ public class Pokemon {
         this.status = status;
     }
 
-    public ArrayList<Tipo> getTipos() {
-        return tipos;
-    }
-
-    public void setTipos(ArrayList<Tipo> tipos) {
-        this.tipos = tipos;
-    }
-
-    public ArrayList<Habilidade> getHabilidade() {
-        return habilidade;
-    }
-
-    public void setHabilidade(ArrayList<Habilidade> habilidade) {
-        this.habilidade = habilidade;
-    }
-
-    public Evolucao getEvolucao() {
-        return evolucao;
-    }
-
-    public void setEvolucao(Evolucao evolucao) {
-        this.evolucao = evolucao;
-    }
-
     @Override
     public String toString() {
         return "Pokemon{" +
@@ -123,9 +97,6 @@ public class Pokemon {
                 ", altura=" + altura +
                 ", categoria='" + categoria + '\'' +
                 ", status=" + status +
-                ", tipos=" + tipos +
-                ", habilidade=" + habilidade +
-                ", evolucao=" + evolucao +
                 '}';
     }
 }
