@@ -34,7 +34,7 @@ public class HabilidadeService {
     }
 
     // atualização de um objeto
-    public void editarPessoa(Integer id, Habilidade habilidade) {
+    public void editarHabilidade(Integer id, Habilidade habilidade) {
         try {
             boolean conseguiuEditar = habilidadeRepository.editar(id, habilidade);
             System.out.println("Habilidade editada? " + conseguiuEditar + "| com id=" + id);
@@ -48,6 +48,24 @@ public class HabilidadeService {
         try {
             List<Habilidade> listar = habilidadeRepository.listar();
             listar.forEach(System.out::println);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void adicionarHabilidadeAoPokemon(Integer idHab, Integer idPoke) {
+        try {
+            habilidadeRepository.adicionarHabilidadeAoPokemon(idHab, idPoke);
+            System.out.println("Habilidade ao pokemon adicinada com sucesso! ");
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removerHabilidadeDoPokemon(Integer id) {
+        try {
+            boolean conseguiuRemover = habilidadeRepository.removerHabilidadeDoPokemon(id);
+            System.out.println("Habilidade removida? " + conseguiuRemover + "| com id=" + id);
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }

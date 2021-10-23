@@ -171,15 +171,66 @@ public class Main {
                     pokemonService.editar(numero, pokemonEditado);
                     break;
                 case "5":
-                    System.out.println("INSERIR EVOLUÇÃO"); //TODO
+                    System.out.println("INSERIR EVOLUÇÃO");// TODO
                     break;
                 case "6":
-                    System.out.println("INSERIR HABILIDADE"); // TODO
-                    Habilidade habilidade = new Habilidade();
-                    System.out.println("Digite o nome da habilidade");
-                    habilidade.setNome(scan.next());
-                    System.out.println("Digite o multiplicador de poder");
-                    habilidade.setMultiplicacaoDePoder(scan.nextDouble());
+                    System.out.println("MENU HABILIDADES");
+                    System.out.println("Opções: ");
+                    System.out.println("  1  - Adicionar Habilidade");
+                    System.out.println("  2  - Editar Habilidade");
+                    System.out.println("  3  - Remover Habilidade");
+                    System.out.println("  4  - Listar Habilidades");
+                    System.out.println("  5  - Adicionar habilidade ao Pokemon");
+                    System.out.print("\nDigite a opção: ");
+                    opcao = scan.next();
+                    switch (opcao) {
+                        case "1":
+                            System.out.println("ADICIONAR HABILIDADE");
+                            Habilidade habilidade = new Habilidade();
+                            System.out.print("Digite o nome da habilidade: ");
+                            habilidade.setNome(scan.next());
+                            System.out.print("Digite o multiplicador de poder: ");
+                            habilidade.setMultiplicacaoDePoder(scan.nextDouble());
+
+                            habilidadeService.adicionarHabilidade(habilidade);
+                            break;
+                        case "2":
+                            System.out.println("EDITAR HABILIDADE");
+                            System.out.print("Digite o id da habilidade a ser editada: ");
+                            Integer id2 = scan.nextInt();
+                            Habilidade habilidade1 = new Habilidade();
+                            System.out.print("Digite o novo nome da habilidade: ");
+                            habilidade1.setNome(scan.next());
+                            System.out.print("Digite o novo multiplicador de poder da habilidade: ");
+                            habilidade1.setMultiplicacaoDePoder(scan.nextDouble());
+
+                            habilidadeService.editarHabilidade(id2, habilidade1);
+                            break;
+                        case "3":
+                            System.out.println("REMOVER HABILIDADE");
+                            System.out.print("Digite o id da habilidade a ser removida: ");
+                            Integer id3 = scan.nextInt();
+
+                            habilidadeService.removerHabilidade(id3);
+                            habilidadeService.removerHabilidadeDoPokemon(id3);
+                            break;
+                        case "4":
+                            System.out.println("LISTAR HABILIDADE");
+                            habilidadeService.listarHabilidades();
+                            break;
+                        case "5":
+                            System.out.println("ADICIONAR HABILIDADE AO POKEMON");
+                            System.out.print("Digite o id do Pokemon: ");
+                            Integer idPoke = scan.nextInt();
+                            System.out.print("Digite o id da Habilidade: ");
+                            Integer idHab = scan.nextInt();
+
+                            habilidadeService.adicionarHabilidadeAoPokemon(idHab, idPoke);
+                            break;
+                        default:
+                            System.out.println("Opção inválida!");
+                            break;
+                    }
                     break;
                 default:
                     System.out.println("Opção inválida!");
@@ -199,11 +250,7 @@ public class Main {
         System.out.println("  3  - Remover Pokemon");
         System.out.println("  4  - Editar Pokemon");
         System.out.println("  5  - Adicionar Evolução");
-        System.out.println("  6  - Adicionar Habilidade");
+        System.out.println("  6  - Menu de Habilidades");
         System.out.println("  S  - Sair/Continuar\n");
-    }
-
-    public static void editarPokemon() {
-
     }
 }

@@ -230,7 +230,7 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
             con = ConexaoBancoDeDados.getConnection();
             Statement stmt = con.createStatement();
 
-            String sql = "SELECT P.* FROM POKEMON P";
+            String sql = "SELECT * FROM POKEMON";
 
             ResultSet res = stmt.executeQuery(sql);
 

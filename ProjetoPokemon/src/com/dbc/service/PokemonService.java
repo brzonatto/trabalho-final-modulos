@@ -26,7 +26,6 @@ public class PokemonService {
     }
 
     // Remoção de Pokémon
-
     public void remover(Integer id) {
         try {
             boolean conseguiuRemover = pokemonRepository.remover(id);
