@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="FUNCIONANDO CRUD POKEMON" />
+    <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="add metodos">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/view/Main.java" afterDir="false" />
+    </list>
     <list id="4ccf74cd-f84a-485e-9ed7-7aca599ed600" name="Changes by Jonathas" comment="Changes by Jonathas" />
     <list id="da0bccc3-9fee-49d5-992d-cd933372df29" name="Changes by leonardocardoso" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,14 +25,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="ProjectId" id="1zY71EPq34fHkhvEkIPQlxDtgQn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -203,6 +198,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634312952744</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ADD classe Tipo">
+      <created>1634338875569</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1634338875569</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ADD classe Se">
+      <created>1634338893918</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634338893918</updated>
     </task>
     <task id="LOCAL-00004" summary="ADD classe Sexo">
       <created>1634338941789</created>
@@ -533,21 +542,7 @@
       <option name="project" value="LOCAL" />
       <updated>1634938881281</updated>
     </task>
-    <task id="LOCAL-00051" summary="ADD TIPOTIPOKEMON REPO,SERV, CLASS">
-      <created>1634961795483</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1634961795484</updated>
-    </task>
-    <task id="LOCAL-00052" summary="FUNCIONANDO CRUD POKEMON">
-      <created>1634961853153</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1634961853153</updated>
-    </task>
-    <option name="localTasksCounter" value="53" />
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -641,6 +636,8 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="MOD classe Pokemon &quot;SEXO&quot;" />
+    <MESSAGE value="MOD interface Acoes" />
     <MESSAGE value="MOD class PokemonLendario" />
     <MESSAGE value="MOD classes ComputadorCarvalho" />
     <MESSAGE value="MOD classes" />
@@ -664,9 +661,7 @@
     <MESSAGE value="DELETE TESTES" />
     <MESSAGE value="add metodos" />
     <MESSAGE value="Changes by Jonathas" />
-    <MESSAGE value="ADD TIPOTIPOKEMON REPO,SERV, CLASS" />
-    <MESSAGE value="FUNCIONANDO CRUD POKEMON" />
-    <option name="LAST_COMMIT_MESSAGE" value="FUNCIONANDO CRUD POKEMON" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Jonathas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -674,10 +669,6 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.InputMismatchException" package="java.util" />
           <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="com.dbc.exceptions.BancoDeDadosException" package="com.dbc.exceptions" />
-          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,11 +1,9 @@
 package com.dbc.view;
 
-import com.dbc.model.Habilidade;
-import com.dbc.model.Pokemon;
-import com.dbc.model.Status;
-import com.dbc.model.TipoPokemon;
+import com.dbc.model.*;
 import com.dbc.service.HabilidadeService;
 import com.dbc.service.PokemonService;
+import com.dbc.service.TipoPokemonService;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -17,6 +15,7 @@ public class Main {
 
         PokemonService pokemonService = new PokemonService();
         HabilidadeService habilidadeService = new HabilidadeService();
+        TipoPokemonService tipoPokemonService = new TipoPokemonService();
 
         opcoes();
         System.out.print("Digite a opção: ");
@@ -68,7 +67,7 @@ public class Main {
                     break;
                 case "3":
                     System.out.println("REMOVER POKEMON");
-                    System.out.print("Digite o id do Pokemon a ser exluido: ");
+                    System.out.print("Digite o id do Pokémon a ser excluído: ");
                     pokemonService.remover(scan.nextInt());
                     break;
                 case "4":
@@ -155,10 +154,17 @@ public class Main {
                 case "6":
                     System.out.println("INSERIR HABILIDADE"); // TODO
                     Habilidade habilidade = new Habilidade();
-
+                    System.out.println("Digite o nome da habilidade");
+                    habilidade.setNome(scan.next());
+                    System.out.println("Digite o multiplicador de poder");
+                    habilidade.setMultiplicacaoDePoder(scan.nextDouble());
                     break;
                 case "7":
                     System.out.println("INSERIR TIPO POKEMON"); // TODO
+                    TipoPokemon tipoPokemon = new TipoPokemon();
+                    System.out.println("Qual o tipo do pokémon?");
+
+
 
 
 
