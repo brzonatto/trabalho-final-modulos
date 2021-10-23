@@ -67,7 +67,7 @@ public class TipoPokemonRepository implements Repositorio<Integer, TipoPokemon>{
         try {
             con = ConexaoBancoDeDados.getConnection();
 
-            String sql = "DELETE FROM POKEMON_TIPO WHERE ID_POKEMON_TIPO = ?";
+            String sql = "DELETE FROM POKEMON_TIPO WHERE FK_POKEMON_ID_POKEMON = ?";
 
             PreparedStatement stmt = con.prepareStatement(sql);
 

@@ -20,4 +20,30 @@ public class TipoPokemonService {
             e.printStackTrace();
         }
     }
+
+    public void remover(Integer id) {
+        try {
+            boolean conseguiuRemover = tipoPokemonRepository.remover(id);
+            System.out.println("removido? " + conseguiuRemover + "| com id=" + id);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void editar(Integer id, TipoPokemon tipoPokemon) {
+        try {
+            boolean conseguiuEditar = tipoPokemonRepository.editar(id, tipoPokemon);
+            System.out.println("editado? " + conseguiuEditar + "| com id=" + id);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void listar() {
+        try {
+            tipoPokemonRepository.listar().forEach(System.out::println);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
 }

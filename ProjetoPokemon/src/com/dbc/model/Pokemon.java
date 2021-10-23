@@ -12,6 +12,7 @@ public class Pokemon {
     private String categoria;
     private String regiaoDominante;
     private Status status;
+    private ArrayList<TipoPokemon> tiposPokemon;
 
 
     public Integer getIdPokemon() {
@@ -84,6 +85,14 @@ public class Pokemon {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public ArrayList<TipoPokemon> getTiposPokemon() {
+        return tiposPokemon;
+    }
+
+    public void setTiposPokemon(ArrayList<TipoPokemon> tiposPokemon) {
+        this.tiposPokemon = tiposPokemon;
     }
 
     @Override
