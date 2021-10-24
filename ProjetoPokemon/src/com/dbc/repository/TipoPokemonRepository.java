@@ -1,6 +1,7 @@
 package com.dbc.repository;
 
 import com.dbc.exceptions.BancoDeDadosException;
+import com.dbc.model.Habilidade;
 import com.dbc.model.Pokemon;
 import com.dbc.model.Tipo;
 import com.dbc.model.TipoPokemon;
@@ -100,7 +101,7 @@ public class TipoPokemonRepository implements Repositorio<Integer, TipoPokemon>{
             StringBuilder sql = new StringBuilder();
             sql.append("UPDATE POKEMON_TIPO SET ");
             sql.append(" NOME_TIPO = ?,");
-            sql.append(" WHERE FK_POKEMON_ID_POKEMON = ? ");
+            sql.append(" WHERE FK_POKEMON_ID_POKEMON = ? AND NOME_TIPO = ? ");
 
             PreparedStatement stmt = con.prepareStatement(sql.toString());
 
@@ -109,7 +110,41 @@ public class TipoPokemonRepository implements Repositorio<Integer, TipoPokemon>{
 
             // Executa-se a consulta
             int res = stmt.executeUpdate();
-            System.out.println("editarPessoa.res=" + res);
+            System.out.println("editarTipo.res=" + res);
+
+            return res > 0;
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public boolean editar(Integer id, TipoPokemon tipoPokemon, String nome) throws BancoDeDadosException {
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+
+            StringBuilder sql = new StringBuilder();
+            sql.append("UPDATE POKEMON_TIPO SET ");
+            sql.append(" NOME_TIPO = ?,");
+            sql.append(" WHERE FK_POKEMON_ID_POKEMON = ? AND NOME_TIPO = ? ");
+
+            PreparedStatement stmt = con.prepareStatement(sql.toString());
+
+            stmt.setString(1, tipoPokemon.getTipo().getNome());
+            stmt.setInt(2, id);
+            stmt.setString(3, nome);
+
+            // Executa-se a consulta
+            int res = stmt.executeUpdate();
+            System.out.println("editarTipo.res=" + res);
 
             return res > 0;
         } catch (SQLException e) {
@@ -158,12 +193,80 @@ public class TipoPokemonRepository implements Repositorio<Integer, TipoPokemon>{
         }
     }
 
+    public List<TipoPokemon> listarTiposDoPokemon(Integer id) throws BancoDeDadosException {
+        List<TipoPokemon> tipoPokemons = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+
+            String sql = "SELECT PT.NOME_TIPO " +
+                    " FROM POKEMON P " +
+                    " INNER JOIN POKEMON_TIPO PT ON (PT.FK_POKEMON_ID_POKEMON = P.ID_POKEMON)" +
+                    " WHERE P.ID_POKEMON = ? ";
+
+            // Executa-se a consulta
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setInt(1, id);
+
+            ResultSet res = stmt.executeQuery();
+
+            while (res.next()) {
+                TipoPokemon tipoPokemon = new TipoPokemon();
+                tipoPokemon.setIdTipoPokemon(res.getInt("ID_POKEMON_TIPO"));
+                tipoPokemon.setTipo(Tipo.ofTipo(res.getString("NOME_TIPO")));
+
+
+                tipoPokemons.add(tipoPokemon);
+            }
+            return tipoPokemons;
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public boolean removerTipoDoPokemon(Integer id) throws BancoDeDadosException {
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+
+            String sql = "DELETE FROM POKEMON_TIPO WHERE FK_POKEMON_ID_POKEMON = ?";
+
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            stmt.setInt(1, id);
+
+            // Executa-se a consulta
+            int res = stmt.executeUpdate();
+            System.out.println("removerPOKETIPOPorId.res=" + res);
+
+            return res > 0;
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     private TipoPokemon getTipoPokemonFromResultSet(ResultSet res) throws SQLException {
         TipoPokemon tipoPokemon = new TipoPokemon();
-        tipoPokemon.setIdTipoPokemon(res.getInt("ID_POKEMON_TIPO"));
         tipoPokemon.setTipo(Tipo.ofTipo(res.getString("NOME_TIPO")));
         Pokemon pokemon = new Pokemon();
         pokemon.setIdPokemon(res.getInt("FK_POKEMON_ID_POKEMON"));
+        tipoPokemon.setIdTipoPokemon(res.getInt("ID_POKEMON_TIPO"));
 
         return tipoPokemon;
     }

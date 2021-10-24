@@ -46,4 +46,21 @@ public class TipoPokemonService {
             e.printStackTrace();
         }
     }
+
+    public void listarTiposDoPokemon(Integer idPoke) {
+        try {
+            tipoPokemonRepository.listarTiposDoPokemon(idPoke).forEach(System.out::println);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removerTipoDoPokemon(Integer id) {
+        try {
+            boolean conseguiuRemover = tipoPokemonRepository.removerTipoDoPokemon(id);
+            System.out.println("tipo removido? " + conseguiuRemover + "| com id=" + id);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
 }

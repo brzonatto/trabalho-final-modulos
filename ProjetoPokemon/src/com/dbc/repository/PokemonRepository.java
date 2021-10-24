@@ -286,6 +286,37 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
         }
     }
 
+    public Pokemon pegarPokemonPorID(Integer id) throws BancoDeDadosException {
+        List<Pokemon> pokemons = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+
+            String sql = "SELECT * FROM POKEMON P " +
+                    "WHERE P.ID_POKEMON = ? ";
+
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setInt(1, id);
+            ResultSet res = stmt.executeQuery();
+
+            while (res.next()) {
+                Pokemon pokemon = getPokemonFromResultSet(res);
+                pokemons.add(pokemon);
+            }
+            return pokemons.get(0);
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     private Pokemon getPokemonFromResultSet(ResultSet res) throws SQLException {
         Pokemon pokemon = new Pokemon();
         pokemon.setIdPokemon(res.getInt("id_pokemon"));

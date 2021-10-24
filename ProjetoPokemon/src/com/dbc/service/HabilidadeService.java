@@ -71,7 +71,7 @@ public class HabilidadeService {
         }
     }
 
-    public void removerPokemonDaHabildiade(Integer id) {
+    public void removerPokemonDaHabilidade(Integer id) {
         try {
             boolean conseguiuRemover = habilidadeRepository.removerPokemonDaHabilidade(id);
             System.out.println("Habilidade removida? " + conseguiuRemover + "| com id=" + id);

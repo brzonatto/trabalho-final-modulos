@@ -5,7 +5,6 @@ import com.dbc.service.HabilidadeService;
 import com.dbc.service.PokemonService;
 import com.dbc.service.TipoPokemonService;
 
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -80,7 +79,7 @@ public class Main {
                     while (opcao1.equalsIgnoreCase("s")) {
                         System.out.println("Opções");
                         System.out.println("  1  - Adicionar habilidades já existentes");
-                        System.out.println("  2  - Adicionar nova habildiade");
+                        System.out.println("  2  - Adicionar nova habilidade");
                         System.out.println("  S  - Sair\n");
                         System.out.print("Digite a opção: ");
                         opcao1 = scan.next();
@@ -134,7 +133,7 @@ public class Main {
                     System.out.println("REMOVER POKEMON");
                     System.out.print("Digite o id do Pokémon a ser excluído: ");
                     Integer id = scan.nextInt();
-                    habilidadeService.removerPokemonDaHabildiade(id);
+                    habilidadeService.removerPokemonDaHabilidade(id);
                     tipoPokemonService.remover(id);
                     pokemonService.remover(id);
                     break;
@@ -153,11 +152,13 @@ public class Main {
                     System.out.println("6 - Categoria");
                     System.out.println("7 - Tipos");
                     System.out.println("8 - Habilidades");
-                    System.out.println("9 - TODOS");
                     System.out.print("Digite a opção: ");
                     opcao = scan.next();
 
+                    Habilidade hab = null;
+                    TipoPokemon tPokemon = null;
                     Pokemon pokemonEditado = new Pokemon();
+                    pokemonEditado.setIdPokemon(numero);
                     switch (opcao) {
                         case "0":
                             System.out.print("Digite o novo número: ");
@@ -202,19 +203,67 @@ public class Main {
                             pokemonEditado.setCategoria(scan.next());
                             break;
                         case "7":
-
+                            tipoPokemonService.removerTipoDoPokemon(numero);
+                            do {
+                                tPokemon = new TipoPokemon();
+                                System.out.print("Digite o novo tipo do Pokemon: ");
+                                tPokemon.setTipo(Tipo.valueOf(scan.next().toUpperCase()));
+                                tPokemon.setPokemon(pokemonEditado);
+                                tipoPokemonService.adicionarTipoPokemon(tPokemon);
+                                System.out.print("Deseja digitar mais tipos? (S/N): ");
+                                sair = scan.next();
+                            } while (sair.equalsIgnoreCase("s"));
                         case "8":
+                            hab = new Habilidade();
+                            habilidadeService.removerPokemonDaHabilidade(numero);
+                            String opcao2 = "s";
+                            while (opcao2.equalsIgnoreCase("s")) {
+                                System.out.println("Opções");
+                                System.out.println("  1  - Adicionar habilidades já existentes");
+                                System.out.println("  2  - Adicionar nova habilidade");
+                                System.out.println("  S  - Sair\n");
+                                System.out.print("Digite a opção: ");
+                                opcao2 = scan.next();
+                                switch (opcao2) {
+                                    case "1":
+                                        do {
+                                            System.out.println("\nLista de habilidades\n");
+                                            habilidadeService.listarHabilidades();
+                                            System.out.print("Digite o id da Habilidade: ");
+                                            Integer idHab = scan.nextInt();
+                                            habilidadeService.adicionarHabilidadeAoPokemon(idHab, numero);
+                                            System.out.print("Deseja aplicar mais habilidades? (S/N): ");
+                                            sair = scan.next();
+                                        } while (sair.equalsIgnoreCase("s"));
+                                        break;
+                                    case "2":
+                                        do {
+                                            Habilidade habilidade4 = new Habilidade();
+                                            System.out.print("Digite o nome da habilidade: ");
+                                            habilidade4.setNome(scan.next());
+                                            System.out.print("Digite o multiplicador de poder: ");
+                                            habilidade4.setMultiplicacaoDePoder(scan.nextDouble());
 
-                            break;
-                        case "9":
-                            System.out.println("EDITAR TUDO");
-
+                                            habilidadeService.adicionarHabilidade(habilidade4);
+                                            habilidadeService.adicionarHabilidadeAoPokemon(habilidade4.getIdHabilidade(), numero);
+                                            System.out.print("Deseja adicionar e aplicar uma nova habilidades? (S/N): ");
+                                            sair = scan.next();
+                                        } while (sair.equalsIgnoreCase("s"));
+                                        break;
+                                    default:
+                                        System.out.println("Opção inválida!");
+                                }
+                                System.out.println("Deseja continuar adicionando habildiades? (S/N): ");
+                                opcao2 = scan.next();
+                            }
                             break;
                         default:
                             System.out.println("Opção inválida");
                             break;
                     }
-                    pokemonService.editar(numero, pokemonEditado);
+                    if (tPokemon == null && hab == null) {
+                        pokemonService.editar(numero, pokemonEditado);
+                    }
                     break;
                 case "5":
                     System.out.println("INSERIR EVOLUÇÃO"); //TODO

@@ -74,10 +74,14 @@ public class PokemonService {
         return soma;
     }
 
-    public Pokemon pegarPokemonPorNumero(Integer numero) throws BancoDeDadosException {
-        List<Pokemon> pokemons = pokemonRepository.listar();
-        return pokemons.stream().filter(pokemon -> pokemon.getNumero().equals(numero))
-                .findFirst().get();
+    public Pokemon pegarPokemonPorId(Integer id) {
+        Pokemon pokemon = null;
+        try {
+            pokemon = pokemonRepository.pegarPokemonPorID(id);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+        return pokemon;
     }
 
 }
