@@ -70,4 +70,13 @@ public class HabilidadeService {
             e.printStackTrace();
         }
     }
+
+    public void removerPokemonDaHabildiade(Integer id) {
+        try {
+            boolean conseguiuRemover = habilidadeRepository.removerPokemonDaHabilidade(id);
+            System.out.println("Habilidade removida? " + conseguiuRemover + "| com id=" + id);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
 }
