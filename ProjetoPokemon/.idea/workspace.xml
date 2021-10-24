@@ -7,12 +7,9 @@
     <list default="true" id="4c6826bd-8648-4de4-b266-c64e4232755e" name="Changes" comment="add metodos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/repository/HabilidadeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/repository/HabilidadeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/repository/PokemonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/repository/PokemonRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/service/HabilidadeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/service/HabilidadeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/service/PokemonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/service/PokemonService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/view/Main.java" afterDir="false" />
     </list>
-    <list id="da0bccc3-9fee-49d5-992d-cd933372df29" name="Changes by leonardocardoso" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +205,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634312952744</updated>
-      <workItem from="1635012354948" duration="16444000" />
+      <workItem from="1635012354948" duration="19166000" />
     </task>
     <task id="LOCAL-00002" summary="ADD classe Tipo">
       <created>1634338875569</created>

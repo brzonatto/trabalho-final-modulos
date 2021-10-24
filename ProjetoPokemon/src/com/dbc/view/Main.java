@@ -89,6 +89,7 @@ public class Main {
                     System.out.println("REMOVER POKEMON");
                     System.out.print("Digite o id do Pokémon a ser excluído: ");
                     Integer id = scan.nextInt();
+                    habilidadeService.removerPokemonDaHabildiade(id);
                     tipoPokemonService.remover(id);
                     pokemonService.remover(id);
                     break;
@@ -211,8 +212,8 @@ public class Main {
                             System.out.print("Digite o id da habilidade a ser removida: ");
                             Integer id3 = scan.nextInt();
 
-                            habilidadeService.removerHabilidade(id3);
                             habilidadeService.removerHabilidadeDoPokemon(id3);
+                            habilidadeService.removerHabilidade(id3);
                             break;
                         case "4":
                             System.out.println("LISTAR HABILIDADE");
