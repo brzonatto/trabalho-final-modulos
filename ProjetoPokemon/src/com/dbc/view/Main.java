@@ -182,8 +182,7 @@ public class Main {
 
 
 
-<<<<<<< HEAD
-=======
+
                             habilidadeService.removerHabilidade(id3);
                             habilidadeService.removerHabilidadeDoPokemon(id3);
                             break;
@@ -197,7 +196,6 @@ public class Main {
                             Integer idPoke = scan.nextInt();
                             System.out.print("Digite o id da Habilidade: ");
                             Integer idHab = scan.nextInt();
->>>>>>> parent of 66bd958 (ajustes em romoves)
 
                     break;
                 default:
