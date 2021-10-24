@@ -8,6 +8,8 @@ import java.util.List;
 
 import com.dbc.model.Pokemon;
 import com.dbc.model.Status;
+import com.dbc.model.Tipo;
+import com.dbc.model.TipoPokemon;
 
 public class PokemonRepository implements Repositorio<Integer, Pokemon> {
     @Override
@@ -230,9 +232,41 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
             con = ConexaoBancoDeDados.getConnection();
             Statement stmt = con.createStatement();
 
-            String sql = "SELECT P.* FROM POKEMON P";
+            String sql = "SELECT * FROM POKEMON";
 
             ResultSet res = stmt.executeQuery(sql);
+
+            while (res.next()) {
+                Pokemon pokemon = getPokemonFromResultSet(res);
+                pokemons.add(pokemon);
+            }
+            return pokemons;
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public List<Pokemon> listarPorTipo(String nomeTipo) throws BancoDeDadosException {
+        List<Pokemon> pokemons = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+
+            String sql = "SELECT P.NOME_POKEMON FROM POKEMON P " +
+                    "INNER JOIN POKEMON_TIPO PT ON (P.ID_POKEMON = PT.FK_POKEMON_ID_POKEMON) " +
+                    "WHERE PT.NOME_TIPO = ? ";
+
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1,nomeTipo);
+            ResultSet res = stmt.executeQuery();
 
             while (res.next()) {
                 Pokemon pokemon = getPokemonFromResultSet(res);
@@ -270,6 +304,8 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
         status.setEspecialDefesa(res.getInt("defesa_especial_status"));
         status.setVelocidade(res.getInt("velocidade_status"));
         pokemon.setStatus(status);
+
+        ArrayList<TipoPokemon> tiposPokemon = new ArrayList<>();
 
         return pokemon;
     }

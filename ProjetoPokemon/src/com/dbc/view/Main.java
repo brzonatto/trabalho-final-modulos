@@ -5,7 +5,6 @@ import com.dbc.service.HabilidadeService;
 import com.dbc.service.PokemonService;
 import com.dbc.service.TipoPokemonService;
 
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -60,37 +59,25 @@ public class Main {
                         pokemon.setRegiaoDominante(null);
                     }
 
-                    ArrayList<TipoPokemon> tiposPokemon = new ArrayList<>();
-                    String sair;
-
-                    do {
-                        TipoPokemon tPokemon = new TipoPokemon();
-                        System.out.print("Digite o tipo do Pokemon: ");
-                        tPokemon.setTipo(Tipo.ofTipo(scan.next().toUpperCase()));
-                        tPokemon.setPokemon(pokemon);
-                        tiposPokemon.add(tPokemon);
-                        System.out.print("Deseja digitar mais tipos? (S/N): ");
-                        sair = scan.next();
-                    } while (sair.equalsIgnoreCase("s"));
-
-                    pokemon.setTiposPokemon(tiposPokemon);
                     pokemonService.adicionarPokemon(pokemon);
-
-                    for ( TipoPokemon key : tiposPokemon) {
-                        tipoPokemonService.adicionarTipoPokemon(key);
-                    }
-
                     break;
                 case "2":
                     System.out.println("LISTAR POKEMONS");
-                    pokemonService.listar();
+                    System.out.println("O que você deseja filtrar?");
+                    System.out.println("1- Quais pokémon existem de determinado tipo");
+                    System.out.println("2- Quais pokémon são lendários");
+
+                    opcao = scan.next();
+                        switch (opcao){
+                            case "1":
+                                System.out.print("Digite qual tipo quer listar: ");
+                                pokemonService.listarPorTipo(scan.next());
+                        }
                     break;
                 case "3":
                     System.out.println("REMOVER POKEMON");
                     System.out.print("Digite o id do Pokémon a ser excluído: ");
-                    Integer id = scan.nextInt();
-                    tipoPokemonService.remover(id);
-                    pokemonService.remover(id);
+                    pokemonService.remover(scan.nextInt());
                     break;
                 case "4":
                     System.out.println("EDITAR POKEMON");
@@ -181,6 +168,16 @@ public class Main {
                     System.out.println("Digite o multiplicador de poder");
                     habilidade.setMultiplicacaoDePoder(scan.nextDouble());
                     break;
+                case "7":
+                    System.out.println("INSERIR TIPO POKEMON"); // TODO
+                    TipoPokemon tipoPokemon = new TipoPokemon();
+                    System.out.println("Qual o tipo do pokémon?");
+
+
+
+
+
+                    break;
                 default:
                     System.out.println("Opção inválida!");
                     break;
@@ -200,6 +197,7 @@ public class Main {
         System.out.println("  4  - Editar Pokemon");
         System.out.println("  5  - Adicionar Evolução");
         System.out.println("  6  - Adicionar Habilidade");
+        System.out.println("  7  - Adicionar Tipo Pokemon");
         System.out.println("  S  - Sair/Continuar\n");
     }
 

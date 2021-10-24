@@ -2,10 +2,13 @@ package com.dbc.service;
 import com.dbc.exceptions.BancoDeDadosException;
 import com.dbc.model.Pokemon;
 import com.dbc.model.Status;
+import com.dbc.model.Tipo;
+import com.dbc.model.TipoPokemon;
 import com.dbc.repository.PokemonRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class PokemonService {
     private PokemonRepository pokemonRepository;
@@ -52,6 +55,15 @@ public class PokemonService {
             List<Pokemon> listar = pokemonRepository.listar();
             listar.forEach(System.out::println);
         } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void listarPorTipo(String nomeTipo){
+        try{
+            List<Pokemon> listar = pokemonRepository.listarPorTipo(nomeTipo);
+            listar.forEach(System.out::println);
+        } catch (BancoDeDadosException e){
             e.printStackTrace();
         }
     }
