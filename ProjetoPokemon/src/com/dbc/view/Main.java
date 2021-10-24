@@ -5,6 +5,7 @@ import com.dbc.service.HabilidadeService;
 import com.dbc.service.PokemonService;
 import com.dbc.service.TipoPokemonService;
 
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -60,6 +61,61 @@ public class Main {
                     }
 
                     pokemonService.adicionarPokemon(pokemon);
+
+                    String sair;
+
+                    do {
+                        TipoPokemon tPokemon = new TipoPokemon();
+                        System.out.print("Digite o tipo do Pokemon: ");
+                        tPokemon.setTipo(Tipo.valueOf(scan.next().toUpperCase()));
+                        tPokemon.setPokemon(pokemon);
+                        tipoPokemonService.adicionarTipoPokemon(tPokemon);
+                        System.out.print("Deseja digitar mais tipos? (S/N): ");
+                        sair = scan.next();
+                    } while (sair.equalsIgnoreCase("s"));
+
+                    System.out.print("Deseja aplica alguma habilidade? (S/N): ");
+                    String opcao1 = scan.next();
+
+                    while (opcao1.equalsIgnoreCase("s")) {
+                        System.out.println("Opções");
+                        System.out.println("  1  - Adicionar habilidades já existentes");
+                        System.out.println("  2  - Adicionar nova habildiade");
+                        System.out.println("  S  - Sair\n");
+                        System.out.print("Digite a opção: ");
+                        opcao1 = scan.next();
+                        switch (opcao1) {
+                            case "1":
+                                do {
+                                    System.out.println("\nLista de habilidades\n");
+                                    habilidadeService.listarHabilidades();
+                                    System.out.print("Digite o id da Habilidade: ");
+                                    Integer idHab = scan.nextInt();
+                                    habilidadeService.adicionarHabilidadeAoPokemon(idHab, pokemon.getIdPokemon());
+                                    System.out.print("Deseja aplicar mais habilidades? (S/N): ");
+                                    sair = scan.next();
+                                } while (sair.equalsIgnoreCase("s"));
+                                break;
+                            case "2":
+                                do {
+                                    Habilidade habilidade3 = new Habilidade();
+                                    System.out.print("Digite o nome da habilidade: ");
+                                    habilidade3.setNome(scan.next());
+                                    System.out.print("Digite o multiplicador de poder: ");
+                                    habilidade3.setMultiplicacaoDePoder(scan.nextDouble());
+
+                                    habilidadeService.adicionarHabilidade(habilidade3);
+                                    habilidadeService.adicionarHabilidadeAoPokemon(habilidade3.getIdHabilidade(), pokemon.getIdPokemon());
+                                    System.out.print("Deseja adicionar e aplicar uma nova habilidades? (S/N): ");
+                                    sair = scan.next();
+                                } while (sair.equalsIgnoreCase("s"));
+                                break;
+                            default:
+                                System.out.println("Opção inválida!");
+                        }
+                        System.out.println("Deseja continuar adicionando habildiades? (S/N): ");
+                        opcao1 = scan.next();
+                    }
                     break;
                 case "2":
                     System.out.println("LISTAR POKEMONS");
@@ -243,6 +299,6 @@ public class Main {
         System.out.println("  5  - Adicionar Evolução");
         System.out.println("  6  - Menu de Habilidades");
         System.out.println("  7  - Adicionar Tipo Pokemon");
-        System.out.println("  S  - Sair/Continuar\n");
+        System.out.println("  S  - Sair\n");
     }
 }
