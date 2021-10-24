@@ -2,6 +2,7 @@ package com.dbc.repository;
 
 import com.dbc.exceptions.BancoDeDadosException;
 import com.dbc.model.Habilidade;
+import com.dbc.model.Pokemon;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -31,9 +32,9 @@ public class HabilidadeRepository implements Repositorio<Integer, Habilidade> {
             Integer proximoId = this.getProximoId(con);
             habilidade.setIdHabilidade(proximoId);
 
-            String sql = "INSERT INTO HABILDIADE H\n" +
-                    "(H.ID_HABILIDADE, H.NOME_HABILIDADE, H.MULT_DE_PODER_HABILIDADE)\n" +
-                    "VALUES(?, ?, ?)\n";
+            String sql = "INSERT INTO HABILIDADE \n" +
+                    "(ID_HABILIDADE, NOME_HABILIDADE, MULT_DE_PODER_HABILIDADE)\n" +
+                    "VALUES(?, ?, ?)";
 
             PreparedStatement stmt = con.prepareStatement(sql);
 
@@ -42,7 +43,7 @@ public class HabilidadeRepository implements Repositorio<Integer, Habilidade> {
             stmt.setDouble(3, habilidade.getMultiplicacaoDePoder());
 
             int res = stmt.executeUpdate();
-            System.out.println("adicionarPessoa.res=" + res);
+            System.out.println("adicionarHabilidade.res=" + res);
             return habilidade;
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());
@@ -63,7 +64,7 @@ public class HabilidadeRepository implements Repositorio<Integer, Habilidade> {
         try {
             con = ConexaoBancoDeDados.getConnection();
 
-            String sql = "DELETE FROM HABILDIADE H WHERE H.ID_HABILIDADE = ?";
+            String sql = "DELETE FROM HABILIDADE H WHERE H.ID_HABILIDADE = ?";
 
             PreparedStatement stmt = con.prepareStatement(sql);
 
@@ -156,5 +157,93 @@ public class HabilidadeRepository implements Repositorio<Integer, Habilidade> {
             }
         }
         return habilidades;
+    }
+
+    public void adicionarHabilidadeAoPokemon(Integer idHab, Integer idPoke) throws BancoDeDadosException {
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+
+            String sql = "INSERT INTO POKEMON_HABILIDADE \n" +
+                    "(FK_HABILIDADE_ID_HABILIDADE, FK_POKEMON_ID_POKEMON)\n" +
+                    "VALUES(?, ?)";
+
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            stmt.setInt(1, idHab);
+            stmt.setInt(2, idPoke);
+
+
+            int res = stmt.executeUpdate();
+            System.out.println("adicionarHabAoPoke.res=" + res);
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public boolean removerHabilidadeDoPokemon(Integer id) throws BancoDeDadosException {
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+
+            String sql = "DELETE FROM POKEMON_HABILIDADE WHERE FK_HABILIDADE_ID_HABILIDADE = ?";
+
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            stmt.setInt(1, id);
+
+            // Executa-se a consulta
+            int res = stmt.executeUpdate();
+            System.out.println("removerPOKEHABILIDADEPorId.res=" + res);
+
+            return res > 0;
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public boolean removerPokemonDaHabildiade(Integer id) throws BancoDeDadosException {
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+
+            String sql = "DELETE FROM POKEMON_HABILIDADE WHERE FK_POKEMON_ID_POKEMON = ?";
+
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            stmt.setInt(1, id);
+
+            // Executa-se a consulta
+            int res = stmt.executeUpdate();
+            System.out.println("removerPOKEHABILIDADEPorId.res=" + res);
+
+            return res > 0;
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
