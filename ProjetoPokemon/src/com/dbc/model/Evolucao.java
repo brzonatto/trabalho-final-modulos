@@ -42,9 +42,9 @@ public class Evolucao {
     public String toString() {
         return "Evolucao{" +
                 "idEvolucao=" + idEvolucao +
-                ", estagioUm=" + estagioUm +
-                ", estagioDois=" + estagioDois +
-                ", estagioTres=" + estagioTres +
+                ", estagioUm=" + estagioUm.getNome() +
+                ", estagioDois=" + estagioDois.getNome() +
+                ", estagioTres=" + estagioTres.getNome() +
                 '}';
     }
 }

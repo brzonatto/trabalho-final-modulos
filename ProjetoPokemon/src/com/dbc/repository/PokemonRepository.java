@@ -154,6 +154,9 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
                     sql.append(" VELOCIDADE_STATUS = ?,");
                 }
             }
+            if (pokemon.getEvolucao() != null) {
+                sql.append(" FK_ID_EVOLUCAO = ?,");
+            }
 
 
             sql.deleteCharAt(sql.length() - 1); //remove o ultimo ','
@@ -202,6 +205,9 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
                 if (status.getVelocidade() != null) {
                     stmt.setInt(index++, status.getVelocidade());
                 }
+            }
+            if (pokemon.getEvolucao() != null) {
+                stmt.setInt(index++, pokemon.getEvolucao().getIdEvolucao());
             }
 
             stmt.setInt(index++, id);
@@ -341,4 +347,34 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
         return pokemon;
     }
 
+    public List<Pokemon> pegarPokemonPorIdEvolucao(Integer id) throws BancoDeDadosException {
+        List<Pokemon> pokemons = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+
+            String sql = "SELECT * FROM POKEMON P " +
+                    "WHERE P.FK_ID_EVOLUCAO = ? ";
+
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setInt(1, id);
+            ResultSet res = stmt.executeQuery();
+
+            while (res.next()) {
+                Pokemon pokemon = getPokemonFromResultSet(res);
+                pokemons.add(pokemon);
+            }
+            return pokemons;
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

@@ -1,10 +1,14 @@
 package com.dbc.view;
 
 import com.dbc.model.*;
+import com.dbc.repository.EvolucaoRepository;
+import com.dbc.service.EvolucaoService;
 import com.dbc.service.HabilidadeService;
 import com.dbc.service.PokemonService;
 import com.dbc.service.TipoPokemonService;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -16,6 +20,7 @@ public class Main {
         PokemonService pokemonService = new PokemonService();
         HabilidadeService habilidadeService = new HabilidadeService();
         TipoPokemonService tipoPokemonService = new TipoPokemonService();
+        EvolucaoService evolucaoService = new EvolucaoService();
 
         opcoes();
         System.out.print("Digite a opção: ");
@@ -266,7 +271,63 @@ public class Main {
                     }
                     break;
                 case "5":
-                    System.out.println("INSERIR EVOLUÇÃO"); //TODO
+                    System.out.println("\nMenu Evolução\n");
+                    System.out.println("Opções: ");
+                    System.out.println("  1  - Adicionar evolução");
+                    System.out.println("  2  - Editar evolução");
+                    System.out.println("  3  - Remover evolução");
+                    System.out.println("  4  - Listar evoluções");
+                    System.out.print("\nDigite a opção: ");
+                    String op = scan.next();
+                    switch (op) {
+                        case "1":
+                            System.out.println("INSERIR EVOLUÇÃO");
+                            Evolucao evolucao = new Evolucao();
+                            System.out.print("Qual id do Pokemon estágio 1: ");
+                            Pokemon stage1 = pokemonService.pegarPokemonPorId(scan.nextInt());
+                            System.out.print("Qual id do Pokemon estágio 2: ");
+                            Pokemon stage2 = pokemonService.pegarPokemonPorId(scan.nextInt());
+                            System.out.print("Qual id do Pokemon estágio 3: ");
+                            Pokemon stage3 = pokemonService.pegarPokemonPorId(scan.nextInt());
+
+                            evolucao.setEstagioUm(stage1);
+                            evolucao.setEstagioDois(stage2);
+                            evolucao.setEstagioTres(stage3);
+
+                            Evolucao evolucaoAdicionada = evolucaoService.adicionarEvolucao(evolucao);
+
+                            stage1.setEvolucao(evolucaoAdicionada);
+                            stage2.setEvolucao(evolucaoAdicionada);
+                            stage3.setEvolucao(evolucaoAdicionada);
+
+                            pokemonService.editar(stage1.getIdPokemon(), stage1);
+                            pokemonService.editar(stage2.getIdPokemon(), stage2);
+                            pokemonService.editar(stage3.getIdPokemon(), stage3);
+                            break;
+                        case "2":
+
+
+                            break;
+                        case "3":
+                            System.out.println("REMOVER EVOLUÇÃO");
+                            System.out.println("Digite o id da evolução a ser removida: ");
+                            Integer idEv = scan.nextInt();
+                            List<Pokemon> pokeLista = pokemonService.pegarPokemonPorIdEvolucao(idEv);
+
+                            for (Pokemon key : pokeLista) {
+                                Pokemon pokeEvo = new Pokemon();
+                                pokeEvo.getEvolucao().setIdEvolucao(null);
+                                pokemonService.editar(key.getIdPokemon(), key);
+                            }
+
+//
+                            break;
+                        case "4":
+                            break;
+                        default:
+                            System.out.println("Opção inválida!");
+                            break;
+                    }
                     break;
                 case "6":
                     System.out.println("MENU HABILIDADES");
@@ -326,8 +387,6 @@ public class Main {
                             break;
                     }
                     break;
-                case "7":
-                    break;
                 default:
                     System.out.println("Opção inválida!");
                     break;
@@ -345,9 +404,8 @@ public class Main {
         System.out.println("  2  - Mostrar todos Pokemons cadastrados");
         System.out.println("  3  - Remover Pokemon");
         System.out.println("  4  - Editar Pokemon");
-        System.out.println("  5  - Adicionar Evolução");
+        System.out.println("  5  - Menu de Evoluções");
         System.out.println("  6  - Menu de Habilidades");
-        System.out.println("  7  - Adicionar Tipo Pokemon");
         System.out.println("  S  - Sair\n");
     }
 }

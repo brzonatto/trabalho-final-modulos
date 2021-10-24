@@ -84,6 +84,16 @@ public class PokemonService {
         return pokemon;
     }
 
+    public List<Pokemon> pegarPokemonPorIdEvolucao(Integer id) {
+        List<Pokemon> listar = null;
+        try {
+            listar = pokemonRepository.pegarPokemonPorIdEvolucao(id);
+            listar.forEach(System.out::println);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+        return listar;
+    }
 }
 
 

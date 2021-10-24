@@ -12,6 +12,7 @@ public class Pokemon {
     private String categoria;
     private String regiaoDominante;
     private Status status;
+    private Evolucao evolucao;
 
     public Integer getIdPokemon() {
         return idPokemon;
@@ -83,6 +84,14 @@ public class Pokemon {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public Evolucao getEvolucao() {
+        return evolucao;
+    }
+
+    public void setEvolucao(Evolucao evolucao) {
+        this.evolucao = evolucao;
     }
 
     @Override
