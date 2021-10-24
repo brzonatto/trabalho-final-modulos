@@ -194,36 +194,7 @@ public class HabilidadeRepository implements Repositorio<Integer, Habilidade> {
         try {
             con = ConexaoBancoDeDados.getConnection();
 
-            String sql = "DELETE FROM POKEMON_HABILIDADE WHERE FK_HABILIDADE_ID_HABILIDADE = ?";
-
-            PreparedStatement stmt = con.prepareStatement(sql);
-
-            stmt.setInt(1, id);
-
-            // Executa-se a consulta
-            int res = stmt.executeUpdate();
-            System.out.println("removerPOKEHABILIDADEPorId.res=" + res);
-
-            return res > 0;
-        } catch (SQLException e) {
-            throw new BancoDeDadosException(e.getCause());
-        } finally {
-            try {
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public boolean removerPokemonDaHabildiade(Integer id) throws BancoDeDadosException {
-        Connection con = null;
-        try {
-            con = ConexaoBancoDeDados.getConnection();
-
-            String sql = "DELETE FROM POKEMON_HABILIDADE WHERE FK_POKEMON_ID_POKEMON = ?";
+            String sql = "DELETE FROM POKEMON_HABILDIADE WHERE FK_HABILIDADE_ID_HABILIDADE = ?";
 
             PreparedStatement stmt = con.prepareStatement(sql);
 

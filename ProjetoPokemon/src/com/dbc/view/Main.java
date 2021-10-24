@@ -77,7 +77,13 @@ public class Main {
                 case "3":
                     System.out.println("REMOVER POKEMON");
                     System.out.print("Digite o id do Pokémon a ser excluído: ");
+<<<<<<< HEAD
                     pokemonService.remover(scan.nextInt());
+=======
+                    Integer id = scan.nextInt();
+                    tipoPokemonService.remover(id);
+                    pokemonService.remover(id);
+>>>>>>> parent of 66bd958 (ajustes em romoves)
                     break;
                 case "4":
                     System.out.println("EDITAR POKEMON");
@@ -176,6 +182,22 @@ public class Main {
 
 
 
+<<<<<<< HEAD
+=======
+                            habilidadeService.removerHabilidade(id3);
+                            habilidadeService.removerHabilidadeDoPokemon(id3);
+                            break;
+                        case "4":
+                            System.out.println("LISTAR HABILIDADE");
+                            habilidadeService.listarHabilidades();
+                            break;
+                        case "5":
+                            System.out.println("ADICIONAR HABILIDADE AO POKEMON");
+                            System.out.print("Digite o id do Pokemon: ");
+                            Integer idPoke = scan.nextInt();
+                            System.out.print("Digite o id da Habilidade: ");
+                            Integer idHab = scan.nextInt();
+>>>>>>> parent of 66bd958 (ajustes em romoves)
 
                     break;
                 default:
