@@ -4,6 +4,7 @@ import com.dbc.model.*;
 import com.dbc.repository.PokemonRepository;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -31,7 +32,10 @@ public class PokemonService {
             boolean conseguiuRemover = pokemonRepository.remover(id);
             System.out.println("removido? " + conseguiuRemover + "| com id=" + id);
         } catch (BancoDeDadosException e) {
-            e.printStackTrace();
+            System.out.println("Opção inválida");
+            //e.printStackTrace();
+        } catch (InputMismatchException e2){
+            System.out.println("Opção Inválida");
         }
     }
 
@@ -41,7 +45,7 @@ public class PokemonService {
             boolean conseguiuEditar = pokemonRepository.editar(id, pokemon);
             System.out.println("editado? " + conseguiuEditar + "| com id=" + id);
         } catch (BancoDeDadosException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
