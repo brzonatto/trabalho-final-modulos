@@ -54,7 +54,7 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
             stmt.setInt(14, pokemon.getStatus().getVelocidade());//VELOCIDADE_STATUS
 
             int res = stmt.executeUpdate();
-            System.out.println("adicionarPokemon.res=" + res);
+//            System.out.println("adicionarPokemon.res=" + res);
 
             return pokemon;
         } catch (SQLException e) {
@@ -84,7 +84,7 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
 
             // Executa-se a consulta
             int res = stmt.executeUpdate();
-            System.out.println("removerPokemonPorId.res=" + res);
+//            System.out.println("removerPokemonPorId.res=" + res);
 
             return res > 0;
         } catch (SQLException e) {
@@ -211,7 +211,7 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
 
             // Executa-se a consulta
             int res = stmt.executeUpdate();
-            System.out.println("editarPokemon.res=" + res);
+//            System.out.println("editarPokemon.res=" + res);
 
             return res > 0;
         } catch (SQLException e) {
@@ -391,7 +391,7 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
 
             // Executa-se a consulta
             int res = stmt.executeUpdate();
-            System.out.println("editarEVOPOKE.res=" + res);
+//            System.out.println("editarEVOPOKE.res=" + res);
 
             return res > 0;
         } catch (SQLException e) {

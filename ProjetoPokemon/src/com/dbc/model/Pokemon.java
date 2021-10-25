@@ -94,6 +94,19 @@ public class Pokemon {
         this.evolucao = evolucao;
     }
 
+    public void imprimirNumeroNome() {
+        System.out.println(this.numero + " - " + this.nome);
+    }
+
+    public void imprimirDadosCompletos() {
+        System.out.println("ID: " + this.idPokemon + " | Número: " + this.numero + " | "
+                + this.nome + " | Level: " + this.level);
+        System.out.println("Peso: " + this.peso + " | Altura: " + this.altura + " | Categoria: " + this.categoria);
+        System.out.println("\nStatus: ");
+        System.out.println(this.status);
+        System.out.println("\n###################################################\n");
+    }
+
     @Override
     public String toString() {
         return "Pokemon{" +

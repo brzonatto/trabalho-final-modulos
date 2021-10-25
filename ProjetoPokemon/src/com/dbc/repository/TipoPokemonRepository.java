@@ -47,7 +47,7 @@ public class TipoPokemonRepository implements Repositorio<Integer, TipoPokemon> 
             stmt.setInt(3, tipoPokemon.getIdTipoPokemon());
 
             int res = stmt.executeUpdate();
-            System.out.println("adicionarTipo.res=" + res);
+//            System.out.println("adicionarTipo.res=" + res);
             return tipoPokemon;
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());

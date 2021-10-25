@@ -43,7 +43,7 @@ public class HabilidadeRepository implements Repositorio<Integer, Habilidade> {
             stmt.setDouble(3, habilidade.getMultiplicacaoDePoder());
 
             int res = stmt.executeUpdate();
-            System.out.println("adicionarHabilidade.res=" + res);
+//            System.out.println("adicionarHabilidade.res=" + res);
             return habilidade;
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());
@@ -72,7 +72,7 @@ public class HabilidadeRepository implements Repositorio<Integer, Habilidade> {
 
             // Executa-se a consulta
             int res = stmt.executeUpdate();
-            System.out.println("removerHabilidadePorId.res=" + res);
+//            System.out.println("removerHabilidadePorId.res=" + res);
 
             return res > 0;
         } catch (SQLException e) {
@@ -109,7 +109,7 @@ public class HabilidadeRepository implements Repositorio<Integer, Habilidade> {
 
             // Executa-se a consulta
             int res = stmt.executeUpdate();
-            System.out.println("editarHabilidade.res=" + res);
+//            System.out.println("editarHabilidade.res=" + res);
 
             return res > 0;
         } catch (SQLException e) {
@@ -175,7 +175,7 @@ public class HabilidadeRepository implements Repositorio<Integer, Habilidade> {
 
 
             int res = stmt.executeUpdate();
-            System.out.println("adicionarHabAoPoke.res=" + res);
+//            System.out.println("adicionarHabAoPoke.res=" + res);
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());
         } finally {
@@ -202,7 +202,7 @@ public class HabilidadeRepository implements Repositorio<Integer, Habilidade> {
 
             // Executa-se a consulta
             int res = stmt.executeUpdate();
-            System.out.println("removerPOKEHABILIDADEPorId.res=" + res);
+//            System.out.println("removerPOKEHABILIDADEPorId.res=" + res);
 
             return res > 0;
         } catch (SQLException e) {
@@ -231,7 +231,7 @@ public class HabilidadeRepository implements Repositorio<Integer, Habilidade> {
 
             // Executa-se a consulta
             int res = stmt.executeUpdate();
-            System.out.println("removerPOKEHABILIDADEPorId.res=" + res);
+//            System.out.println("removerPOKEHABILIDADEPorId.res=" + res);
 
             return res > 0;
         } catch (SQLException e) {

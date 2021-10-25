@@ -21,44 +21,44 @@ public class Main {
         HabilidadeService habilidadeService = new HabilidadeService();
         TipoPokemonService tipoPokemonService = new TipoPokemonService();
         EvolucaoService evolucaoService = new EvolucaoService();
-
+        System.out.println("\nBEM VINDO AO POKE CADASTRO!\n");
         opcoes();
         System.out.print("Digite a opção: ");
         String opcao = scan.next();
         while (!opcao.equalsIgnoreCase("s")) {
             switch (opcao) {
                 case "1":
-                    System.out.println("INSERIR POKÉMON");
+                    System.out.println("\nINSERIR POKÉMON");
                     Pokemon pokemon = new Pokemon();
-                    System.out.print("Digite o número: ");
+                    System.out.print("Digite o número do Pokemon: ");
                     pokemon.setNumero(scan.nextInt());
-                    System.out.print("Digite o nome: ");
+                    System.out.print("Digite o nome do Pokemon: ");
                     pokemon.setNome(scan.next());
-                    System.out.print("Digite o level: ");
+                    System.out.print("Digite o level do Pokemon: ");
                     pokemon.setLevel(scan.nextInt());
-                    System.out.print("Digite o peso: ");
+                    System.out.print("Digite o peso do Pokemon: ");
                     pokemon.setPeso(scan.nextDouble());
-                    System.out.print("Digite a altura: ");
+                    System.out.print("Digite a altura do Pokemon: ");
                     pokemon.setAltura(scan.nextDouble());
-                    System.out.print("Digite a categoria: ");
+                    System.out.print("Digite a categoria do Pokemon: ");
                     pokemon.setCategoria(scan.next());
                     Status status = new Status();
-                    System.out.print("Digite o HP: ");
+                    System.out.print("Digite o HP do Pokemon: ");
                     status.setHp(scan.nextInt());
-                    System.out.print("Digite o ataque: ");
+                    System.out.print("Digite o ataque do Pokemon: ");
                     status.setAtaque(scan.nextInt());
-                    System.out.print("Digite a defesa: ");
+                    System.out.print("Digite a defesa do Pokemon: ");
                     status.setDefesa(scan.nextInt());
-                    System.out.print("Digite o ataque especial: ");
+                    System.out.print("Digite o ataque especial do Pokemon: ");
                     status.setEspecialAtaque(scan.nextInt());
-                    System.out.print("Digite a defesa especial: ");
+                    System.out.print("Digite a defesa especial do Pokemon: ");
                     status.setEspecialDefesa(scan.nextInt());
-                    System.out.print("Digite a velocidade: ");
+                    System.out.print("Digite a velocidade do Pokemon: ");
                     status.setVelocidade(scan.nextInt());
                     pokemon.setStatus(status);
                     if (pokemonService.somaStatus(pokemon) >= 580) {
                         System.out.print("Devido ao seu número de status alto, este pokemon é lendário!\n");
-                        System.out.print("Digite a Região Dominante: ");
+                        System.out.print("Então, digite a Região Dominante do Pokemon: ");
                         pokemon.setRegiaoDominante(scan.next());
                     } else {
                         pokemon.setRegiaoDominante(null);
@@ -78,7 +78,7 @@ public class Main {
                         sair = scan.next();
                     } while (sair.equalsIgnoreCase("s"));
 
-                    System.out.print("Deseja aplica alguma habilidade? (S/N): ");
+                    System.out.print("Deseja adicionar alguma habilidade? (S/N): ");
                     String opcao1 = scan.next();
 
                     while (opcao1.equalsIgnoreCase("s")) {
@@ -91,12 +91,12 @@ public class Main {
                         switch (opcao1) {
                             case "1":
                                 do {
-                                    System.out.println("\nLista de habilidades\n");
+                                    System.out.println("\nLista de habilidades existentes\n");
                                     habilidadeService.listarHabilidades();
-                                    System.out.print("Digite o id da Habilidade: ");
+                                    System.out.print("\nDigite o id da Habilidade: ");
                                     Integer idHab = scan.nextInt();
                                     habilidadeService.adicionarHabilidadeAoPokemon(idHab, pokemon.getIdPokemon());
-                                    System.out.print("Deseja aplicar mais habilidades? (S/N): ");
+                                    System.out.print("Deseja adicionar mais habilidades existentes? (S/N): ");
                                     sair = scan.next();
                                 } while (sair.equalsIgnoreCase("s"));
                                 break;
@@ -105,36 +105,48 @@ public class Main {
                                     Habilidade habilidade3 = new Habilidade();
                                     System.out.print("Digite o nome da habilidade: ");
                                     habilidade3.setNome(scan.next());
-                                    System.out.print("Digite o multiplicador de poder: ");
+                                    System.out.print("\nDigite o multiplicador de poder da habilidade: ");
                                     habilidade3.setMultiplicacaoDePoder(scan.nextDouble());
 
                                     habilidadeService.adicionarHabilidade(habilidade3);
                                     habilidadeService.adicionarHabilidadeAoPokemon(habilidade3.getIdHabilidade(), pokemon.getIdPokemon());
-                                    System.out.print("Deseja adicionar e aplicar uma nova habilidades? (S/N): ");
+                                    System.out.print("Deseja adicionar outra nova habilidade? (S/N): ");
                                     sair = scan.next();
                                 } while (sair.equalsIgnoreCase("s"));
                                 break;
                             default:
-                                System.out.println("Opção inválida!");
+                                System.out.println("\nOpção inválida!");
                         }
-                        System.out.println("Deseja continuar adicionando habildiades? (S/N): ");
+                        System.out.println("Deseja continuar adicionando habilidades? (S/N): ");
                         opcao1 = scan.next();
                     }
+                    System.out.println("\nPokemon adicionado com sucesso!");
                     break;
                 case "2":
-                    System.out.println("LISTAR POKEMONS");
-                    System.out.println("O que você deseja filtrar?");
-                    System.out.println("1- Quais pokémon existem de determinado tipo");
-                    System.out.println("2- Quais pokémon são lendários");
+                    System.out.println("\nLISTAR POKEMONS");
+                    System.out.println("Opções de filtro?");
+                    System.out.println("0 - Mostrar todos");
+                    System.out.println("1 - Mostrar Pokemons por tipo");
+                    System.out.println("2 - Mostrar Pokemons lendários");
+                    System.out.println("3 - Mostrar todos detalhado");
 
+                    System.out.print("\nDigite a opção: ");
                     opcao = scan.next();
                     switch (opcao) {
+                        case "0":
+                            System.out.print("\nMostrar todos\n\n");
+                            pokemonService.listarNumeroNome();
+                            break;
                         case "1":
                             System.out.print("Digite qual tipo quer listar: ");
                             tipoPokemonService.filtrarPokemonPorTipo(scan.next().toUpperCase());
                             break;
                         case "2":
                             pokemonService.listarLendarios();
+                            break;
+                        case "3":
+                            System.out.println("\n###################################################\n");
+                            pokemonService.listarNumeroNomeDetalhado();
                             break;
                         default:
                             System.out.println("Opção Inválida");
@@ -407,7 +419,7 @@ public class Main {
     public static void opcoes() {
         System.out.println("Opções: ");
         System.out.println("  1  - Adicionar Pokemon");
-        System.out.println("  2  - Mostrar todos Pokemons cadastrados");
+        System.out.println("  2  - Mostrar Pokemons cadastrados");
         System.out.println("  3  - Remover Pokemon");
         System.out.println("  4  - Editar Pokemon");
         System.out.println("  5  - Menu de Evoluções");

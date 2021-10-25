@@ -17,7 +17,7 @@ public class HabilidadeService {
     public void adicionarHabilidade(Habilidade habilidade) {
         try {
             Habilidade habilidadeAdicionada = habilidadeRepository.adicionar(habilidade);
-            System.out.println("Habilidade adicinada com sucesso! " + habilidadeAdicionada);
+//            System.out.println("Habilidade adicinada com sucesso! " + habilidadeAdicionada);
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }
@@ -27,7 +27,7 @@ public class HabilidadeService {
     public void removerHabilidade(Integer id) {
         try {
             boolean conseguiuRemover = habilidadeRepository.remover(id);
-            System.out.println("Habilidade removida? " + conseguiuRemover + "| com id=" + id);
+//            System.out.println("Habilidade removida? " + conseguiuRemover + "| com id=" + id);
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }
@@ -37,7 +37,7 @@ public class HabilidadeService {
     public void editarHabilidade(Integer id, Habilidade habilidade) {
         try {
             boolean conseguiuEditar = habilidadeRepository.editar(id, habilidade);
-            System.out.println("Habilidade editada? " + conseguiuEditar + "| com id=" + id);
+//            System.out.println("Habilidade editada? " + conseguiuEditar + "| com id=" + id);
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }
@@ -56,7 +56,7 @@ public class HabilidadeService {
     public void adicionarHabilidadeAoPokemon(Integer idHab, Integer idPoke) {
         try {
             habilidadeRepository.adicionarHabilidadeAoPokemon(idHab, idPoke);
-            System.out.println("Habilidade ao pokemon adicinada com sucesso! ");
+//            System.out.println("Habilidade ao pokemon adicinada com sucesso! ");
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }
@@ -65,7 +65,7 @@ public class HabilidadeService {
     public void removerHabilidadeDoPokemon(Integer id) {
         try {
             boolean conseguiuRemover = habilidadeRepository.removerHabilidadeDoPokemon(id);
-            System.out.println("Habilidade removida? " + conseguiuRemover + "| com id=" + id);
+//            System.out.println("Habilidade removida? " + conseguiuRemover + "| com id=" + id);
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }
@@ -74,7 +74,7 @@ public class HabilidadeService {
     public void removerPokemonDaHabilidade(Integer id) {
         try {
             boolean conseguiuRemover = habilidadeRepository.removerPokemonDaHabilidade(id);
-            System.out.println("Habilidade removida? " + conseguiuRemover + "| com id=" + id);
+//            System.out.println("Habilidade removida? " + conseguiuRemover + "| com id=" + id);
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }

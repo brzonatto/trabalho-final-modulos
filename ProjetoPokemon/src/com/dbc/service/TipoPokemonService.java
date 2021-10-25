@@ -19,7 +19,7 @@ public class TipoPokemonService {
     public void adicionarTipoPokemon(TipoPokemon tipoPokemon) {
         try {
             TipoPokemon tipoPokemonAdicionado = tipoPokemonRepository.adicionar(tipoPokemon);
-            System.out.println("Tipo Pokémon adicinado com sucesso! " + tipoPokemonAdicionado);
+//            System.out.println("Tipo Pokémon adicinado com sucesso! " + tipoPokemonAdicionado);
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }

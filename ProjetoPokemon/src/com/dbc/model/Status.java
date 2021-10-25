@@ -58,13 +58,8 @@ public class Status {
 
     @Override
     public String toString() {
-        return "Status{" +
-                "hp=" + hp +
-                ", ataque=" + ataque +
-                ", defesa=" + defesa +
-                ", especialAtaque=" + especialAtaque +
-                ", especialDefesa=" + especialDefesa +
-                ", velocidade=" + velocidade +
-                '}';
+        return "HP: " + this.hp + " | Ataque: " + this.ataque + " | Defesa: " + this.defesa
+                + "\nAtaque Especial: " + this.especialAtaque + " | Defesa Especial: " + this.especialDefesa
+                + " | Velocidade: " + this.velocidade;
     }
 }

@@ -31,10 +31,6 @@ public class Habilidade {
 
     @Override
     public String toString() {
-        return "Habilidade{" +
-                "idHabilidade=" + idHabilidade +
-                ", nome='" + nome + '\'' +
-                ", multiplicacaoDePoder=" + multiplicacaoDePoder +
-                '}';
+        return "ID: " + this.idHabilidade + " - Nome: " + this.nome;
     }
 }

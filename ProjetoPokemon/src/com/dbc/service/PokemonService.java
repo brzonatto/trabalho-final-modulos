@@ -19,7 +19,7 @@ public class PokemonService {
     public void adicionarPokemon(Pokemon pokemon) {
         try {
             Pokemon pokemonAdicionado = pokemonRepository.adicionar(pokemon);
-            System.out.println("Pokémon adicinado com sucesso! " + pokemonAdicionado);
+//            System.out.println("Pokémon adicinado com sucesso! " + pokemonAdicionado);
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }
@@ -50,6 +50,27 @@ public class PokemonService {
         try {
             List<Pokemon> listar = pokemonRepository.listar();
             listar.forEach(System.out::println);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void listarNumeroNome() {
+        try {
+            List<Pokemon> listar = pokemonRepository.listar();
+            listar.stream().sorted((a, b) -> a.getNumero().compareTo(b.getNumero()))
+                    .forEach(Pokemon::imprimirNumeroNome);
+
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void listarNumeroNomeDetalhado() {
+        try {
+            List<Pokemon> listar = pokemonRepository.listar();
+            listar.stream().sorted((a, b) -> a.getNumero().compareTo(b.getNumero()))
+                    .forEach(Pokemon::imprimirDadosCompletos);
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }
