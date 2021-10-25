@@ -56,7 +56,7 @@ public class Main {
                     System.out.print("Digite a velocidade: ");
                     status.setVelocidade(scan.nextInt());
                     pokemon.setStatus(status);
-                    if (pokemonService.somaStatus(pokemon) > 580) {
+                    if (pokemonService.somaStatus(pokemon) >= 580) {
                         System.out.print("Devido ao seu número de status alto, este pokemon é lendário!\n");
                         System.out.print("Digite a Região Dominante: ");
                         pokemon.setRegiaoDominante(scan.next());
@@ -131,7 +131,14 @@ public class Main {
                     switch (opcao) {
                         case "1":
                             System.out.print("Digite qual tipo quer listar: ");
-                            pokemonService.listarPorTipo(scan.next());
+                            tipoPokemonService.filtrarPokemonPorTipo(scan.next().toUpperCase());
+                            break;
+                        case "2":
+                            pokemonService.listarLendarios();
+                            break;
+                        default:
+                            System.out.println("Opção Inválida");
+                            break;
                     }
                     break;
                 case "3":
@@ -194,7 +201,16 @@ public class Main {
                             System.out.print("Digite a velocidade: ");
                             status1.setVelocidade(scan.nextInt());
                             pokemonEditado.setStatus(status1);
+
+                            if (pokemonService.somaStatus(pokemonEditado) >= 580) {
+                                System.out.print("Devido ao seu número de status alto, este pokemon é lendário!\n");
+                                System.out.print("Digite a Região Dominante: ");
+                                pokemonEditado.setRegiaoDominante(scan.next());
+                            } else {
+                                pokemonEditado.setRegiaoDominante(null);
+                            }
                             break;
+
                         case "4":
                             System.out.print("Digite a nova altura: ");
                             pokemonEditado.setAltura(scan.nextDouble());

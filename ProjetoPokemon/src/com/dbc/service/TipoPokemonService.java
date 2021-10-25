@@ -2,8 +2,12 @@ package com.dbc.service;
 
 import com.dbc.exceptions.BancoDeDadosException;
 import com.dbc.model.Pokemon;
+import com.dbc.model.Tipo;
 import com.dbc.model.TipoPokemon;
 import com.dbc.repository.TipoPokemonRepository;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TipoPokemonService {
     private TipoPokemonRepository tipoPokemonRepository;
@@ -60,6 +64,30 @@ public class TipoPokemonService {
             boolean conseguiuRemover = tipoPokemonRepository.removerTipoDoPokemon(id);
             System.out.println("tipo removido? " + conseguiuRemover + "| com id=" + id);
         } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void filtrarPokemonPorTipo(String tipoPesquisado){
+        Tipo []todosOsTipos = Tipo.values();
+        boolean resposta = false;
+
+        try{
+            for(int i = 0; i < todosOsTipos.length; i++) {
+                if (tipoPesquisado.equals(todosOsTipos[i].getNome())) {
+                    resposta = true;
+                    int verificacao = tipoPokemonRepository.filtrarPokemonPorTipo(tipoPesquisado).size();
+                    if (verificacao == 0) {
+                        System.out.println("Não há pokémon registrados com este tipo.");
+                    } else {
+                        tipoPokemonRepository.filtrarPokemonPorTipo(tipoPesquisado).forEach(System.out::println);
+                    }
+                    break;
+                }
+            }if(!resposta){
+                System.out.println("Tipo Inexistente");
+            }
+        }catch (BancoDeDadosException e){
             e.printStackTrace();
         }
     }

@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3068a54d-be70-490c-9e9c-8349290d2def" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/repository/HabilidadeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/repository/HabilidadeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dbc/service/HabilidadeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/service/HabilidadeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoPokemon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetoPokemon.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/repository/PokemonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/repository/PokemonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/repository/TipoPokemonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/repository/TipoPokemonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/service/PokemonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/service/PokemonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dbc/service/TipoPokemonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/service/TipoPokemonService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dbc/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dbc/view/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +18,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1zy9UydgUqBwfuZkO6mHoxJUnFj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,6 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635083858939</updated>
       <workItem from="1635083863715" duration="3328000" />
+      <workItem from="1635109483680" duration="13336000" />
     </task>
     <task id="LOCAL-00001" summary="Ajustes">
       <created>1635087018336</created>
@@ -71,6 +87,29 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ajustes" />

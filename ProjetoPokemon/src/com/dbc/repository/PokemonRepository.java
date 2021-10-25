@@ -406,4 +406,42 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
             }
         }
     }
-}
+
+    public List<Pokemon> listarLendarios() throws BancoDeDadosException{
+        List<Pokemon> lendariosLista = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+            Statement stmt = con.createStatement();
+
+            String sql = "SELECT * FROM POKEMON p\n" +
+                    "WHERE p.REGIAO_DOMINANTE_POKE_LENDARIO != 'NULL'";
+
+            ResultSet res = stmt.executeQuery(sql);
+
+            while (res.next()) {
+                Pokemon pokemon = getPokemonFromResultSet(res);
+                lendariosLista.add(pokemon);
+            }
+            return lendariosLista;
+
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+
+    }
+
+
+
+

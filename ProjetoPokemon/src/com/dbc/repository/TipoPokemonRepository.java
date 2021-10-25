@@ -10,7 +10,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TipoPokemonRepository implements Repositorio<Integer, TipoPokemon>{
+public class TipoPokemonRepository implements Repositorio<Integer, TipoPokemon> {
 
 
     @Override
@@ -270,4 +270,42 @@ public class TipoPokemonRepository implements Repositorio<Integer, TipoPokemon>{
 
         return tipoPokemon;
     }
-}
+
+    public List<String> filtrarPokemonPorTipo(String tipoPesquisado) throws BancoDeDadosException{
+        List<String> pokemonFiltrados = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+
+            String sql = "SELECT P.NOME_POKEMON FROM POKEMON P\n" +
+                    "INNER JOIN POKEMON_TIPO PT ON (P.ID_POKEMON = PT.FK_POKEMON_ID_POKEMON)\n" +
+                    "WHERE PT.NOME_TIPO = ?";
+
+            // Executa-se a consulta
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, tipoPesquisado);
+
+            ResultSet res = stmt.executeQuery();
+
+            while (res.next()) {
+                Pokemon pokemon = new Pokemon();
+                String nome;
+                pokemon.setNome(res.getString("NOME_POKEMON"));
+                nome = pokemon.getNome();
+                pokemonFiltrados.add(nome);
+            }
+            return pokemonFiltrados;
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    }
+

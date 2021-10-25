@@ -100,6 +100,17 @@ public class PokemonService {
             e.printStackTrace();
         }
     }
+
+    public List<Pokemon> listarLendarios(){
+        List<Pokemon> listar = null;
+        try{
+            listar = pokemonRepository.listarLendarios();
+            listar.forEach(System.out::println);
+        }catch (BancoDeDadosException e){
+            e.printStackTrace();
+        }
+        return listar;
+    }
 }
 
 
