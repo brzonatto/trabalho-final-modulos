@@ -66,6 +66,17 @@ public class PokemonService {
         }
     }
 
+    public void listarIDNome() {
+        try {
+            List<Pokemon> listar = pokemonRepository.listar();
+            listar.stream().sorted((a, b) -> a.getNumero().compareTo(b.getNumero()))
+                    .forEach(Pokemon::imprimirIDNome);
+
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void listarNumeroNomeDetalhado() {
         try {
             List<Pokemon> listar = pokemonRepository.listar();

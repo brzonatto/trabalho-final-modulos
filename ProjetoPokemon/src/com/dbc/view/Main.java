@@ -2,6 +2,7 @@ package com.dbc.view;
 
 import com.dbc.model.*;
 import com.dbc.repository.EvolucaoRepository;
+import com.dbc.repository.PokemonRepository;
 import com.dbc.service.EvolucaoService;
 import com.dbc.service.HabilidadeService;
 import com.dbc.service.PokemonService;
@@ -67,7 +68,6 @@ public class Main {
                     pokemonService.adicionarPokemon(pokemon);
 
                     String sair;
-
 
                     int cont1 = 0;
                     do {
@@ -160,7 +160,9 @@ public class Main {
                 case "3":
                     System.out.println("REMOVER POKEMON");
                     System.out.print("Digite o id do pokémon a ser excluído: ");
+
                     Integer id = scan.nextInt();
+                    evolucaoService.removerEvolucao(id);
                     habilidadeService.removerPokemonDaHabilidade(id);
                     tipoPokemonService.remover(id);
                     pokemonService.remover(id);
@@ -314,9 +316,10 @@ public class Main {
                     String op = scan.next();
                     switch (op) {
                         case "1":
-                            System.out.println("INSERIR EVOLUÇÃO");
+                            System.out.println("\nINSERIR EVOLUÇÃO\n");
                             Evolucao evolucao = new Evolucao();
-                            System.out.print("Qual id do Pokemon estágio 1: ");
+                            pokemonService.listarIDNome();
+                            System.out.print("\nQual id do Pokemon estágio 1: ");
                             Pokemon stage1 = pokemonService.pegarPokemonPorId(scan.nextInt());
                             System.out.print("Qual id do Pokemon estágio 2: ");
                             Pokemon stage2 = pokemonService.pegarPokemonPorId(scan.nextInt());
@@ -338,8 +341,9 @@ public class Main {
                             pokemonService.editar(stage3.getIdPokemon(), stage3);
                             break;
                         case "2":
-                            System.out.println("REMOVER EVOLUÇÃO");
-                            System.out.print("Digite o id da evolução a ser removida: ");
+                            System.out.println("\nREMOVER EVOLUÇÃO\n");
+                            evolucaoService.listarEvolucoesID();
+                            System.out.print("\nDigite o id da evolução a ser removida: ");
                             Integer idEv = scan.nextInt();
                             pokemonService.removerEvolucaoPokemon(idEv);
                             evolucaoService.removerEvolucao(idEv);

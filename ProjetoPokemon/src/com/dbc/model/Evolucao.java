@@ -1,5 +1,6 @@
 package com.dbc.model;
 
+
 public class Evolucao {
     private Integer idEvolucao;
     private Pokemon estagioUm; // sem evolução
@@ -38,13 +39,29 @@ public class Evolucao {
         this.estagioTres = estagioTres;
     }
 
+    public String imprimir() {
+        if (this.estagioTres != null) {
+            return "Lv: " + this.estagioUm.getLevel() + " - " + this.estagioUm.getNome()
+                    + " >>> Lv: " + this.estagioDois.getLevel() + " - " + this.estagioDois.getNome()
+                    + " >>> Lv: " + this.estagioTres.getLevel() + " - " + this.estagioTres.getNome();
+        }
+        return "Lv: " + this.estagioUm.getLevel() + " - " + this.estagioUm.getNome()
+                + "\nLv: " + this.estagioDois.getLevel() + " - " + this.estagioDois.getNome();
+    }
+
+    public void imprimirID() {
+        if (this.estagioTres != null) {
+            System.out.println( "ID: " + this.idEvolucao + " | Lv: " + this.estagioUm.getLevel() + " - " + this.estagioUm.getNome()
+                    + " >>> Lv: " + this.estagioDois.getLevel() + " - " + this.estagioDois.getNome()
+                    + " >>> Lv: " + this.estagioTres.getLevel() + " - " + this.estagioTres.getNome());
+        } else {
+            System.out.println( "Lv: " + this.estagioUm.getLevel() + " - " + this.estagioUm.getNome()
+                    + "\nLv: " + this.estagioDois.getLevel() + " - " + this.estagioDois.getNome());
+        }
+    }
+
     @Override
     public String toString() {
-        return "Evolucao{" +
-                "idEvolucao=" + idEvolucao +
-                ", estagioUm=" + estagioUm.getNome() +
-                ", estagioDois=" + estagioDois.getNome() +
-                ", estagioTres=" + estagioTres.getNome() +
-                '}';
+        return imprimir();
     }
 }

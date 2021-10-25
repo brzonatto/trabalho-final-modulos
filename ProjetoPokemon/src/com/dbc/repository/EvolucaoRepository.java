@@ -46,7 +46,7 @@ public class EvolucaoRepository implements Repositorio<Integer, Evolucao>{
             stmt.setInt(4, evolucao.getEstagioTres().getIdPokemon());
 
             int res = stmt.executeUpdate();
-            System.out.println("adicionarEvolucao.res=" + res);
+//            System.out.println("adicionarEvolucao.res=" + res);
             return evolucao;
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());
@@ -75,7 +75,7 @@ public class EvolucaoRepository implements Repositorio<Integer, Evolucao>{
 
             // Executa-se a consulta
             int res = stmt.executeUpdate();
-            System.out.println("removerEvolucaoPorId.res=" + res);
+//            System.out.println("removerEvolucaoPorId.res=" + res);
 
             return res > 0;
         } catch (SQLException e) {
@@ -132,4 +132,6 @@ public class EvolucaoRepository implements Repositorio<Integer, Evolucao>{
         }
         return evolucoes;
     }
+
+
 }

@@ -2,6 +2,7 @@ package com.dbc.repository;
 
 import com.dbc.exceptions.BancoDeDadosException;
 
+import java.lang.reflect.Type;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -274,8 +275,11 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
                 Pokemon pokemon = getPokemonFromResultSet(res);
                 pokemons.add(pokemon);
             }
-            
-            return pokemons.get(0);   
+
+            return pokemons.get(0);
+
+
+
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());
         } finally {
@@ -320,7 +324,8 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
             con = ConexaoBancoDeDados.getConnection();
 
             String sql = "SELECT * FROM POKEMON P " +
-                    "WHERE P.FK_ID_EVOLUCAO = ? ";
+                    "WHERE P.FK_ID_EVOLUCAO = ? " +
+                    "ORDER BY P.NUMERO_POKEMON ";
 
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setInt(1, id);
@@ -457,16 +462,15 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
         status.setEspecialAtaque(res.getInt("ataque_especial_status"));
         status.setEspecialDefesa(res.getInt("defesa_especial_status"));
         status.setVelocidade(res.getInt("velocidade_status"));
-        pokemon.setStatus(status);        
-        Evolucao evolucao = new Evolucao();
-        evolucao.setIdEvolucao(res.getInt("FK_ID_EVOLUCAO"));
-        evolucao.setEstagioUm(pegarPokemonPorID(res.getInt("ID_POKE_ESTAGIO_1_EVOLUCAO")));
-        evolucao.setEstagioDois(pegarPokemonPorID(res.getInt("ID_POKE_ESTAGIO_2_EVOLUCAO")));
-        evolucao.setEstagioTres(pegarPokemonPorID(res.getInt("ID_POKE_ESTAGIO_3_EVOLUCAO")));
-        pokemon.setEvolucao(evolucao);
-
-        ArrayList<TipoPokemon> tiposPokemon = new ArrayList<>();
-
+        pokemon.setStatus(status);
+        if (res.getInt("FK_ID_EVOLUCAO") != Types.NULL) {
+            Evolucao evolucao = new Evolucao();
+            evolucao.setIdEvolucao(res.getInt("FK_ID_EVOLUCAO"));
+            evolucao.setEstagioUm(pegarPokemonPorID(res.getInt("ID_POKE_ESTAGIO_1_EVOLUCAO")));
+            evolucao.setEstagioDois(pegarPokemonPorID(res.getInt("ID_POKE_ESTAGIO_2_EVOLUCAO")));
+            evolucao.setEstagioTres(pegarPokemonPorID(res.getInt("ID_POKE_ESTAGIO_3_EVOLUCAO")));
+            pokemon.setEvolucao(evolucao);
+        }
         return pokemon;
     }
 }

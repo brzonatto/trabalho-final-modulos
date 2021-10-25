@@ -18,7 +18,7 @@ public class EvolucaoService {
         Evolucao evolucaoAdicionada = null;
         try {
             evolucaoAdicionada = evolucaoRepository.adicionar(evolucao);
-            System.out.println("Evolucao adicinada com sucesso! " + evolucaoAdicionada);
+            System.out.println("\nEvolucao adicinada com sucesso!" );
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }
@@ -38,6 +38,15 @@ public class EvolucaoService {
         try {
             List<Evolucao> listar = evolucaoRepository.listar();
             listar.forEach(System.out::println);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void listarEvolucoesID() {
+        try {
+            List<Evolucao> listar = evolucaoRepository.listar();
+            listar.forEach(Evolucao::imprimirID);
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }

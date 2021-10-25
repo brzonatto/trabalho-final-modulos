@@ -98,6 +98,10 @@ public class Pokemon {
         System.out.println(this.numero + " - " + this.nome);
     }
 
+    public void imprimirIDNome() {
+        System.out.println("ID: " + this.idPokemon + " - " + this.nome);
+    }
+
     public void imprimirDadosCompletos() {
         System.out.println("ID: " + this.idPokemon + " | Número: " + this.numero + " | "
                 + this.nome + " | Level: " + this.level);
