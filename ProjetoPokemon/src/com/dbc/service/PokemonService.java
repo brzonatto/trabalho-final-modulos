@@ -124,6 +124,19 @@ public class PokemonService {
         }
         return listar;
     }
+
+    public List<Pokemon> listarDetalhesEvo(){
+        List<Pokemon> listar = null;
+        try{
+            listar = pokemonRepository.listarDetalhesPokemonsPorID();
+            listar.stream().sorted((a, b) -> a.getNumero().compareTo(b.getNumero()))
+                    .forEach(Pokemon::imprimirDadosCompletos);
+        }catch (BancoDeDadosException e){
+            e.printStackTrace();
+        }
+        return listar;
+    }
+
 }
 
 

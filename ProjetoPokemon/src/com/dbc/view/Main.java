@@ -149,7 +149,8 @@ public class Main {
                             break;
                         case "3":
                             System.out.println("\n###################################################\n");
-                            pokemonService.listarNumeroNomeDetalhado();
+//                            pokemonService.listarNumeroNomeDetalhado();
+                            pokemonService.listarDetalhesEvo();
                             break;
                         default:
                             System.out.println("Opção Inválida");

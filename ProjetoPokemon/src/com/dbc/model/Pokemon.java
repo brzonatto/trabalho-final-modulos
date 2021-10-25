@@ -104,6 +104,13 @@ public class Pokemon {
         System.out.println("Peso: " + this.peso + " | Altura: " + this.altura + " | Categoria: " + this.categoria);
         System.out.println("\nStatus: ");
         System.out.println(this.status);
+        System.out.println("\nEvoluções: ");
+        if (this.evolucao != null) {
+            System.out.println(this.evolucao);
+        } else {
+            System.out.println("Este Pokemon não possui evoluções!");
+        }
+
         System.out.println("\n###################################################\n");
     }
 

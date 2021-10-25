@@ -274,7 +274,8 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
                 Pokemon pokemon = getPokemonFromResultSet(res);
                 pokemons.add(pokemon);
             }
-            return pokemons.get(0);
+            
+            return pokemons.get(0);   
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());
         } finally {
