@@ -6,10 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.dbc.model.Pokemon;
-import com.dbc.model.Status;
-import com.dbc.model.Tipo;
-import com.dbc.model.TipoPokemon;
+import com.dbc.model.*;
 
 public class PokemonRepository implements Repositorio<Integer, Pokemon> {
     @Override
@@ -365,6 +362,38 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
                 pokemons.add(pokemon);
             }
             return pokemons;
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public boolean removerEvolucaoPokemon(Integer id) throws BancoDeDadosException {
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+
+            StringBuilder sql = new StringBuilder();
+            sql.append("UPDATE POKEMON P SET");
+            sql.append(" P.FK_ID_EVOLUCAO = NULL");
+            sql.append(" WHERE P.FK_ID_EVOLUCAO = ? ");
+
+            PreparedStatement stmt = con.prepareStatement(sql.toString());
+
+            stmt.setInt(1, id);
+
+            // Executa-se a consulta
+            int res = stmt.executeUpdate();
+            System.out.println("editarEVOPOKE.res=" + res);
+
+            return res > 0;
         } catch (SQLException e) {
             throw new BancoDeDadosException(e.getCause());
         } finally {

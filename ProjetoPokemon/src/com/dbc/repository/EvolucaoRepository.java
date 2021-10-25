@@ -3,11 +3,14 @@ package com.dbc.repository;
 import com.dbc.exceptions.BancoDeDadosException;
 import com.dbc.model.Evolucao;
 import com.dbc.model.Habilidade;
+import com.dbc.model.Pokemon;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EvolucaoRepository implements Repositorio<Integer, Evolucao>{
+    PokemonRepository pokemonRepository = new PokemonRepository();
     @Override
     public Integer getProximoId(Connection connection) throws SQLException {
         String sql = "SELECT seq_ID_EVOLUCAO.nextval mysequence from DUAL";
@@ -95,6 +98,38 @@ public class EvolucaoRepository implements Repositorio<Integer, Evolucao>{
 
     @Override
     public List<Evolucao> listar() throws BancoDeDadosException {
-        return null;
+        List<Evolucao> evolucoes = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
+            Statement stmt = con.createStatement();
+
+            String sql = "SELECT * FROM EVOLUCAO";
+
+            // Executa-se a consulta
+            ResultSet res = stmt.executeQuery(sql);
+
+            while (res.next()) {
+                Evolucao evolucao = new Evolucao();
+                evolucao.setIdEvolucao(res.getInt("ID_EVOLUCAO"));
+                List<Pokemon> pokemons = pokemonRepository.pegarPokemonPorIdEvolucao(evolucao.getIdEvolucao());
+                evolucao.setEstagioUm(pokemons.get(0));
+                evolucao.setEstagioDois(pokemons.get(1));
+                evolucao.setEstagioTres(pokemons.get(2));
+
+                evolucoes.add(evolucao);
+            }
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return evolucoes;
     }
 }

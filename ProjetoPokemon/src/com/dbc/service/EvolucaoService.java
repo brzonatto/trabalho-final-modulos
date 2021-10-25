@@ -2,7 +2,10 @@ package com.dbc.service;
 
 import com.dbc.exceptions.BancoDeDadosException;
 import com.dbc.model.Evolucao;
+import com.dbc.model.Habilidade;
 import com.dbc.repository.EvolucaoRepository;
+
+import java.util.List;
 
 public class EvolucaoService {
     private EvolucaoRepository evolucaoRepository;
@@ -26,6 +29,15 @@ public class EvolucaoService {
         try {
             boolean conseguiuRemover = evolucaoRepository.remover(id);
             System.out.println("Evolucao removida? " + conseguiuRemover + "| com id=" + id);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void listarEvolucoes() {
+        try {
+            List<Evolucao> listar = evolucaoRepository.listar();
+            listar.forEach(System.out::println);
         } catch (BancoDeDadosException e) {
             e.printStackTrace();
         }

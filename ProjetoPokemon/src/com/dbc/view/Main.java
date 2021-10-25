@@ -274,9 +274,8 @@ public class Main {
                     System.out.println("\nMenu Evolução\n");
                     System.out.println("Opções: ");
                     System.out.println("  1  - Adicionar evolução");
-                    System.out.println("  2  - Editar evolução");
-                    System.out.println("  3  - Remover evolução");
-                    System.out.println("  4  - Listar evoluções");
+                    System.out.println("  2  - Remover evolução");
+                    System.out.println("  3  - Listar evoluções");
                     System.out.print("\nDigite a opção: ");
                     String op = scan.next();
                     switch (op) {
@@ -305,24 +304,15 @@ public class Main {
                             pokemonService.editar(stage3.getIdPokemon(), stage3);
                             break;
                         case "2":
-
-
+                            System.out.println("REMOVER EVOLUÇÃO");
+                            System.out.print("Digite o id da evolução a ser removida: ");
+                            Integer idEv = scan.nextInt();
+                            pokemonService.removerEvolucaoPokemon(idEv);
+                            evolucaoService.removerEvolucao(idEv);
                             break;
                         case "3":
-                            System.out.println("REMOVER EVOLUÇÃO");
-                            System.out.println("Digite o id da evolução a ser removida: ");
-                            Integer idEv = scan.nextInt();
-                            List<Pokemon> pokeLista = pokemonService.pegarPokemonPorIdEvolucao(idEv);
-
-                            for (Pokemon key : pokeLista) {
-                                Pokemon pokeEvo = new Pokemon();
-                                pokeEvo.getEvolucao().setIdEvolucao(null);
-                                pokemonService.editar(key.getIdPokemon(), key);
-                            }
-
-//
-                            break;
-                        case "4":
+                            System.out.println("MOSTRAR EVOLUÇÕES");
+                            evolucaoService.listarEvolucoes();
                             break;
                         default:
                             System.out.println("Opção inválida!");

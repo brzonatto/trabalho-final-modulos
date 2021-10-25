@@ -1,9 +1,6 @@
 package com.dbc.service;
 import com.dbc.exceptions.BancoDeDadosException;
-import com.dbc.model.Pokemon;
-import com.dbc.model.Status;
-import com.dbc.model.Tipo;
-import com.dbc.model.TipoPokemon;
+import com.dbc.model.*;
 import com.dbc.repository.PokemonRepository;
 
 import java.util.ArrayList;
@@ -93,6 +90,15 @@ public class PokemonService {
             e.printStackTrace();
         }
         return listar;
+    }
+
+    public void removerEvolucaoPokemon(Integer id) {
+        try {
+            boolean conseguiuEditar = pokemonRepository.removerEvolucaoPokemon(id);
+            System.out.println("Pokemon evolução editada? " + conseguiuEditar + "| com id=" + id);
+        } catch (BancoDeDadosException e) {
+            e.printStackTrace();
+        }
     }
 }
 
