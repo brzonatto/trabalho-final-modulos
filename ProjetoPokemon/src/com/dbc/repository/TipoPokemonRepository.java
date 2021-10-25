@@ -271,13 +271,13 @@ public class TipoPokemonRepository implements Repositorio<Integer, TipoPokemon> 
         return tipoPokemon;
     }
 
-    public List<String> filtrarPokemonPorTipo(String tipoPesquisado) throws BancoDeDadosException{
-        List<String> pokemonFiltrados = new ArrayList<>();
+    public List<Pokemon> filtrarPokemonPorTipo(String tipoPesquisado) throws BancoDeDadosException{
+        List<Pokemon> pokemonFiltrados = new ArrayList<>();
         Connection con = null;
         try {
             con = ConexaoBancoDeDados.getConnection();
 
-            String sql = "SELECT P.NOME_POKEMON FROM POKEMON P\n" +
+            String sql = "SELECT P.NOME_POKEMON, P.NUMERO_POKEMON FROM POKEMON P\n" +
                     "INNER JOIN POKEMON_TIPO PT ON (P.ID_POKEMON = PT.FK_POKEMON_ID_POKEMON)\n" +
                     "WHERE PT.NOME_TIPO = ?";
 
@@ -289,10 +289,9 @@ public class TipoPokemonRepository implements Repositorio<Integer, TipoPokemon> 
 
             while (res.next()) {
                 Pokemon pokemon = new Pokemon();
-                String nome;
+                pokemon.setNumero(res.getInt("NUMERO_POKEMON"));
                 pokemon.setNome(res.getString("NOME_POKEMON"));
-                nome = pokemon.getNome();
-                pokemonFiltrados.add(nome);
+                pokemonFiltrados.add(pokemon);
             }
             return pokemonFiltrados;
         } catch (SQLException e) {

@@ -76,15 +76,6 @@ public class PokemonService {
         }
     }
 
-    public void listarPorTipo(String nomeTipo){
-        try{
-            List<Pokemon> listar = pokemonRepository.listarPorTipo(nomeTipo);
-            listar.forEach(System.out::println);
-        } catch (BancoDeDadosException e){
-            e.printStackTrace();
-        }
-    }
-
     public Integer somaStatus(Pokemon pokemon) {
         Status status = pokemon.getStatus();
         Integer soma = status.getHp() + status.getAtaque() + status.getDefesa() + status.getEspecialAtaque()
@@ -126,7 +117,8 @@ public class PokemonService {
         List<Pokemon> listar = null;
         try{
             listar = pokemonRepository.listarLendarios();
-            listar.forEach(System.out::println);
+            listar.stream().sorted((a, b) -> a.getNumero().compareTo(b.getNumero()))
+                    .forEach(Pokemon::imprimirNumeroNome);
         }catch (BancoDeDadosException e){
             e.printStackTrace();
         }

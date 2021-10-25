@@ -257,38 +257,6 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
         }
     }
 
-    public List<Pokemon> listarPorTipo(String nomeTipo) throws BancoDeDadosException {
-        List<Pokemon> pokemons = new ArrayList<>();
-        Connection con = null;
-        try {
-            con = ConexaoBancoDeDados.getConnection();
-
-            String sql = "SELECT P.NOME_POKEMON FROM POKEMON P " +
-                    "INNER JOIN POKEMON_TIPO PT ON (P.ID_POKEMON = PT.FK_POKEMON_ID_POKEMON) " +
-                    "WHERE PT.NOME_TIPO = ? ";
-
-            PreparedStatement stmt = con.prepareStatement(sql);
-            stmt.setString(1,nomeTipo);
-            ResultSet res = stmt.executeQuery();
-
-            while (res.next()) {
-                Pokemon pokemon = getPokemonFromResultSet(res);
-                pokemons.add(pokemon);
-            }
-            return pokemons;
-        } catch (SQLException e) {
-            throw new BancoDeDadosException(e.getCause());
-        } finally {
-            try {
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     public Pokemon pegarPokemonPorID(Integer id) throws BancoDeDadosException {
         List<Pokemon> pokemons = new ArrayList<>();
         Connection con = null;
@@ -439,8 +407,68 @@ public class PokemonRepository implements Repositorio<Integer, Pokemon> {
 
     }
 
+    public List<Pokemon> listarDetalhesPokemonsPorID() throws BancoDeDadosException {
+        List<Pokemon> pokemons = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = ConexaoBancoDeDados.getConnection();
 
+            String sql = "SELECT P.*, E.ID_POKE_ESTAGIO_1_EVOLUCAO, E.ID_POKE_ESTAGIO_2_EVOLUCAO, E.ID_POKE_ESTAGIO_3_EVOLUCAO FROM POKEMON P  " +
+                    "LEFT JOIN EVOLUCAO E ON (E.ID_EVOLUCAO = P.FK_ID_EVOLUCAO) ";
+//
+
+            PreparedStatement stmt = con.prepareStatement(sql);
+//            stmt.setInt(1, pokemon.getIdPokemon());
+            ResultSet res = stmt.executeQuery();
+
+            while (res.next()) {
+                Pokemon pokemon = getPokemonFromResultSet2(res);
+                pokemons.add(pokemon);
+            }
+            return pokemons;
+        } catch (SQLException e) {
+            throw new BancoDeDadosException(e.getCause());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
+
+    private Pokemon getPokemonFromResultSet2(ResultSet res) throws SQLException {
+        Pokemon pokemon = new Pokemon();
+        pokemon.setIdPokemon(res.getInt("id_pokemon"));
+        pokemon.setNumero(res.getInt("numero_pokemon"));
+        pokemon.setNome(res.getString("nome_pokemon"));
+        pokemon.setLevel(res.getInt("level_pokemon"));
+        pokemon.setPeso(res.getDouble("peso_pokemon"));
+        pokemon.setAltura(res.getDouble("altura_pokemon"));
+        pokemon.setCategoria(res.getString("categoria_pokemon"));
+        pokemon.setRegiaoDominante(res.getString("regiao_dominante_poke_lendario"));
+        Status status = new Status();
+        status.setHp(res.getInt("hp_status"));
+        status.setAtaque(res.getInt("ataque_status"));
+        status.setDefesa(res.getInt("defesa_status"));
+        status.setEspecialAtaque(res.getInt("ataque_especial_status"));
+        status.setEspecialDefesa(res.getInt("defesa_especial_status"));
+        status.setVelocidade(res.getInt("velocidade_status"));
+        pokemon.setStatus(status);        
+        Evolucao evolucao = new Evolucao();
+        evolucao.setIdEvolucao(res.getInt("FK_ID_EVOLUCAO"));
+        evolucao.setEstagioUm(pegarPokemonPorID(res.getInt("ID_POKE_ESTAGIO_1_EVOLUCAO")));
+        evolucao.setEstagioDois(pegarPokemonPorID(res.getInt("ID_POKE_ESTAGIO_2_EVOLUCAO")));
+        evolucao.setEstagioTres(pegarPokemonPorID(res.getInt("ID_POKE_ESTAGIO_3_EVOLUCAO")));
+        pokemon.setEvolucao(evolucao);
+
+        ArrayList<TipoPokemon> tiposPokemon = new ArrayList<>();
+
+        return pokemon;
+    }
+}
 
 
 

@@ -70,17 +70,21 @@ public class TipoPokemonService {
 
     public void filtrarPokemonPorTipo(String tipoPesquisado){
         Tipo []todosOsTipos = Tipo.values();
+        List<Pokemon> listar = null;
         boolean resposta = false;
 
         try{
+            listar = tipoPokemonRepository.filtrarPokemonPorTipo(tipoPesquisado);
             for(int i = 0; i < todosOsTipos.length; i++) {
                 if (tipoPesquisado.equals(todosOsTipos[i].getNome())) {
                     resposta = true;
-                    int verificacao = tipoPokemonRepository.filtrarPokemonPorTipo(tipoPesquisado).size();
+                    int verificacao = listar.size();
+                    System.out.println(verificacao);
                     if (verificacao == 0) {
                         System.out.println("Não há pokémon registrados com este tipo.");
                     } else {
-                        tipoPokemonRepository.filtrarPokemonPorTipo(tipoPesquisado).forEach(System.out::println);
+                        listar.stream().sorted((a, b) -> a.getNumero().compareTo(b.getNumero()))
+                                .forEach(Pokemon::imprimirNumeroNome);
                     }
                     break;
                 }
